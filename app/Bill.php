@@ -16,5 +16,10 @@ class Bill extends Model
     {
         return $this->belongTo('App\Customer');
     }
+    
+    public function bill_detail()
+    {
+        return $this->hasMany('App\Bill_Detail');
+    }
 
 }

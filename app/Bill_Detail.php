@@ -16,4 +16,8 @@ class Bill_Detail extends Model
     {
         return $this->belongTo('App\Product');
     }
+    public function bill()
+    {
+        return $this->belongTo('App\Bill');
+    }
 }
