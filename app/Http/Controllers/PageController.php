@@ -10,4 +10,12 @@ class PageController extends Controller
    {
        return view('page.trangchu');
    }
+   public function getProductType()
+   {
+       return view('page.loai_sanpham');
+   }
+   public function getProductDetail()
+   {
+    return view('page.chitiet_sanpham');
+   }
 }

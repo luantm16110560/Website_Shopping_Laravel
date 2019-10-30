@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home',[
-    'as'=>'trang-chu',
+    'as'=>'home-page',
     'uses'=>'PageController@getIndex'
+]);
+Route::get('/type',[
+    'as'=>'product-type',
+    'uses'=>'PageController@getProductType'
+]);
+Route::get('/product_detail',[
+    'as'=>'product-detail',
+    'uses'=>'PageController@getProductDetail'
 ]);
