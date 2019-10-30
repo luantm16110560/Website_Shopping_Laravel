@@ -12,4 +12,8 @@ class Bill_Detail extends Model
 
     public $timestamps=false;
 
+    public function product()
+    {
+        return $this->belongTo('App\Product');
+    }
 }

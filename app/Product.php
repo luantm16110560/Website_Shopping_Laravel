@@ -20,5 +20,9 @@ class Product extends Model
     {
         return $this->belongTo('App\Good_Receipt');
     }
+    public function bill_detail()
+    {
+        return $this->hasMany('App\Bill_Detail');
+    }
 
 }
