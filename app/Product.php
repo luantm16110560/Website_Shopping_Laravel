@@ -12,4 +12,9 @@ class Product extends Model
 
     public $timestamps=false;
 
+    public function product_type()
+    {
+        return $this->belongTo('App\Type_Product');
+    }
+
 }
