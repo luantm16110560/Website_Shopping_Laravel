@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('index',[
+Route::get('/home',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
 ]);
