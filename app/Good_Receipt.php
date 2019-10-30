@@ -12,4 +12,9 @@ class Good_Receipt extends Model
 
     public $timestamps=false;
 
+    public function product()
+    {
+        return $this->hasMany('App\Product');
+    }
+
 }

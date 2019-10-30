@@ -16,5 +16,9 @@ class Product extends Model
     {
         return $this->belongTo('App\Type_Product');
     }
+    public function good_receipt()
+    {
+        return $this->belongTo('App\Good_Receipt');
+    }
 
 }
