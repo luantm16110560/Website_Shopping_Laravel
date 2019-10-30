@@ -26,3 +26,11 @@ Route::get('/product_detail',[
     'as'=>'product-detail',
     'uses'=>'PageController@getProductDetail'
 ]);
+Route::get('/contact',[
+    'as'=>'contact',
+    'uses'=>'PageController@getContact'
+]);
+Route::get('/about',[
+    'as'=>'about',
+    'uses'=>'PageController@getAbout'
+]);

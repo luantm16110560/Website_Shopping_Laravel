@@ -18,4 +18,12 @@ class PageController extends Controller
    {
     return view('page.chitiet_sanpham');
    }
+   public function getContact()
+   {
+       return view('page.lienhe');
+   }
+   public function getAbout()
+   {
+       return view('page.gioithieu');
+   }
 }
