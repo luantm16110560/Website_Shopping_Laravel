@@ -11,7 +11,8 @@ class PageController extends Controller
        $slide = Slide::all();
 
         echo $slide;
-       return view('page.trangchu',compact('my_slide'));
+       //return view('page.trangchu',compact('my_slide'));
+       return view('page.trangchu')->with('my_slide',$slide);
    }
    public function getProductType()
    {
