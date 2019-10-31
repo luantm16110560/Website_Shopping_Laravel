@@ -34,3 +34,12 @@ Route::get('/about',[
     'as'=>'about',
     'uses'=>'PageController@getAbout'
 ]);
+
+Route::get('/file',[
+    'as'=>'upload_file',
+    'uses'=>'FileController@showUploadForm'
+]);
+
+Route::post('/file',[
+    'uses'=>'FileController@storeFile'
+]);
