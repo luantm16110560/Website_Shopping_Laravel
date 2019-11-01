@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Slide;
 use Illuminate\Http\Request;
 use DB;
+use App\Product;
 class PageController extends Controller
 {
    public function getIndex()
@@ -11,7 +12,12 @@ class PageController extends Controller
     $slide = DB::table('slides')->get();
     //echo $slide;
        //return view('page.trangchu',compact('my_slide'));
-       return view('page.trangchu')->with('my_slide',$slide);
+
+     //  $user = User::where('confirmation_code', '=', 123456, 'and')->where('id', '=', 5, 'or')->where('role', '=', 'admin')->first();
+
+       $newProduct = Product::where('status','=',1,'and')->where('isNew', '=', '1')->get();
+      //  dd($newProduct);
+       return view('page.trangchu')->with('my_slide',$slide)->with('new_product',$newProduct);
    }
    public function getProductType()
    {
