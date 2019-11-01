@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 use App\Slide;
 use Illuminate\Http\Request;
-
+use DB;
 class PageController extends Controller
 {
    public function getIndex()
    {
-       $slide = Slide::all();
-
-        echo $slide;
+    $slide = DB::table('slides')->get();
+    //echo $slide;
        //return view('page.trangchu',compact('my_slide'));
        return view('page.trangchu')->with('my_slide',$slide);
    }
