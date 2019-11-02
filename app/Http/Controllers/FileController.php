@@ -39,6 +39,12 @@ class FileController extends Controller
             );
          
          }
+         else{
+            $filename='defaul_product.png';
+            DB::table('slides')->insert(
+                ['image' => $filename, 'status'=>1]
+            );
+         }
  
      
     }
