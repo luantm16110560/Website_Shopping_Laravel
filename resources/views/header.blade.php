@@ -1,12 +1,6 @@
 <div id="header">
   <div class="header-top">
     <div class="container">
-      <div class="pull-left auto-width-left">
-        <ul class="top-menu menu-beta l-inline">
-          <li><a href=""><i class="fa fa-home"></i> 01 Võ Văn Ngân, phường Linh Chiểu, quận Thủ Đức</a></li>
-          <li><a href=""><i class="fa fa-phone"></i> 083 653 2285</a></li>
-        </ul>
-      </div>
       <div class="pull-right auto-width-right">
         <ul class="top-details menu-beta l-inline">
           <li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
