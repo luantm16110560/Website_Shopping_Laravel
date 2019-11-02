@@ -18,7 +18,7 @@ Route::get('/home',[
     'as'=>'home-page',
     'uses'=>'PageController@getIndex'
 ]);
-Route::get('/type',[
+Route::get('/type/{type}',[
     'as'=>'product-type',
     'uses'=>'PageController@getProductType'
 ]);

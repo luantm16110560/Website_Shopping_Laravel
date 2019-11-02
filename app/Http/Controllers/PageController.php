@@ -20,9 +20,10 @@ class PageController extends Controller
       $saleoff_product=Product::where('promotion_price','<>',0,'and')->where('status','=',1)->paginate(8);
        return view('page.trangchu')->with('my_slide',$slide)->with('new_product',$newProduct)->with('saleoff_product',$saleoff_product);
    }
-   public function getProductType()
+   public function getProductType($type)
    {
-       return view('page.loai_sanpham');
+       $type_product=Product::where('id_type',$type)->get();
+       return view('page.loai_sanpham')->with("type_product",$type_product);
    }
    public function getProductDetail()
    {
