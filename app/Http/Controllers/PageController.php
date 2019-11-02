@@ -15,7 +15,7 @@ class PageController extends Controller
 
      //  $user = User::where('confirmation_code', '=', 123456, 'and')->where('id', '=', 5, 'or')->where('role', '=', 'admin')->first();
 
-       $newProduct = Product::where('status','=',1,'and')->where('isNew', '=', '1')->get();
+       $newProduct = Product::where('status','=',1,'and')->where('isNew', '=', '1')->paginate(8);
       //  dd($newProduct);
        return view('page.trangchu')->with('my_slide',$slide)->with('new_product',$newProduct);
    }

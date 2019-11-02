@@ -70,6 +70,9 @@
                             </div>
                             @endforeach
                         </div>
+                        <div class="row">
+                            {{$new_product->links()}}
+                        </div>
                     </div>
                     <!-- .beta-products-list -->
 
