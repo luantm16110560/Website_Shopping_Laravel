@@ -43,3 +43,8 @@ Route::get('/file',[
 Route::post('/file',[
     'uses'=>'FileController@storeFile'
 ]);
+
+Route::get('/add-to-card/{id}',[
+    'as'=>'addtocard',
+    'uses'=>'PageController@getAddtoCard'
+]);
