@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$np->name}}</p>
-                                        <p class="single-item-price">
+                                        <p class="single-item-price" style="font-size: 18px ">
                                             @if($np->promotion_price==0)
                                             <span class="flash-sale">{{number_format($np->unit_price)}} VND</span> 
                                             @else
@@ -93,7 +93,7 @@
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$sop->name}}</p>
-                                        <p class="single-item-price">
+                                        <p class="single-item-price" style="font-size: 18px ">
                                             <span class="flash-del">{{number_format($sop->unit_price)}} VND</span>
                                             <span class="flash-sale">{{number_format($sop->promotion_price)}} VND</span>
                                         </p>

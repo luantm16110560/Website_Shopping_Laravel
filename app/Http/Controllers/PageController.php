@@ -5,6 +5,7 @@ use App\Slide;
 use Illuminate\Http\Request;
 use DB;
 use App\Product;
+use App\Type_Product;
 class PageController extends Controller
 {
    public function getIndex()
@@ -23,7 +24,10 @@ class PageController extends Controller
    public function getProductType($type)
    {
        $type_product=Product::where('id_type',$type)->get();
-       return view('page.loai_sanpham')->with("type_product",$type_product);
+       $product_other=Product::where('id_type','<>',$type)->paginate(3);
+       $loai=Type_Product::all();
+       $loai_sp=Type_Product::where('id',$type)->first();
+       return view('page.loai_sanpham')->with("type_product",$type_product)->with("product_other",$product_other)->with("loai",$loai)->with("loai_sp",$loai_sp);
    }
    public function getProductDetail()
    {
