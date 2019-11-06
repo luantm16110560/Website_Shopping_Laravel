@@ -29,9 +29,11 @@ class PageController extends Controller
        $loai_sp=Type_Product::where('id',$type)->first();
        return view('page.loai_sanpham')->with("type_product",$type_product)->with("product_other",$product_other)->with("loai",$loai)->with("loai_sp",$loai_sp);
    }
-   public function getProductDetail()
+   public function getProductDetail(Request $res)
    {
-    return view('page.chitiet_sanpham');
+        $sanpham=Product::where('id',$res->id)->first();
+        $sp_tuongtu=Product::where('id_type',$sanpham->id_type)->paginate(3);
+        return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu);
    }
    public function getContact()
    {

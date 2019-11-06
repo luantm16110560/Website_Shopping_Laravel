@@ -48,7 +48,7 @@
                                     </div>
                                     @endif
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="source/image/product/{{$np->image}}" alt=""></a>
+                                    <a href="{{route('product-detail',$np->id)}}"><img src="source/image/product/{{$np->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$np->name}}</p>
@@ -89,7 +89,7 @@
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="source/image/product/{{$sop->image}}" alt=""></a>
+                                        <a href="{{route('product-detail',$sop->id)}}"><img src="source/image/product/{{$sop->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$sop->name}}</p>

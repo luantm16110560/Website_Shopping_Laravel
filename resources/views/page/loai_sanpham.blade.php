@@ -7,7 +7,7 @@
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
-      <a href="{{route('home-page')}}">Home</a> / <span>Loại sản phẩm</span>
+      <a href="{{route('home-page')}}">Trang chủ</a> / <span>Loại sản phẩm</span>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -43,7 +43,7 @@
                       </div>
                       @endif
                     <div class="single-item-header">
-                      <a href="product.html"><img src="source/image/product/{{$product->image}}" alt="" height="250px"></a>
+                      <a href="{{route('product-detail',$product->id)}}"><img src="source/image/product/{{$product->image}}" alt="" height="250px"></a>
                     </div>
                     <div class="single-item-body">
                       <p class="single-item-title">{{$product->name}}</p>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="single-item-caption">
                       <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                      <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                      <a class="beta-btn primary" href="{{route('product-detail',$product->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                       <div class="clearfix"></div>
                     </div>
                   </div>
@@ -85,7 +85,7 @@
                       </div>
                       @endif
                     <div class="single-item-header">
-                      <a href="product.html"><img src="source/image/product/{{$sp->image}}" alt="" height="250px"></a>
+                      <a href="{{route('product-detail',$sp->id)}}"><img src="source/image/product/{{$sp->image}}" alt="" height="250px"></a>
                     </div>
                     <div class="single-item-body">
                       <p class="single-item-title">{{$sp->name}}</p>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="single-item-caption">
                       <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                      <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                      <a class="beta-btn primary" href="{{route('product-detail',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                       <div class="clearfix"></div>
                     </div>
                   </div>
