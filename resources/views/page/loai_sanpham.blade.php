@@ -63,7 +63,8 @@
                     <div class="single-item-body">
                       <p class="single-item-title">{{$product->name}}</p>
                       <p class="single-item-price">
-                        <span>{{$product->unit_price}}</span>
+                        <span class="flash-del">{{number_format($product->unit_price)}} VND</span>
+                        <span class="flash-sale">{{number_format($product->promotion_price)}} VDN</span>
                       </p>
                     </div>
                     <div class="single-item-caption">
