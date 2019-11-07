@@ -86,7 +86,7 @@
         <ul class="l-inline ov">
         <li><a href="{{route("home-page")}}">Trang chủ</a></li>
 
-        <li><a href="{{route("home-page")}}">Loại sản phẩm</a>
+        <li><a href="">Loại sản phẩm</a>
           <ul class="sub-menu">
             @foreach($loai_sp as $loai)
               <li><a href="{{route("product-type",$loai->id)}}">{{$loai->name}}</a></li>
