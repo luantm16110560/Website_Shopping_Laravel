@@ -88,14 +88,23 @@
                             @foreach ($saleoff_product as $sop)
                             <div class="col-sm-3">
                                 <div class="single-item">
+                                    @if($sop->promotion_price!=0)
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon ">Sale</div>
+                                        </div>
+                                    @endif
                                     <div class="single-item-header">
                                         <a href="{{route('product-detail',$sop->id)}}"><img src="source/image/product/{{$sop->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$sop->name}}</p>
                                         <p class="single-item-price" style="font-size: 18px ">
-                                            <span class="flash-del">{{number_format($sop->unit_price)}} VND</span>
-                                            <span class="flash-sale">{{number_format($sop->promotion_price)}} VND</span>
+                                                @if($sop->promotion_price !=0)
+                                                <span class="flash-del">{{number_format($sop->unit_price)}} VND</span>
+                                                <span class="flash-sale">{{number_format($sop->promotion_price)}} VDN</span>
+                                              @else
+                                              <span>{{number_format($sop->unit_price)}} VND</span>
+                                              @endif
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
@@ -110,6 +119,7 @@
                         <div class="row">
                                 {{$saleoff_product->links()}}
                         </div>
+                        <div class="space40">&nbsp;</div>
                     </div>
                 </div>
             </div>
