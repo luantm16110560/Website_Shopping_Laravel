@@ -32,7 +32,7 @@
               @foreach ($product_cart as $productcart)
               <div class="cart-item">
                   <div class="media">
-                  <a class="pull-left" href="#"><img src="source/image/product/{{$productcart['item']['image']}}" alt="" height="30px"></a>
+                  <a class="pull-left" href="{{route('product-detail',$productcart['item']['id'])}}"><img src="source/image/product/{{$productcart['item']['image']}}" alt="" height="30px"></a>
                     <div class="media-body">
                       <span class="cart-item-title"><strong>{{$productcart['item']['name']}}</strong></span>
                       {{-- <span class="cart-item-options">Size: XS; Colar: Navy</span> --}}
@@ -85,7 +85,7 @@
       <nav class="main-menu">
         <ul class="l-inline ov">
         <li><a href="{{route("home-page")}}">Trang chủ</a></li>
-        
+
         <li><a href="{{route("home-page")}}">Loại sản phẩm</a>
           <ul class="sub-menu">
             @foreach($loai_sp as $loai)
