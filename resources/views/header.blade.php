@@ -3,9 +3,9 @@
     <div class="container">
       <div class="pull-right auto-width-right">
         <ul class="top-details menu-beta l-inline">
-          <li><a href="#"><i class="fa fa-user" style="font-size:15px"></i>Tài khoản</a></li>
-          <li><a href="#" ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:15px"></i>Đăng kí</a></li>
-          <li><a href="#"><i class="fa fa-lock" aria-hidden="true" style="font-size:15px"></i>Đăng nhập</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100009638520081"><i class="fa fa-user" style="font-size:15px"></i>Tài khoản</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100009638520081" ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:15px"></i>Đăng kí</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100009638520081"><i class="fa fa-lock" aria-hidden="true" style="font-size:15px"></i>Đăng nhập</a></li>
         </ul>
       </div>
       <div class="clearfix"></div>
