@@ -14,7 +14,7 @@
   <div class="header-body">
     <div class="container beta-relative">
       <div class="pull-left">
-        <a href="index.html" id="logo"><img src="source/assets/dest/images/logo-shoe.png" width="100px" height="50px" alt=""></a>
+        <a href="{{route("about")}}" id="logo"><img src="source/image/logo/logo.png" width="100px" height="70px" alt=""></a>
       </div>
       <div class="pull-right beta-components space-left ov">
         <div class="space10">&nbsp;</div>
@@ -78,7 +78,7 @@
       <div class="clearfix"></div>
     </div> <!-- .container -->
   </div> <!-- .header-body -->
-  <div class="header-bottom" style="background-color: #0277b8;">
+  <div class="header-bottom" style="background-color: #000099;">
     <div class="container">
       <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
       <div class="visible-xs clearfix"></div>

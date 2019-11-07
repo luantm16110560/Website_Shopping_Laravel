@@ -7,7 +7,7 @@
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
-        <a href="index.html">Home</a> / <span>Contacts</span>
+        <a href="{{route("home-page")}}">Trang chủ</a> / <span>Liên hệ</span>
       </div>
     </div>
     <div class="clearfix"></div>
