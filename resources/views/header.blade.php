@@ -20,19 +20,19 @@
         <div class="space10">&nbsp;</div>
         <div class="beta-comp">
           <form role="search" method="get" id="searchform" action="/">
-                <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
+                <strong><input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." /></strong>
                 <button class="fa fa-search" aria-hidden="true" style="font-size:15px" type="submit" id="searchsubmit"></button>
           </form>
         </div>
         <div class="beta-comp">
           @if(Session::has('cart'))
           <div class="cart">
-          <div class="beta-select"><i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:15px"></i>Giỏ Hàng (@if(Session::has('cart')){{Session('cart')->totalQty}}@else 0 @endif sản phẩm)<i class="fa fa-chevron-down"></i></div>
+          <div class="beta-select"><strong class="fa fa-shopping-cart" aria-hidden="true" style="font-size:15px"></strong>  <strong>Giỏ Hàng (@if(Session::has('cart')){{Session('cart')->totalQty}}@else 0 @endif sản phẩm)</strong><i class="fa fa-chevron-down"></i></div>
             <div class="beta-dropdown cart-body">
               @foreach ($product_cart as $productcart)
               <div class="cart-item">
                   <div class="media">
-                  <a class="pull-left" href="{{route('product-detail',$productcart['item']['id'])}}"><img src="source/image/product/{{$productcart['item']['image']}}" alt="" height="30px"></a>
+                  <a class="pull-left"  href="{{route('product-detail',$productcart['item']['id'])}}"><img src="source/image/product/{{$productcart['item']['image']}}" alt="" height="30px"></a>
                     <div class="media-body">
                       <span class="cart-item-title"><strong>{{$productcart['item']['name']}}</strong></span>
                       {{-- <span class="cart-item-options">Size: XS; Colar: Navy</span> --}}

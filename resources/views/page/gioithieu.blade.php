@@ -16,28 +16,29 @@
 <div class="container">
   <div id="content">
     <div class="our-history">
-      <h2 class="text-center wow fadeInDown">Our History</h2>
+      <h1 class="text-center wow fadeInDown"><strong style="color: #000099;">TOM'S SHOSE</strong></h1>
+      <h6 class="text-center wow fadeInDown"><i style="color: #000099;">Chooser Your Best</i> </h6>
       <div class="space35">&nbsp;</div>
 
       <div class="history-slider">
         <div class="history-navigation">
-          <a data-slide-index="0" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2003</span></a>
-          <a data-slide-index="1" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2004</span></a>
-          <a data-slide-index="2" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2005</span></a>
-          <a data-slide-index="3" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2007</span></a>
-          <a data-slide-index="4" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2009</span></a>
-          <a data-slide-index="5" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2011</span></a>
-          <a data-slide-index="6" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2014</span></a>
+          <a data-slide-index="0" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center"><p class="text-center">Thành Lập</p></span></a>
+          <a data-slide-index="1" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center"><p class="text-center">Thương Hiệu</p></span></a>
+          <a data-slide-index="2" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center"><p class="text-center">Sứ Mệnh</p></span></a>
+          <a data-slide-index="3" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center"><p class="text-center">Phát Triển</p></span></a>
+          <a data-slide-index="4" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center"><p class="text-center">Cơ Hội</p></span></a>
+          <a data-slide-index="5" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center"><p class="text-center">Thị Trường</p></span></a>
+          <a data-slide-index="6" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center"><p class="text-center">Đối Tác</p></span></a>
         </div>
 
         <div class="history-slides">
           <div> 
             <div class="row">
             <div class="col-sm-5">
-              <img src="source/assets/dest/images/history.jpg" alt="">
+              <img src="source\image\intro\history.png" alt="">
             </div>
             <div class="col-sm-7">
-              <h5 class="other-title">Birth.</h5>
+              <h5 class="other-title"><strong style="color: #000099">Lịch Sử Hình Thành</strong></h5>
               <p>
                 Suite 127 / 267 – 277 Brussel St,<br />
                 62 Croydon, NYC<br />
@@ -51,10 +52,10 @@
           <div> 
             <div class="row">
             <div class="col-sm-5">
-              <img src="source/assets/dest/images/history.jpg" alt="">
+              <img src="source\image\intro\tomshoes.png" alt="">
             </div>
             <div class="col-sm-7">
-              <h5 class="other-title">Web Design</h5>
+              <h5 class="other-title"><strong style="color: #000099">Thương Hiệu</strong></h5>
               <p>
                 Suite 127 / 267 – 277 Brussel St,<br />
                 62 Croydon, NYC<br />
@@ -68,10 +69,10 @@
           <div> 
             <div class="row">
             <div class="col-sm-5">
-              <img src="source/assets/dest/images/history.jpg" alt="">
+              <img src="source\image\intro\sumenh.png" alt="">
             </div>
             <div class="col-sm-7">
-              <h5 class="other-title">Web Development</h5>
+              <h5 class="other-title"><strong style="color: #000099">Sứ Mệnh</strong></h5>
               <p>
                 Suite 127 / 267 – 277 Brussel St,<br />
                 62 Croydon, NYC<br />
@@ -85,10 +86,10 @@
           <div> 
             <div class="row">
             <div class="col-sm-5">
-              <img src="source/assets/dest/images/history.jpg" alt="">
+              <img src="source\image\intro\phattrien.png" alt="">
             </div>
             <div class="col-sm-7">
-              <h5 class="other-title">Photoshop</h5>
+              <h5 class="other-title"><strong style="color: #000099">Phát Triển</strong></h5>
               <p>
                 Suite 127 / 267 – 277 Brussel St,<br />
                 62 Croydon, NYC<br />
@@ -102,10 +103,10 @@
           <div> 
             <div class="row">
             <div class="col-sm-5">
-              <img src="source/assets/dest/images/history.jpg" alt="">
+              <img src="source\image\intro\cohoi.png" alt="">
             </div>
             <div class="col-sm-7">
-              <h5 class="other-title">Skill</h5>
+              <h5 class="other-title"><strong style="color: #000099">Cơ Hội</strong></h5>
               <p>
                 Suite 127 / 267 – 277 Brussel St,<br />
                 62 Croydon, NYC<br />
@@ -119,10 +120,10 @@
           <div> 
             <div class="row">
             <div class="col-sm-5">
-              <img src="source/assets/dest/images/history.jpg" alt="">
+              <img src="source\image\intro\thitruong.png" alt="">
             </div>
             <div class="col-sm-7">
-              <h5 class="other-title">Project.</h5>
+              <h5 class="other-title"><strong style="color: #000099">Thị Trường</strong></h5>
               <p>
                 Suite 127 / 267 – 277 Brussel St,<br />
                 62 Croydon, NYC<br />
@@ -136,10 +137,10 @@
           <div> 
             <div class="row">
             <div class="col-sm-5">
-              <img src="source/assets/dest/images/history.jpg" alt="">
+              <img src="source\image\intro\doitac.png" alt="">
             </div>
             <div class="col-sm-7">
-              <h5 class="other-title">Coffe</h5>
+              <h5 class="other-title" ><strong style="color: #000099">Đối Tác</strong></h5>
               <p>
                 Suite 127 / 267 – 277 Brussel St,<br />
                 62 Croydon, NYC<br />

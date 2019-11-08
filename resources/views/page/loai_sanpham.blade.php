@@ -57,7 +57,7 @@
                       </p>
                     </div>
                     <div class="single-item-caption">
-                      <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                      <a class="add-to-cart pull-left" href="{{route('addtocard',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
                       <a class="beta-btn primary" href="{{route('product-detail',$product->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                       <div class="clearfix"></div>
                     </div>
@@ -99,7 +99,7 @@
                       </p>
                     </div>
                     <div class="single-item-caption">
-                      <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                      <a class="add-to-cart pull-left" href="{{route('addtocard',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
                       <a class="beta-btn primary" href="{{route('product-detail',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                       <div class="clearfix"></div>
                     </div>
