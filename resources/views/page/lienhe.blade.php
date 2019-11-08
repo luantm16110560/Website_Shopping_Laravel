@@ -52,8 +52,8 @@
 
         <h6 class="contact-title">Địa chỉ cửa hàng: </h6>
         <p>
-          Số 1, Võ Văn Ngân, Linh Chiểu,<br>
-          Thủ Đức, Hồ Chí Minh <br>
+          Số 1, Võ Văn Ngân, Linh Chiểu,<br/>
+          Thủ Đức, Hồ Chí Minh <br/>
           Việt Nam
         </p>
         <div class="space20">&nbsp;</div>
