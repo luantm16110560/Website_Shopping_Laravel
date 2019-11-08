@@ -39,13 +39,15 @@
             </div>
             <div class="col-sm-7">
               <h5 class="other-title"><strong style="color: #000099">Lịch Sử Hình Thành</strong></h5>
+              <div style="border: 1px; border-color:red; border-style: groove;"></div>
+              <div class="space10">&nbsp;</div>
               <p>
-                Suite 127 / 267 – 277 Brussel St,<br />
-                62 Croydon, NYC<br />
-                New York
+                <strong>Năm thành lập:</strong> 2019<br />
+                <strong>Founder:</strong> Nguyễn Đức Quy<br />
+                <strong>President:</strong> Trương Minh Luân<br />
               </p>
-              <div class="space20">&nbsp;</div>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem.</p>
+              <div class="space10">&nbsp;</div>
+              <p>Được thành lập vào ngày 09/09/2019. Dưới sự đồng hợp tác của Founder và President. <strong style="color: #000099">TOM'S SHOES</strong> ra đời đóng góp to lớn cho sự phát triển của xã hội thương mại Việt Nam. </p>
             </div>
             </div> 
           </div>
@@ -56,13 +58,13 @@
             </div>
             <div class="col-sm-7">
               <h5 class="other-title"><strong style="color: #000099">Thương Hiệu</strong></h5>
+              <div style="border: 1px; border-color:red; border-style: groove;"></div>
+              <div class="space10">&nbsp;</div>
               <p>
-                Suite 127 / 267 – 277 Brussel St,<br />
-                62 Croydon, NYC<br />
-                New York
+                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Chooser your best"</i><br/>
               </p>
-              <div class="space20">&nbsp;</div>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem.</p>
+              <div class="space10">&nbsp;</div>
+              <p>Lấy cảm hứng từ các thương hiệu giày nổi tiếng trên thế giới. <strong style="color: #000099">TOM'S SHOES</strong> là sự kết hợp giữa văn hóa phương Đông và văn hóa phương Tây. Mang đến cho khách hàng những sản phẩm vừa độc đáo, vừa mới lạ đảm bảo phù hợp với thu nhập và tính thẩm mỹ của người Việt Nam.</p>
             </div>
             </div> 
           </div>
@@ -73,13 +75,13 @@
             </div>
             <div class="col-sm-7">
               <h5 class="other-title"><strong style="color: #000099">Sứ Mệnh</strong></h5>
+              <div style="border: 1px; border-color:red; border-style: groove;"></div>
+              <div class="space10">&nbsp;</div>
               <p>
-                Suite 127 / 267 – 277 Brussel St,<br />
-                62 Croydon, NYC<br />
-                New York
+                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Mang đến sự lựa chọn tốt nhất cho bạn"</i><br />
               </p>
-              <div class="space20">&nbsp;</div>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem.</p>
+              <div class="space10">&nbsp;</div>
+              <p>Là một trong những thương hiệu giày vừa mới thành lập. <strong style="color: #000099">TOM'S SHOES</strong> chính là người bạn, người đồng hành cùng khách hàng trên mỗi chặng đường, mỗi chuyến đi. Sứ mệnh của <strong style="color: #000099">TOM'S SHOES</strong> là luôn luôn bảo vệ, nâng niu những đôi chân vàng của các thế hệ Việt Nam.</p>
             </div>
             </div> 
           </div>
@@ -90,13 +92,13 @@
             </div>
             <div class="col-sm-7">
               <h5 class="other-title"><strong style="color: #000099">Phát Triển</strong></h5>
+              <div style="border: 1px; border-color:red; border-style: groove;"></div>
+              <div class="space10">&nbsp;</div>
               <p>
-                Suite 127 / 267 – 277 Brussel St,<br />
-                62 Croydon, NYC<br />
-                New York
+                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Chặng đường phát triển cùng thương mại Việt Nam"</i><br />
               </p>
-              <div class="space20">&nbsp;</div>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem.</p>
+              <div class="space10">&nbsp;</div>
+              <p>Để khẳng định thương hiệu của chính mình. <strong style="color: #000099">TOM'S SHOES</strong> luôn phấn đấu nỗ lực phát triển song song cùng nền kinh tế thương mại Việt Nam. Phát triển <strong style="color: #000099">TOM'S SHOES</strong> không chỉ là thương hiệu của Việt Nam mà là thương hiệu toàn cầu. Từng bước khẳng định vị thế trên thị trường quốc tế.</p>
             </div>
             </div> 
           </div>
@@ -107,13 +109,13 @@
             </div>
             <div class="col-sm-7">
               <h5 class="other-title"><strong style="color: #000099">Cơ Hội</strong></h5>
+              <div style="border: 1px; border-color:red; border-style: groove;"></div>
+              <div class="space10">&nbsp;</div>
               <p>
-                Suite 127 / 267 – 277 Brussel St,<br />
-                62 Croydon, NYC<br />
-                New York
+                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Thách thức tạo nên Cơ hội"</i><br />
               </p>
-              <div class="space20">&nbsp;</div>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem.</p>
+              <div class="space10">&nbsp;</div>
+              <p>Cuộc cách mạng công nghiệp 4.0 phát triển, kéo theo sự phát triển của thương mại điện tử, đó vừa là thách thức vừa là cơ hội cho <strong style="color: #000099">TOM'S SHOES</strong>. Để phát triển nhanh hơn, xa hơn và lâu hơn với <strong style="color: #000099">TOM'S SHOES</strong> mọi thử thách chính là cơ hội tuyệt vời nhất để khẳng định giá trị thương hiệu.</p>
             </div>
             </div> 
           </div>
@@ -124,13 +126,13 @@
             </div>
             <div class="col-sm-7">
               <h5 class="other-title"><strong style="color: #000099">Thị Trường</strong></h5>
+              <div style="border: 1px; border-color:red; border-style: groove;"></div>
+              <div class="space10">&nbsp;</div>
               <p>
-                Suite 127 / 267 – 277 Brussel St,<br />
-                62 Croydon, NYC<br />
-                New York
+                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Hòa nhập cùng nền kinh tế thị trường"</i><br />
               </p>
-              <div class="space20">&nbsp;</div>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem.</p>
+              <div class="space10">&nbsp;</div>
+              <p>Là một thương hiệu giày mới. Tuy nhiên, <strong style="color: #000099">TOM'S SHOES</strong> đã dần dần chiếm được ưu thế trên thị trường Việt Nam. Với hơn 100 chi nhánh từ Bắc vào Nam, hơn 200 đại lí trải dài suốt miền đất hình chữ S. Ngoài ra, <strong style="color: #000099">TOM'S SHOES</strong> đang định hướng phát triển thương hiệu sang các nước Đông Nam Á, Đông Á, Tây Á và cuối cùng là phân phối trên toàn thế giới. </p>
             </div>
             </div> 
           </div>
@@ -141,13 +143,13 @@
             </div>
             <div class="col-sm-7">
               <h5 class="other-title" ><strong style="color: #000099">Đối Tác</strong></h5>
+              <div style="border: 1px; border-color:red; border-style: groove;"></div>
+              <div class="space10">&nbsp;</div>
               <p>
-                Suite 127 / 267 – 277 Brussel St,<br />
-                62 Croydon, NYC<br />
-                New York
+                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Hợp tác cùng phát triển"</i><br />
               </p>
-              <div class="space20">&nbsp;</div>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem.</p>
+              <div class="space10">&nbsp;</div>
+              <p><strong style="color: #000099">TOM'S SHOES</strong> đã liên kết với các trung tâm thương mại, các chuỗi cửa hàng, các chi nhánh ủy quyền hợp tác trên cương vị bình đẳng, cùng nhau phát triển. Với sự tin tưởng từ các đối tác đã tạo tiền đề để <strong style="color: #000099">TOM'S SHOES</strong> càng ngày phát triển, hoàn thiện và khẳng định mình trên chiến trường thương mại Việt Nam.</p>
             </div>
             </div> 
           </div>
@@ -156,7 +158,7 @@
     </div>
 
     <div class="space50">&nbsp;</div>
-    <hr />
+    <div style="border: 1px; border-color:blue; border-style: groove;"></div>
     <div class="space50">&nbsp;</div>
     <h2 class="text-center wow fadeInDown">Our Passion for What We Do Transfers Into Our Services</h2>
     <div class="space20">&nbsp;</div>
@@ -198,7 +200,7 @@
     </div> <!-- .beta-counter block end -->
 
     <div class="space50">&nbsp;</div>
-    <hr />
+    <div style="border: 1px; border-color:blue; border-style: groove;"></div>
     <div class="space50">&nbsp;</div>
 
     <h2 class="text-center wow fadeInDownwow fadeInDown">Our Amaizing Team</h2>
