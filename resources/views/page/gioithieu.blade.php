@@ -16,7 +16,7 @@
 <div class="container">
   <div id="content">
     <div class="our-history">
-      <h1 class="text-center wow fadeInDown"><strong style="color: #000099;">TOM'S SHOSE</strong></h1>
+      <h1 class="text-center wow fadeInDown"><strong style="color: #000099;">TOM'S SHOEs</strong></h1>
       <h6 class="text-center wow fadeInDown"><i style="color: #000099;">Chooser Your Best</i> </h6>
       <div class="space35">&nbsp;</div>
 
