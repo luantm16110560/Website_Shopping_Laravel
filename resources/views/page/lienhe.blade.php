@@ -3,7 +3,7 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Contacts</h6>
+      <h6 class="inner-title">Liên Hệ</h6>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
@@ -23,51 +23,50 @@
     <div class="space50">&nbsp;</div>
     <div class="row">
       <div class="col-sm-8">
-        <h2>Contact Form</h2>
+        <h2>Liên hệ với chúng tôi</h2>
         <div class="space20">&nbsp;</div>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p>
+        <p><strong style="color: #000099">TOM'S SHOES</strong> rất mong muốn nhận được những ý kiến, đóng góp về chất lượng phục vụ, chất lượng sản phẩm nhằm mang đến các trải nghiệm tốt nhất và tuyệt vời nhất cho khách hàng.</p>
         <div class="space20">&nbsp;</div>
+        <p><i>**Hãy điền đầy đủ các thông tin bên dưới**</i></p>
         <form action="#" method="post" class="contact-form">	
           <div class="form-block">
-            <input name="your-name" type="text" placeholder="Your Name (required)">
+            <input name="your-name" type="text" placeholder="Hãy cho chúng tôi tên của ban..........">
           </div>
           <div class="form-block">
-            <input name="your-email" type="email" placeholder="Your Email (required)">
+            <input name="your-email" type="email" placeholder="Hãy cho chúng tôi Email của bạn.........">
           </div>
           <div class="form-block">
-            <input name="your-subject" type="text" placeholder="Subject">
+            <input name="your-subject" type="text" placeholder="Hãy cho chúng tôi vấn đề của bạn........">
           </div>
           <div class="form-block">
-            <textarea name="your-message" placeholder="Your Message"></textarea>
+            <textarea name="your-message" placeholder="Hãy để những ý kiến cho chúng tôi......."></textarea>
           </div>
           <div class="form-block">
-            <button type="submit" class="beta-btn primary">Send Message <i class="fa fa-chevron-right"></i></button>
+            <button type="submit" class="beta-btn primary" style="background: #000099; color: white">Gửi đến chúng tôi<i class="fa fa-chevron-right"></i></button>
           </div>
         </form>
       </div>
       <div class="col-sm-4">
-        <h2>Contact Information</h2>
+        <h2>Thông tin liên hệ</h2>
         <div class="space20">&nbsp;</div>
 
-        <h6 class="contact-title">Address</h6>
+        <h6 class="contact-title">Địa chỉ cửa hàng: </h6>
         <p>
-          Suite 127 / 267 – 277 Brussel St,<br>
-          62 Croydon, NYC <br>
-          Newyork
+          Số 1, Võ Văn Ngân, Linh Chiểu,<br>
+          Thủ Đức, Hồ Chí Minh <br>
+          Việt Nam
         </p>
         <div class="space20">&nbsp;</div>
-        <h6 class="contact-title">Business Enquiries</h6>
+        <h6 class="contact-title">Email:</h6>
         <p>
-          Doloremque laudantium, totam rem aperiam, <br>
-          inventore veritatio beatae. <br>
-          <a href="mailto:biz@betadesign.com">biz@betadesign.com</a>
+          Thương hiệu giày <strong style="color: #000099">TOM'S SHOES</strong> <br>
+          <a href="mailto:quyducnguyen2210@gmail.com">tomshoes@gmail.com</a>
         </p>
         <div class="space20">&nbsp;</div>
-        <h6 class="contact-title">Employment</h6>
+        <h6 class="contact-title">Tuyển dụng:</h6>
         <p>
-          We’re always looking for talented persons to <br>
-          join our team. <br>
-          <a href="hr@betadesign.com">hr@betadesign.com</a>
+          Hãy cùng tham gia với <strong style="color: #000099">TOM'S SHOES</strong> <br>
+          <a href="mailto:quyducnguyen2210@gmail.com">hrtomshoes@gmail.com</a>
         </p>
       </div>
     </div>
