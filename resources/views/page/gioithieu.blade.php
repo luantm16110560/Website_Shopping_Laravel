@@ -211,8 +211,9 @@
     <div class="row">
       <div class="col-sm-6 wow fadeInLeft">
         <div class="bets-img-hover">
-          <img class="pull-left" src="source/assets/dest/images/person2.jpg" alt="">
+          <img class="pull-left" src="source/image/employee/quy.png" alt="">
           <div class="media-body beta-person-body">
+            </br>
             <h5>Mr.Duc Quy</h5>
             <p class="font-large">Founder</p>
             <p>Nemo enim ipsam voluptatem quia voluptas sit asatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque por quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
@@ -222,8 +223,9 @@
       </div>
       <div class="col-sm-6 wow fadeInRight">
         <div class="bets-img-hover">
-          <img class="pull-left" src="source/assets/dest/images/person3.jpg" alt="">
+          <img class="pull-left" src="source/image/employee/luan.png" alt="">
           <div class="media-body beta-person-body">
+          </br>
             <h5>Mr.Minh Luan</h5>
             <p class="font-large">President</p>
             <p>Nemo enim ipsam voluptatem quia voluptas sit asatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque por quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
@@ -241,7 +243,7 @@
       <div class="col-sm-3">
         <div class="beta-person beta-person-full">
       <div class="bets-img-hover">
-          <img src="source/assets/dest/images/person1.jpg" alt="">
+          <img src="source/image/employee/anh.png" alt="">
       </div>
           <div class="beta-person-body">
             <h5>Mr.Duc Anh</h5>
@@ -254,7 +256,7 @@
       <div class="col-sm-3">
         <div class="beta-person beta-person-full">
         <div class="bets-img-hover">
-          <img src="source/assets/dest/images/person2.jpg" alt="">
+          <img src="source/image/employee/nhi.png" alt="">
         </div>
           <div class="beta-person-body">
             <h5>Mrs.Yen Nhi</h5>
@@ -267,7 +269,7 @@
       <div class="col-sm-3">
         <div class="beta-person beta-person-full">
         <div class="bets-img-hover">
-          <img src="source/assets/dest/images/person3.jpg" alt="">
+          <img src="source/image/employee/hung.png" alt="">
         </div>
           <div class="beta-person-body">
             <h5>Mr.Duy Hung</h5>
@@ -280,7 +282,7 @@
       <div class="col-sm-3">
         <div class="beta-person beta-person-full">
         <div class="bets-img-hover">	
-          <img src="source/assets/dest/images/person4.jpg" alt="">
+          <img src="source/image/employee/tranh.png" alt="">
         </div>
           <div class="beta-person-body">
             <h5>Mrs.Bang Tranh</h5>
