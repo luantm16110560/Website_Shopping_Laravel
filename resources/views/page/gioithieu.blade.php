@@ -17,7 +17,7 @@
   <div id="content">
     <div class="our-history">
       <h1 class="text-center wow fadeInDown"><strong style="color: #000099;">TOM'S SHOES</strong></h1>
-      <h6 class="text-center wow fadeInDown"><i style="color: #000099;">Chooser Your Best</i> </h6>
+      <h6 class="text-center wow fadeInDown"><i style="color: #000099;">Best Your Choice</i> </h6>
       <div class="space35">&nbsp;</div>
 
       <div class="history-slider">
@@ -61,7 +61,7 @@
               <div style="border: 1px; border-color:red; border-style: groove;"></div>
               <div class="space10">&nbsp;</div>
               <p>
-                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Chooser your best"</i><br/>
+                <strong style="color: #000099">TOM'S SHOES</strong> <i>"Best Your Choice"</i><br/>
               </p>
               <div class="space10">&nbsp;</div>
               <p>Lấy cảm hứng từ các thương hiệu giày nổi tiếng trên thế giới. <strong style="color: #000099">TOM'S SHOES</strong> là sự kết hợp giữa văn hóa phương Đông và văn hóa phương Tây. Mang đến cho khách hàng những sản phẩm vừa độc đáo, vừa mới lạ đảm bảo phù hợp với thu nhập và tính thẩm mỹ của người Việt Nam.</p>
@@ -160,41 +160,41 @@
     <div class="space50">&nbsp;</div>
     <div style="border: 1px; border-color:blue; border-style: groove;"></div>
     <div class="space50">&nbsp;</div>
-    <h2 class="text-center wow fadeInDown">Our Passion for What We Do Transfers Into Our Services</h2>
+    <h2 class="text-center wow fadeInDown">Những con số ấn tượng của <strong style="color: #000099">TOM'S SHOES</strong></h2>
     <div class="space20">&nbsp;</div>
-    <p class="text-center wow fadeInLeft">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br /> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+    <p class="text-center wow fadeInLeft">Nỗ lực không ngừng mang các sản phẩm tốt đến khách hàng là niềm hạnh phúc của <strong style="color: #000099">TOM'S SHOES</strong><br /> Đã mang đến cho <strong style="color: #000099">TOM'S SHOES</strong> những con số vô cùng ấn tượng.</p>
     <div class="space35">&nbsp;</div>
 
     <div class="row">
       <div class="col-sm-2 col-sm-push-2">
         <div class="beta-counter">
           <p class="beta-counter-icon"><i class="fa fa-user"></i></p>
-          <p class="beta-counter-value timer numbers" data-to="19855" data-speed="2000">19855</p>
-          <p class="beta-counter-title">Clients Satisfied</p>
+          <p class="beta-counter-value timer numbers" data-to="19855" data-speed="2000">13582</p>
+          <p class="beta-counter-title">Khách Hàng</p>
         </div>
       </div>
 
       <div class="col-sm-2 col-sm-push-2">
         <div class="beta-counter">
           <p class="beta-counter-icon"><i class="fa fa-picture-o"></i></p>
-          <p class="beta-counter-value timer numbers" data-to="3568" data-speed="2000">3568</p>
-          <p class="beta-counter-title">Amazing Works</p>
+          <p class="beta-counter-value timer numbers" data-to="3568" data-speed="2000">256328</p>
+          <p class="beta-counter-title">Sản Phẩm</p>
         </div>
       </div>
 
       <div class="col-sm-2 col-sm-push-2">
         <div class="beta-counter">
-          <p class="beta-counter-icon"><i class="fa fa-clock-o"></i></p>
-          <p class="beta-counter-value timer numbers" data-to="258934" data-speed="2000">258934</p>
-          <p class="beta-counter-title">Support Hours</p>
+          <p class="beta-counter-icon"><i class="fa fa-users"></i></p>
+          <p class="beta-counter-value timer numbers" data-to="258934" data-speed="2000">Hơn 100</p>
+          <p class="beta-counter-title">Đối Tác</p>
         </div>
       </div>
 
       <div class="col-sm-2 col-sm-push-2">
         <div class="beta-counter">
-          <p class="beta-counter-icon"><i class="fa fa-pencil"></i></p>
-          <p class="beta-counter-value timer numbers" data-to="150" data-speed="2000">150</p>
-          <p class="beta-counter-title">New Projects</p>
+          <p class="beta-counter-icon"><i class="fa fa-star"></i></p>
+          <p class="beta-counter-value timer numbers" data-to="150" data-speed="2000">4.9/5</p>
+          <p class="beta-counter-title">Sự Hài Lòng</p>
         </div>
       </div>
     </div> <!-- .beta-counter block end -->
@@ -216,8 +216,8 @@
             </br>
             <h5>Mr.Duc Quy</h5>
             <p class="font-large">Founder</p>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit asatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque por quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
-            <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
+            <p>Người sáng lập nên thương hiệu giày <strong style="color: #000099">TOM'S SHOES</strong> với nhiều năm kinh nghiệm trong lĩnh vực Kinh doanh và Marketing.</p>
+            <a href="https://www.facebook.com/profile.php?id=100009638520081">View profile <i class="fa fa-chevron-right"></i></a>
           </div>
         </div>
       </div>
@@ -228,13 +228,13 @@
           </br>
             <h5>Mr.Minh Luan</h5>
             <p class="font-large">President</p>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit asatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque por quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
+            <p>Tốt nghiệp chuyên ngành Quản trị kinh doanh Đại học Ngoại Thương, nhiều năm kinh niệm trên thị trường thương mại Việt Nam và Quốc Tế.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
           </div>
         </div>
       </div>
     </div>
-    
+    <div style="border: 1px; border-color:blue; border-style: groove;"></div>
     <div class="space60">&nbsp;</div>
     <h5 class="text-center other-title wow fadeInDown">Người Đồng Hành</h5>
     <p class="text-center wow fadeInUp">Chúng tôi là những nhân viên ưu tú của <strong style="color: #000099">TOM'S SHOES</strong><br />Với chúng tôi <strong style="color: #000099">TOM'S SHOES</strong> là nhà</p>
@@ -248,7 +248,7 @@
           <div class="beta-person-body">
             <h5>Mr.Duc Anh</h5>
             <p class="font-large">Sale Manager</p>
-            <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+            <p>Tốt nghiệp chuyên ngành Quản trị kinh doanh Đại học Kinh tế Quốc Dân, hiểu biết rõ về thị trường Việt Nam và thế giới.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
           </div>
         </div>
@@ -261,7 +261,7 @@
           <div class="beta-person-body">
             <h5>Mrs.Yen Nhi</h5>
             <p class="font-large">Marketing Manager</p>
-            <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+            <p>Tốt nghiệp chuyên ngành Thiết kế đồ họa trường đại học FPT, nhiều năm kinh nghiệm trong lĩnh vực design và quảng cáo.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
           </div>
         </div>
@@ -274,7 +274,7 @@
           <div class="beta-person-body">
             <h5>Mr.Duy Hung</h5>
             <p class="font-large">Market Manager</p>
-            <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+            <p>Tốt nghiệp chuyên ngành Quản lý thị trường Đại học Tôn Đức Thắng, nhiều năm kinh nghiệm trong lĩnh vực đánh giá, phân tích thị hiếu của người tiêu dùng.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
           </div>
         </div>
@@ -287,7 +287,7 @@
           <div class="beta-person-body">
             <h5>Mrs.Bang Tranh</h5>
             <p class="font-large">Customers Manager</p>
-            <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+            <p>Tốt nghiệp chuyên ngành Quan hệ quốc tế Đại học Khoa Học Xã Hội và Nhân Văn, nhiều năm kinh nghiệm trong lĩnh vực chăm sóc và dịch vụ khách hàng.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
           </div>
         </div>

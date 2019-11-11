@@ -4,7 +4,7 @@
       <div class="col-sm-3">
         <div class="widget">
           <h4 class="widget-title">Kết Nối Xã Hội</h4>
-          <a  href="https://www.facebook.com/profile.php?id=100009638520081">FanPage</a>
+          <a  href="https://www.facebook.com/profile.php?id=100009638520081">FanPage <strong style="color: #000099">TOM'S SHOES</strong></a>
         </div>
       </div>
       <div class="col-sm-2">
