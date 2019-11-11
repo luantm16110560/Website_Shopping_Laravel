@@ -48,3 +48,18 @@ Route::get('/add-to-card/{id}',[
     'as'=>'addtocard',
     'uses'=>'PageController@getAddtoCard'
 ]);
+
+Route::get('/delItem-cart/{id}',[
+    'as'=>'deletegiohang',
+    'uses'=>'PageController@getDelItemCard'
+]);
+
+Route::get('/login',[
+    'as'=>'login',
+    'uses'=>'PageController@getLogin'
+]);
+
+Route::get('/dangky',[
+    'as'=>'dangky',
+    'uses'=>'PageController@getSignin'
+]);

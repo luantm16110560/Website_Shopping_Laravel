@@ -55,4 +55,28 @@ class PageController extends Controller
        $res->session()->put('cart',$cart);
        return redirect()->back();
    }
+
+   public function getDelItemCard($id){
+       $oldCart=Session::has('cart')?Session::get('cart'):null;
+       $cart=new Cart($oldCart);
+       $cart->removeItem($id);
+       if(count($cart->items)>0){
+           Session::put('cart',$cart);
+       }
+       else
+       {
+           Session::forget('cart');
+       }
+       return redirect()->back();
+   }
+
+   public function getLogin()
+   {
+       return view('page.login');
+   }
+
+   public function getSignin()
+   {
+       return view('page.dangky');
+   }
 }

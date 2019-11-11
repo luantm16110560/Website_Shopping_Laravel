@@ -4,8 +4,8 @@
       <div class="pull-right auto-width-right">
         <ul class="top-details menu-beta l-inline">
           <li><a href="https://www.facebook.com/profile.php?id=100009638520081" style="background: #000099; "><i class="fa fa-user" style="font-size:15px; color: white"></i><strong style="color: white">Tài khoản</strong></a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=100009638520081" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng kí</strong></a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=100009638520081" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng nhập</strong></a></li>
+          <li><a href="{{route('dangky')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng kí</strong></a></li>
+        <li><a href="{{route('login')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng nhập</strong></a></li>
         </ul>
       </div>
       <div class="clearfix"></div>
@@ -31,6 +31,7 @@
             <div class="beta-dropdown cart-body">
               @foreach ($product_cart as $productcart)
               <div class="cart-item">
+              <a class="cart-item-delete" href="{{route('deletegiohang',$productcart['item']['id'])}}"><i class="fa fa-times"></i></a>
                   <div class="media">
                   <a class="pull-left"  href="{{route('product-detail',$productcart['item']['id'])}}"><img src="source/image/product/{{$productcart['item']['image']}}" alt="" height="30px"></a>
                     <div class="media-body">
@@ -53,7 +54,7 @@
                                 <p>X</p>
                               </td>
                               <td >
-                                <span class="cart-total-value">{{number_format($productcart['item']['unit_price'])}} VND</span></span>
+                                <span class="cart-total-value"> @if(($productcart['item']['promotion_price'])==0){{number_format($productcart['item']['unit_price'])}} VND @else {{number_format($productcart['item']['promotion_price'])}}@endif </span></span>
                               </td>
                         </tr>
                       </table> 
