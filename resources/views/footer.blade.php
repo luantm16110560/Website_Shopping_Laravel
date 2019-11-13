@@ -53,7 +53,7 @@
 </div> <!-- #footer -->
 <div class="copysource/right">
   <div class="container">
-      <p class="pull-left"><strong>Privacy policy &copy; 2019</strong></p>
+    <p class="text-muted">Copyright © 2017, <a href="https://allaravel.com">All Laravel</a></p>
       <p class="pull-right pay-options">
           <a href="#"><img src="source/assets/dest/images/pay/momo.jpg" alt="" height="20px" width="20px" /></a>
           <a href="#"><img src="source/assets/dest/images/pay/vnpay.png" alt="" height="20px" width="20px"/></a>
