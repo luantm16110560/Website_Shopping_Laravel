@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb">
-					<a href="index.html">Home</a> / <span>Đăng kí</span>
+					<a href="{{route("home-page")}}">Trang chủ</a> / <span>Đăng kí</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -17,7 +17,7 @@
 	<div class="container">
 		<div id="content">
 			
-			<form action="{{route('signin')}}" method="post" class="beta-form-checkout">
+			<form action="{{route('dangki')}}" method="post" class="beta-form-checkout">
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 				<div class="row">
 					<div class="col-sm-3"></div>

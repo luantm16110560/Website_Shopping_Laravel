@@ -7,6 +7,9 @@ use DB;
 use App\Product;
 use App\Type_Product;
 use App\Cart;
+use App\Customer;
+use App\Bill;
+use App\Bill_Detail;
 use Session;
 class PageController extends Controller
 {
@@ -72,11 +75,50 @@ class PageController extends Controller
 
    public function getLogin()
    {
-       return view('page.login');
+       return view('page.dangnhap');
    }
 
    public function getSignin()
    {
-       return view('page.dangky');
+       return view('page.dangki');
+   }
+
+   public function getOrder(){
+    return view('page.dat_hang');
+    }
+
+   public function postOrder(Request $req)
+   {
+       $cart=Session::get('cart');
+       $customer= new Customer;
+       $customer->name=$req->name;
+       $customer->gender=$req->gender;
+       $customer->email=$req->email;
+       $customer->address=$req->address;
+       $customer->phone_number=$req->phone;
+       $customer->note=$req->notes;
+       $customer->status=1;
+       $customer->save();
+
+       $bill=new Bill;
+       $bill->id_customer=$customer->id;
+       $bill->date_order=date('Y-m-d');
+       $bill->total=$cart->totalPrice;
+       $bill->payment=$req->payment_method;
+       $bill->note=$req->notes;
+       $bill->status=1;
+       $bill->save();
+       foreach($cart->items as $key=>$value){
+        $bill_detail=new Bill_Detail;
+        $bill_detail->id_bill=$bill->id;
+        $bill_detail->id_product=$key;
+        $bill_detail->amount=$value['qty'];
+        if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
+        else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
+        $bill_detail->status=1;
+        $bill_detail->save();
+       }
+       Session::forget('cart');
+       return redirect()->back()->with('thongbao','Đặt hàng thành công');
    }
 }

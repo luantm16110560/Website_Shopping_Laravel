@@ -54,12 +54,32 @@ Route::get('/delItem-cart/{id}',[
     'uses'=>'PageController@getDelItemCard'
 ]);
 
-Route::get('/login',[
-    'as'=>'login',
+Route::get('/dang_nhap',[
+    'as'=>'dangnhap',
     'uses'=>'PageController@getLogin'
 ]);
 
-Route::get('/dangky',[
-    'as'=>'dangky',
+Route::post('dang_nhap',[
+	'as'=>'dangnhap',
+	'uses'=>'PageController@postLogin'
+]);
+
+Route::get('/dang_ki',[
+    'as'=>'dangki',
     'uses'=>'PageController@getSignin'
+]);
+
+Route::post('dang_ki',[
+	'as'=>'dangki',
+	'uses'=>'PageController@postSignin'
+]);
+
+Route::get('/dat_hang',[
+	'as'=>'dathang',
+	'uses'=>'PageController@getOrder'
+]);
+
+Route::post('/dat_hang',[
+    'as'=>'dathang',
+    'uses'=>'PageController@postOrder'
 ]);

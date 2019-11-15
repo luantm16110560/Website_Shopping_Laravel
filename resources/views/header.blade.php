@@ -4,8 +4,8 @@
       <div class="pull-right auto-width-right">
         <ul class="top-details menu-beta l-inline">
           <li><a href="https://www.facebook.com/profile.php?id=100009638520081" style="background: #000099; "><i class="fa fa-user" style="font-size:15px; color: white"></i><strong style="color: white">Tài khoản</strong></a></li>
-          <li><a href="{{route('dangky')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng kí</strong></a></li>
-        <li><a href="{{route('login')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng nhập</strong></a></li>
+          <li><a href="{{route('dangki')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng kí</strong></a></li>
+        <li><a href="{{route('dangnhap')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng nhập</strong></a></li>
         </ul>
       </div>
       <div class="clearfix"></div>
@@ -68,7 +68,7 @@
 
                 <div class="center">
                   <div class="space10">&nbsp;</div>
-                  <a href="checkout.html" class="beta-btn primary text-center" style="background: #000099; "><strong style="color: white">Đặt hàng</strong> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                  <a href="{{route("dathang")}}" class="beta-btn primary text-center" style="background: #000099; "><strong style="color: white">Đặt hàng</strong> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
