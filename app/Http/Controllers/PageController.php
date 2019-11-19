@@ -8,9 +8,11 @@ use App\Product;
 use App\Type_Product;
 use App\Cart;
 use App\Customer;
+use App\User;
 use App\Bill;
 use App\Bill_Detail;
 use Session;
+use Hash;
 class PageController extends Controller
 {
    public function getIndex()
@@ -120,5 +122,28 @@ class PageController extends Controller
        }
        Session::forget('cart');
        return redirect()->back()->with('thongbao','Đặt hàng thành công');
+   }
+   public function postSignin(Request $req){
+       $this->validate($req,
+           [
+                 'email'=>'required|email|unique:users,email',
+                 'username'=>'unique:users,username',
+           ],
+           [
+               
+                'email.unique'=>'Email đã có người sử dụng',
+                'username.unique'=>'Username đã có người đăng ký, hãy thử tên khác',
+           ]);
+           $user =new User();
+           $user->name=$req->name;
+           $user->phone=$req->phone;
+           $user->address=$req->address;
+           $user->username=$req->username;
+           $user->email=$req->email;
+           $user->password=Hash::make($req->password);
+           $user->role=0;
+           $user->status=1;
+           $user->save();
+           return redirect()->back()->with('thanhcong','Đã tạo tài khoản thành công');
    }
 }

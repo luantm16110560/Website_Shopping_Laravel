@@ -17,7 +17,18 @@
     <div id="content">
 
         <div class="row">
+                @if(count($errors)>0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $err)
+                    <div class="center" style="font-size: 16px; font-weight: bold">{{$err}}</div>
+                    @endforeach
+                </div>
+            @endif
+            @if(Session::has('thanhcong'))
+            <div class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('thanhcong')}}</div>
+                @endif
             <div class="col-sm-4"></div>
+           
             <div class="col-sm-4">
 
                 <div class="card rounded shadow shadow-sm">
@@ -26,7 +37,7 @@
                         <h3 class="mb-0">Đăng nhập</h3>
                     </div> --}}
                     <div class="card-body">
-                        <form action="{{route('dangnhap')}}" method="post" class="beta-form-checkout">
+                        <form action="{{route('dangki')}}" method="post" class="beta-form-checkout">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
                                 <label style="font-size: 17px">Họ tên</label>
@@ -80,6 +91,7 @@
                             <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng ký</button>
 
                         </form>
+                          
                     </div>
                     <!--/card-block-->
                 </div>
