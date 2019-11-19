@@ -1,76 +1,94 @@
-@extends('master')
-@section('content')
-	<div class="inner-header">
-		<div class="container">
-			<div class="pull-left">
-				<h6 class="inner-title">Đăng kí</h6>
-			</div>
-			<div class="pull-right">
-				<div class="beta-breadcrumb">
-					<a href="{{route("home-page")}}">Trang chủ</a> / <span>Đăng kí</span>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	
-	<div class="container">
-		<div id="content">
-			
-			<form action="{{route('dangki')}}" method="post" class="beta-form-checkout">
-			<input type="hidden" name="_token" value="{{csrf_token()}}">
-				<div class="row">
-					<div class="col-sm-3"></div>
-					@if(count($errors)>0)
-						<div class="alert alert-danger">
-							@foreach($errors->all() as $err)
-							{{$err}}
-							@endforeach
-						</div>
-					@endif
-					@if(Session::has('thanhcong'))
-						<div class="alert alert-success">{{Session::get('thanhcong')}}</div>
-					@endif
-					<div class="col-sm-6">
-						<h4>Đăng kí</h4>
-						<div class="space20">&nbsp;</div>
+@extends('master') @section('content')
+<div class="inner-header">
+    <div class="container">
+        <div class="pull-right">
+            <div class="beta-breadcrumb">
+                <a href="{{route('home-page')}}">Trang chủ</a> / <span>Đăng kí</span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="center">
+    <h6 class="inner-title">Đăng ký</h6>
+</div>
 
-						
-						<div class="form-block">
-							<label for="email">Email address*</label>
-							<input type="email" name="email" required>
-						</div>
+<div class="container">
+    <div id="content">
 
-						<div class="form-block">
-							<label for="your_last_name">Fullname*</label>
-							<input type="text" name="fullname" required>
-						</div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
 
-						<div class="form-block">
-							<label for="adress">Address*</label>
-							<input type="text" name="address" value="Street Address" required>
-						</div>
+                <div class="card rounded shadow shadow-sm">
+                    {{--
+                    <div class="card-header">
+                        <h3 class="mb-0">Đăng nhập</h3>
+                    </div> --}}
+                    <div class="card-body">
+                        <form action="{{route('dangnhap')}}" method="post" class="beta-form-checkout">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <div class="form-group">
+                                <label style="font-size: 17px">Họ tên</label>
+                                <input type="text" class="form-control form-control-lg rounded-0" name="name" required placeholder="Nhập họ tên">
 
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 17px">Điện thoại</label>
+                                <input type="number" class="form-control form-control-lg rounded-0" name="phone" required placeholder="Nhập số điện thoại">
 
-						<div class="form-block">
-							<label for="phone">Phone*</label>
-							<input type="text" name="phone" required>
-						</div>
-						<div class="form-block">
-							<label for="phone">Password*</label>
-							<input type="password" name="password" required>
-						</div>
-						<div class="form-block">
-							<label for="phone">Re password*</label>
-							<input type="password" name="re_password" required>
-						</div>
-						<div class="form-block">
-							<button type="submit" class="btn btn-primary">Register</button>
-						</div>
-					</div>
-					<div class="col-sm-3"></div>
-				</div>
-			</form>
-		</div> <!-- #content -->
-	</div> <!-- .container -->
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 17px">Địa chỉ</label>
+                                <input type="text" class="form-control form-control-lg rounded-0" name="address" required placeholder="Nhập địa chỉ">
+
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 17px">Email</label>
+                                <input type="email" class="form-control form-control-lg rounded-0" name="email" required placeholder="Nhập Email">
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 17px">Tên đăng nhập</label>
+                                <input type="text" class="form-control form-control-lg rounded-0" name="username" required placeholder="Nhập tên đăng nhập">
+
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 17px">Mật khẩu</label>
+                                <input type="password" class="form-control form-control-lg rounded-0" id="password" name="password" required placeholder="Nhập mật khẩu">
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 17px">Xác nhận mật khẩu</label>
+                                <input type="password" class="form-control form-control-lg rounded-0" id="confirm_password" name="cpassword" required placeholder="Xác nhận mật khẩu" onkeyup="check()">
+
+                            </div>
+                          
+                            <script>
+                                var check = function() {
+                                    if (document.getElementById('password').value ==
+                                        document.getElementById('confirm_password').value) {
+                                        document.getElementById('message').style.color = 'green';
+                                        document.getElementById('message').innerHTML = '<i class="fa fa-check"></i> Mật khẩu trùng khớp';
+										document.getElementById("btnLogin").disabled = false;
+                                    } else {
+                                        document.getElementById('message').style.color = 'red';
+                                        document.getElementById('message').innerHTML = '<i class="fa fa-times"></i> Mật khẩu không khớp';
+										document.getElementById("btnLogin").disabled = true;
+                                    }
+                                }
+                            </script>
+  													<span style="font-size: 15px;  font-weight: bold;" class="right" id='message'></span>
+                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng ký</button>
+
+                        </form>
+                    </div>
+                    <!--/card-block-->
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+    </div>
+    <!-- #content -->
+</div>
+
 @endsection

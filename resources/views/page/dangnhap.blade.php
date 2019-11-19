@@ -1,64 +1,66 @@
-@extends('master')
-@section('content')
+@extends('master') @section('content')
 <div class="inner-header">
-		<div class="container">
-			<div class="pull-left">
-				<h6 class="inner-title">Đăng nhập</h6>
-			</div>
-			<div class="pull-right">
-				<div class="beta-breadcrumb">
-					<a href="{{route("home-page")}}">Trang chủ</a> / <span>Đăng nhập</span>
+    <div class="container">
+			
+        <div class="pull-right">
+            <div class="beta-breadcrumb">
+                <a href="{{route("home-page")}}">Home</a> / <span>Đăng nhập</span>
+            </div>
 				</div>
-			</div>
-			<div class="clearfix"></div>
+				
+				<div class="clearfix"></div>
+			
 		</div>
-	</div>
 	
-	<div class="container">
-		<div id="content">
-			<form action="{{route('dangnhap')}}" method="post" class="beta-form-checkout">
-			<input type="hidden" name="_token" value="{{csrf_token()}}">
-				<div class="row">
-					<div class="col-sm-3"></div>
-					@if(Session::has('flag'))
-						<div class="alert alert-{{Session::get('flag')}}">{{Session::get('message')}}</div>
-					@endif
-					<div class="col-sm-6">
-						<h4>Đăng nhập</h4>
-						<div class="space20">&nbsp;</div>
-						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="email">
-							<span class="focus-input100"></span>		
-						</div> 
-						<div class="wrap-input100 validate-input" data-validate="Password is required">
-							<span class="label-input100">Password</span>
-							<input class="input100" type="password" name="pass">
-							<span class="focus-input100"></span>	
-						</div>      
-						{{-- <div class="container-login100-form-btn">
-							<button type="submit" class="btn btn-primary">Login</button>
-						</div> --}}
-					</br>
-						<div class="text-center p-t-46 p-b-20">
-							<span class="txt2">
-								or sign up using
-							</span>
-						</div>
-					</br>
-						<div class="login100-form-social flex-c-m; text-center">
-							<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
-								<i class="fa fa-facebook-square" style="font-size:36px; color:blue" aria-hidden="true"></i>
-							</a>              
-							<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
-								<i class="fa fa-google-plus-square" style="font-size:36px; color: blue" aria-hidden="true"></i>
-							</a>
-						</div>
-						
-					</div>
-					<div class="col-sm-3"></div>
-				</div>
-			</form>
-		</div> <!-- #content -->
-	</div> <!-- .container -->
+</div>
+<div class="center">
+		<h6 class="inner-title">Đăng nhập</h6>
+</div>
+
+<div class="container">
+    <div id="content">
+     
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+									
+                    <div class="card rounded shadow shadow-sm">
+                        {{-- <div class="card-header">
+                            <h3 class="mb-0">Đăng nhập</h3>
+                        </div> --}}
+                        <div class="card-body">
+														<form action="{{route('dangnhap')}}" method="post" class="beta-form-checkout">
+																<input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <div class="form-group">
+                                    <label style="font-size: 17px">Tên đăng nhập</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="username" required>
+                                
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-size: 17px">Mật khẩu</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" name="password" required>
+                                 
+                                </div>
+                                {{-- <div>
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description small text-dark">Remember me on this computer</span>
+                                    </label>
+                                </div> --}}
+																<button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng nhập</button>
+													
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+      
+    </div>
+    <!-- #content -->
+</div>
+
+<!--/container-->
 @endsection
