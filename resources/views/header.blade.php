@@ -1,9 +1,9 @@
 <div id="header">
   <div class="header-top">
     <div class="container">
-      <div class="pull-right auto-width-right">
+      <div class="pull-right">
         <ul class="top-details menu-beta l-inline">
-          <li><a href="https://www.facebook.com/profile.php?id=100009638520081" style="background: #000099; "><i class="fa fa-user" style="font-size:15px; color: white"></i><strong style="color: white">Tài khoản</strong></a></li>
+          {{-- <li><a href="https://www.facebook.com/profile.php?id=100009638520081" style="background: #000099; "><i class="fa fa-user" style="font-size:15px; color: white"></i><strong style="color: white">Tài khoản</strong></a></li> --}}
           <li><a href="{{route('dangki')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng kí</strong></a></li>
         <li><a href="{{route('dangnhap')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:15px; color: white"></i><strong style="color: white">Đăng nhập</strong></a></li>
         </ul>
