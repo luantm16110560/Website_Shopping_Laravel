@@ -16,6 +16,7 @@
    <div id="content">
       <div class="row">
          <div class="col-sm-4"></div>
+        
          <div class="col-sm-4">
             <div class="card rounded shadow shadow-sm">
                {{-- 
@@ -23,6 +24,11 @@
                   <h3 class="mb-0">Đăng nhập</h3>
                </div>
                --}}
+               @if(Session::has('flag'))
+               <div class="center">
+               <div style="font-size: 20px;  font-weight: bold;" class="allert alert-{{Session::get('flag')}}">{{Session::get('message')}}</div>
+            </div>
+               @endif
                <div class="card-body">
                   <form action="{{route('dangnhap')}}" method="post" class="beta-form-checkout">
                      <input type="hidden" name="_token" value="{{csrf_token()}}">

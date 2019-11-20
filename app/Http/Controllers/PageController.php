@@ -13,6 +13,7 @@ use App\Bill;
 use App\Bill_Detail;
 use Session;
 use Hash;
+use Auth;
 class PageController extends Controller
 {
    public function getIndex()
@@ -145,5 +146,29 @@ class PageController extends Controller
            $user->status=1;
            $user->save();
            return redirect()->back()->with('thanhcong','Đã tạo tài khoản thành công');
+   }
+   public function postLogin(Request $req)
+   {
+    $this->validate($req,
+    [
+        
+    ],
+    [
+        
+    ]
+    );
+      $credentials = array('username'=>$req->username,'password'=>$req->password);
+      if(Auth::attempt($credentials))
+      {
+          return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
+      }
+      else
+      {
+        return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng nhập không thành công']);
+      }
+   }
+   public function getLogout(){
+       Auth::logout();
+       return redirect()->route('home-page');
    }
 }
