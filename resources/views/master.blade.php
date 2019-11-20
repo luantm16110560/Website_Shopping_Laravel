@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Cửa hàng giày TOM'S SHOES</title>
     <base href="{{asset('')}}">
     <link rel="icon" href="{!! asset('source/image/icon/icon-web-title.png') !!}"/>
