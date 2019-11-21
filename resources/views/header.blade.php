@@ -74,7 +74,7 @@
     <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
     <div class="visible-xs clearfix"></div>
     <nav class="navbar navbar-inverse" style="background-color:#000099 " >
-       <div class="col-sm-9">
+       <div class="col-sm-6">
           <ul class="nav navbar-nav" >
              <li> <a href="{{route("about")}}"><img src="source/image/logo/logo.png" width="141.77px" height="45px" alt=""></a></li>
              <li><a href="{{route("home-page")}}" style="font-size:18px; color:white; margin-top: 13px">Trang chủ</a></li>
@@ -90,11 +90,11 @@
              <li><a href="{{route("about")}}" style="font-size:18px; color:white; margin-top: 13px">Giới thiệu</a></li>
              <li><a href="{{route("contact")}}" style="font-size:18px; color:white; margin-top: 13px">Liên hệ</a></li>
        </div>
-       <div class="col-sm-1"></div>
-       <div class="col-sm-2">
-       <li style="margin-top: 19px;>     
-          <form role="search" method="get" id="searchform" action="/">
-       <strong><input style="font-size:16px" type="text" value="" name="s" id="s" placeholder="Tìm kiếm sản phẩm" /></strong>
+       <div class="col-sm-3"></div>
+       <div class="col-sm-3">
+     
+       <form style="margin-top: 19px;" role="search" method="get" id="searchform" action="{{route('search')}}">
+       <strong><input style="font-size:16px;" type="text" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
        <button class="fa fa-search" aria-hidden="true" type="submit" id="searchsubmit"></button>
        </form>
        </div>

@@ -171,4 +171,11 @@ class PageController extends Controller
        Auth::logout();
        return redirect()->route('home-page');
    }
+   public function getSearch(Request $req)
+   {
+        $product = Product::where('name','like','%'.$req->id_search.'%')
+                            ->orWhere('unit_price',$req->id_search)
+                            ->get();
+                            return view('page.search')->with("sanpham",$product);
+   }
 }

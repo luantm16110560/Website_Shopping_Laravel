@@ -86,3 +86,8 @@ Route::post('/dat_hang',[
     'as'=>'dathang',
     'uses'=>'PageController@postOrder'
 ]);
+
+Route::get('search',[
+	'as'=>'search',
+	'uses'=>'PageController@getSearch'
+]);
