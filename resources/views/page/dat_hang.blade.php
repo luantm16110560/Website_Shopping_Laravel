@@ -94,11 +94,11 @@
 									<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD" checked="checked" data-order_button_text="">
 									<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
 									<div class="payment_box payment_method_bacs" style="display: block;">
-										Cửa hàng sẽ gửi hàng đến địa chỉ của bạn, bạn xem hàng rồi thanh toán tiền cho nhân viên giao hàng
+										Đơn hàng sẽ được giao đến địa chỉ của bạn trong khoảng 3-5 ngày.
 									</div>						
 								</li>
 
-								<li class="payment_method_cheque">
+								{{-- <li class="payment_method_cheque">
 									<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" data-order_button_text="">
 									<label for="payment_method_cheque">Chuyển khoản </label>
 									<div class="payment_box payment_method_cheque" style="display: none;">
@@ -107,12 +107,12 @@
 										<br>- Chủ TK: Nguyễn A
 										<br>- Ngân hàng ACB, Chi nhánh TPHCM
 									</div>						
-								</li>
+								</li> --}}
 								
 							</ul>
 						</div>
 
-						<div class="text-center"><button type="submit" class="beta-btn primary" href="#">Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
+						<div class="text-center"><button type="submit" class="beta-btn primary" href="#">Thanh toán<i class="fa fa-chevron-right"></i></button></div>
 					</div> <!-- .your-order -->
 				</div>
 			</div>

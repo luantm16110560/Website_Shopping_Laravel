@@ -50,7 +50,7 @@
                       <p class="single-item-price" style="font-size: 18px ">
                           @if($product->promotion_price !=0)
                             <span class="flash-del">{{number_format($product->unit_price)}} VND</span>
-                            <span class="flash-sale">{{number_format($product->promotion_price)}} VDN</span>
+                            <span class="flash-sale">{{number_format($product->promotion_price)}} VND</span>
                           @else
                           <span>{{number_format($product->unit_price)}} VND</span>
                           @endif
@@ -58,7 +58,7 @@
                     </div>
                     <div class="single-item-caption">
                       <a class="add-to-cart pull-left" href="{{route('addtocard',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                      <a class="beta-btn primary" href="{{route('product-detail',$product->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                      <a class="beta-btn primary" href="{{route('product-detail',$product->id)}}">Chi tiết sản phẩm <i class="fa fa-chevron-right"></i></a>
                       <div class="clearfix"></div>
                     </div>
                   </div>
@@ -92,7 +92,7 @@
                       <p class="single-item-price" style="font-size: 18px ">
                           @if($sp->promotion_price !=0)
                             <span class="flash-del">{{number_format($sp->unit_price)}} VND</span>
-                            <span class="flash-sale">{{number_format($sp->promotion_price)}} VDN</span>
+                            <span class="flash-sale">{{number_format($sp->promotion_price)}} VND</span>
                           @else
                           <span>{{number_format($sp->unit_price)}} VND</span>
                           @endif
@@ -100,7 +100,7 @@
                     </div>
                     <div class="single-item-caption">
                       <a class="add-to-cart pull-left" href="{{route('addtocard',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                      <a class="beta-btn primary" href="{{route('product-detail',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                      <a class="beta-btn primary" href="{{route('product-detail',$sp->id)}}">Chi tiết sản phẩm  <i class="fa fa-chevron-right"></i></a>
                       <div class="clearfix"></div>
                     </div>
                   </div>

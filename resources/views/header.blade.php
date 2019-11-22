@@ -60,7 +60,7 @@
                          <div class="clearfix"></div>
                          <div class="center">
                             <div class="space10">&nbsp;</div>
-                            <a href="{{route("dathang")}}" class="beta-btn primary text-center" style="background: #000099; "><strong style="color: white">Đặt hàng</strong> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            <a href="{{route("dathang")}}" class="beta-btn primary text-center" style="background: #000099; "><strong style="color: white">Tiến hành thanh toán</strong> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                          </div>
                       </div>
                    </div>
