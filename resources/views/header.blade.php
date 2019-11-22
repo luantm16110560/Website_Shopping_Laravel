@@ -79,7 +79,7 @@
              <li> <a href="{{route("about")}}"><img src="source/image/logo/logo.png" width="141.77px" height="45px" alt=""></a></li>
              <li><a href="{{route("home-page")}}" style="font-size:18px; color:white; margin-top: 13px">Trang chủ</a></li>
              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-size:18px; color:white; margin-top: 13px" >Loại sản phẩm
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-size:18px; color:white; margin-top: 13px" >Sản phẩm
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                    @foreach($loai_sp as $loai)
