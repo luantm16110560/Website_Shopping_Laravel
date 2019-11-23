@@ -160,11 +160,12 @@ class PageController extends Controller
       $credentials = array('username'=>$req->username,'password'=>$req->password);
       if(Auth::attempt($credentials))
       {
-          return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
+         // return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
+         return redirect()->route('home-page');
       }
       else
       {
-        return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng nhập không thành công']);
+        return redirect()->back()->with(['flag'=>'danger','message'=>'Tên đăng nhập hoặc mật khẩu không đúng']);
       }
    }
    public function getLogout(){
