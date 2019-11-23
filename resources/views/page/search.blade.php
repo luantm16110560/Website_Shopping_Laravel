@@ -32,7 +32,7 @@
                                             <span class="flash-sale">{{number_format($sp->unit_price)}} VND</span> 
                                             @else
                                             <span class="flash-del">{{number_format($sp->unit_price)}} VND</span>
-                                            <span class="flash-sale">{{number_format($sp->promotion_price)}} VDN</span>
+                                            <span class="flash-sale">{{number_format($sp->promotion_price)}} VND</span>
                                             @endif
                                         </p>
                                     </div>

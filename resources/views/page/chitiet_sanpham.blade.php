@@ -123,7 +123,7 @@
                   <p class="single-item-price" style="font-size: 18px">
                       @if($sptt->promotion_price !=0)
                         <span class="flash-del">{{number_format($sptt->unit_price)}} VND</span>
-                        <span class="flash-sale">{{number_format($sptt->promotion_price)}} VDN</span>
+                        <span class="flash-sale">{{number_format($sptt->promotion_price)}} VND</span>
                       @else
                         <span>{{number_format($sptt->unit_price)}} VND</span>
                   @endif
