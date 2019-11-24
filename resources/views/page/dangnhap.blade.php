@@ -30,7 +30,7 @@
             </div>
                @endif
                <div class="card-body">
-                  <form action="{{route('dangnhap')}}" method="post" class="beta-form-checkout">
+                  <form action="{{route('dangnhap')}}" method="post" class="beta-form-checkout" autocomplete="off">
                      <input type="hidden" name="_token" value="{{csrf_token()}}">
                      <div class="form-group">
                         <label style="font-size: 17px">Tên đăng nhập</label>

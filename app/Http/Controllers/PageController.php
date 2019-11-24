@@ -14,6 +14,7 @@ use App\Bill_Detail;
 use Session;
 use Hash;
 use Auth;
+use Response;
 class PageController extends Controller
 {
    public function getIndex()
@@ -174,9 +175,13 @@ class PageController extends Controller
    }
    public function getSearch(Request $req)
    {
-        $product = Product::where('name','like','%'.$req->id_search.'%')
-                            ->orWhere('unit_price',$req->id_search)
-                            ->get();
-                            return view('page.search')->with("sanpham",$product);
+        $product = Product::where('name','like','%'.$req->id_search.'%')->get();                            
+        return Response::json($product, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
    }
+   public function getsearchView(Request $req)
+   {
+    $product = Product::where('name','like','%'.$req->id_search.'%')->get();                  
+     return view('page.search')->with("sanpham",$product);
+   }
+   
 }

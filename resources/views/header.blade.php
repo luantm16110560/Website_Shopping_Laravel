@@ -1,3 +1,5 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 <div id="header">
     <div class="pull-right">
        <ul class="top-details menu-beta l-inline">
@@ -93,8 +95,21 @@
        <div class="col-sm-3"></div>
        <div class="col-sm-3">
      
-       <form style="margin-top: 19px;" role="search" method="get" id="searchform" action="{{route('search')}}">
-       <strong><input style="font-size:16px;" type="text" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
+       <form style="margin-top: 19px;" role="search" method="get" id="searchform" action="{{route('searchView')}}" autocomplete="off">
+       <strong><input style="font-size:16px;" type="text" class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
+       <script type="text/javascript">
+         var path ="{{route('search')}}";
+     
+         $('input.typeahead').typeahead({
+             source:function(query,process){
+                 return $.get(path,{query:name},function(data){
+                     return process(data);
+                 });
+             }
+         });
+     
+     
+     </script>
        <button class="fa fa-search" aria-hidden="true" type="submit" id="searchsubmit"></button>
        </form>
        </div>
