@@ -10,7 +10,13 @@
             <li><a href="{{route('dangki')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Đăng ký</strong></a></li>
             <li><a href="{{route('dangnhap')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Đăng nhập</strong></a></li>
           @endif
-         </ul>
+          @can('isAdmin')
+         <li class="pull-left"><a href="#" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Trang của admin</strong></a></li>
+          @endcan
+          @can('isManager')
+          <li class="pull-left"><a href="#" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Trang bán hàng</strong></a></li>
+           @endcan    
+      </ul>
     </div>
     <div class="header-body">
        <div class="container beta-relative">
@@ -43,11 +49,12 @@
              <li><a href="{{route("contact")}}" style="font-size:18px; color:white; margin-top: 13px">Liên hệ</a></li>
              
        </div>
-     
        <div class="col-sm-3" style="margin-top: 19px;">
          @if(Session::has('cart'))
-         <div class="cart">
-            <div class="beta-select"><strong style="color: white" class="fa fa-shopping-cart" aria-hidden="true" style="font-size:15px"></strong> &nbsp <strong style="color: white">Giỏ Hàng (@if(Session::has('cart')){{Session('cart')->totalQty}}@else 0 @endif sản phẩm)</strong><i style="color: white" class="fa fa-chevron-down"></i></div>
+         <div class="cart">      
+                   <marquee class="pull-left" style="color: red;font-size: 18px;font-weight: bold" behavior="alternate" width="10%">>></marquee>
+            <div class="beta-select"><strong style="color: white;  font-size: 25px;" class="fa fa-shopping-cart" aria-hidden="true"></strong> &nbsp <strong style="color: white">Giỏ Hàng (@if(Session::has('cart')){{Session('cart')->totalQty}}@else 0 @endif sản phẩm)</strong><i style="color: white" class="fa fa-chevron-down"></i>   
+         </div>
             <div class="beta-dropdown cart-body">
                @foreach ($product_cart as $productcart)
                <div class="cart-item">
