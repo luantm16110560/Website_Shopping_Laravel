@@ -87,7 +87,7 @@
                                     }
                                 }
                             </script>
-  													<span style="font-size: 15px;  font-weight: bold;" class="right" id='message'></span>
+  							<span style="font-size: 15px;  font-weight: bold;" class="right" id='message'></span>
                             <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng ký</button>
 
                         </form>
