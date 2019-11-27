@@ -20,15 +20,9 @@ class PageController extends Controller
    public function getIndex()
    {
     $slide = DB::table('slides')->get();
-    //echo $slide;
-       //return view('page.trangchu',compact('my_slide'));
-
-     //  $user = User::where('confirmation_code', '=', 123456, 'and')->where('id', '=', 5, 'or')->where('role', '=', 'admin')->first();
-
-    $newProduct = Product::where('status','=',1,'and')->where('isNew', '=', '1')->paginate(4);
-      //  dd($newProduct);
-      $saleoff_product=Product::where('promotion_price','<>',0,'and')->where('status','=',1)->paginate(4);
-       return view('page.trangchu')->with('my_slide',$slide)->with('new_product',$newProduct)->with('saleoff_product',$saleoff_product);
+    $product = Product::where('status','=',1)->paginate(4);
+    $count =  Product::where('status','=',1,'and')->count();
+    return view('page.trangchu')->with('my_slide',$slide)->with('product',$product)->with('_count',$count);
    }
    public function getProductType($type)
    {
@@ -183,6 +177,17 @@ class PageController extends Controller
    {
     $product = Product::where('name','like','%'.$req->id_search.'%')->get();                  
      return view('page.search')->with("sanpham",$product);
+   }
+   public function getProductByGender(Request $req)
+   {
+  
+    $productgender = Product::where('gender', 'like', $req->client_gender)->paginate(1);
+        $countProductByGender = Product:: where([
+                                    ['gender', 'like','%'.$req->client_gender.'%'],
+                                    ['status', '=', 1],
+                                  ])->count();
+       return view('page.gender')->with('pro', $productgender)->with('_count',$countProductByGender);
+  
    }
    
 }

@@ -99,3 +99,7 @@ Route::get('searchView',[
 	'as'=>'searchView',
 	'uses'=>'PageController@getsearchView'
 ]);
+Route::get('/gender',[
+	'as'=>'gender',
+	'uses'=>'PageController@getProductByGender'
+]);
