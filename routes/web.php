@@ -103,3 +103,7 @@ Route::get('/gender',[
 	'as'=>'gender',
 	'uses'=>'PageController@getProductByGender'
 ]);
+Route::get('/gender_typeProdouct',[
+	'as'=>'gender_typeProdouct',
+	'uses'=>'PageController@getProductTypeByGender'
+]);

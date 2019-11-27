@@ -21,7 +21,7 @@ class PageController extends Controller
    {
     $slide = DB::table('slides')->get();
     $product = Product::where('status','=',1)->paginate(4);
-    $count =  Product::where('status','=',1,'and')->count();
+    $count =  Product::where('status','=',1)->count();
     return view('page.trangchu')->with('my_slide',$slide)->with('product',$product)->with('_count',$count);
    }
    public function getProductType($type)
@@ -170,24 +170,64 @@ class PageController extends Controller
    }
    public function getSearch(Request $req)
    {
-        $product = Product::where('name','like','%'.$req->id_search.'%')->get();                            
+        $product = Product::where([
+                                  ['name','like','%'.$req->id_search.'%'],
+                                  ['status','=',1],
+                                  ])->get();                            
         return Response::json($product, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
    }
    public function getsearchView(Request $req)
    {
-    $product = Product::where('name','like','%'.$req->id_search.'%')->get();                  
+    $product = Product::where([
+                             ['name','like','%'.$req->id_search.'%'],
+                             ['status','=',1],                            
+                             ])->get();                  
      return view('page.search')->with("sanpham",$product);
    }
    public function getProductByGender(Request $req)
-   {
-  
-    $productgender = Product::where('gender', 'like', $req->client_gender)->paginate(1);
+   { 
+    $productgender = Product::where([
+                                    ['gender', 'like', $req->client_gender],
+                                    ['status', '=', 1]
+                                    ])->paginate(1);
         $countProductByGender = Product:: where([
                                     ['gender', 'like','%'.$req->client_gender.'%'],
                                     ['status', '=', 1],
                                   ])->count();
        return view('page.gender')->with('pro', $productgender)->with('_count',$countProductByGender);
-  
+   }
+   public function getProductTypeByGender(Request $req)
+   {
+    $myurl = $req->url;
+    $kq="";
+    $temp="";
+    for ($i=strlen($myurl)-1; $i>=0; $i=$i-1)
+    {
+        if(is_numeric($myurl[$i]))
+        {
+            $temp=$temp.$myurl[$i];
+        }
+    }
+    for ($i=strlen($temp)-1; $i>=0; $i=$i-1)
+    {
+        if(is_numeric($temp[$i]))
+        {
+            $kq=$kq.$temp[$i];
+        }
+    }
+   $id_type=(int)$kq;
+    $productgendertype = Product::where([
+                                        ['gender', 'like', $req->client_gender],
+                                        ['status', '=', 1],
+                                        ['id_type','=',$id_type]
+                                        ])->paginate(2);
+    $countproductgendertype = Product::where([
+                                        ['gender', 'like', $req->client_gender],
+                                        ['status', '=', 1],
+                                        ['id_type','=',$id_type]
+                                        ])->count();
+        
+         return view('page.gender_type_product')->with('pro', $productgendertype)->with('_count',$countproductgendertype);
    }
    
 }

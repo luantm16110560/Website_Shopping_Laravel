@@ -16,23 +16,9 @@
                                 <ul class="nav navbar-nav">
                                     {{--
                                     <li class="active"><a href="#">Home</a></li> --}}
-                                    <li><a href="{{route('gender',['client_gender'=>'Nam'])}}" style="color: blue;font-weight: bold;font-size: 25px;font-family: Open Sans">Nam</a></li>
-                                    <li><a href="{{route('gender',['client_gender'=>'Nữ'])}}" style="color: pink;font-size: 25px;font-weight: bold">Nữ</a></li>
-        
+                                   
                                 </ul>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li>
-                                        <div class="dropdown" style="margin-top: 15px">
-                                            <a data-toggle="dropdown" style="font-size: 20px; margin-right:7px;">Sắp xếp giá<span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Giảm dần</a></li>
-                                                <li><a href="#">Tăng dần</a></li>
-        
-                                            </ul>
-                                        </div>
-                                    </li>
-        
-                                </ul>
+                               
                             </div>
                         </nav>
                 <div class="col-sm-12">
@@ -57,8 +43,6 @@
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$sp->name}}</p>
-                                        <strong> Mã sản phẩm:</strong>
-                                        <p class="single-item-title" style="color: red;font-weight: bold">{{$sp->id}}</p>
                                         <p class="single-item-price" style="font-size: 18px ">
                                             @if($sp->promotion_price==0)
                                             <span class="flash-sale">{{number_format($sp->unit_price)}} VND</span> 
@@ -80,7 +64,7 @@
                            
                         </div>
                   
-                        {{ $pro->appends(['client_gender' => request()->query('client_gender')])->links() }}
+                        {{ $pro->appends(['gender_typeProdouct' => request()->query('gender_typeProdouct')])->links() }}
 
                     </div>
             

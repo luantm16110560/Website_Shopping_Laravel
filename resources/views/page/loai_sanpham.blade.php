@@ -26,8 +26,36 @@
           </ul>
         </div>
         <div class="col-sm-9">
+            <nav class="navbar navbar-inverse" style="background-color: #EDEDED;border-color: #EDEDED">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" style="font-size: 25px;font-weight: bold">Bộ lọc|</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        {{--
+                        <li class="active"><a href="#">Home</a></li> --}}
+                        <li><a href="{{route('gender_typeProdouct',['client_gender'=>'Nam','url'=>URL::current()])}}" style="color: blue;font-weight: bold;font-size: 25px;font-family: Open Sans">Nam</a></li>
+                        <li><a href="{{route('gender_typeProdouct',['client_gender'=>'Nữ','url'=>URL::current()])}}" style="color: pink;font-size: 25px;font-weight: bold">Nữ</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <div class="dropdown" style="margin-top: 15px">
+                                <a data-toggle="dropdown" style="font-size: 20px; margin-right:7px;">Sắp xếp giá<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Giảm dần</a></li>
+                                    <li><a href="#">Tăng dần</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            
           <div class="beta-products-list">
-            <h4>New Products</h4>
+            {{-- <h4></h4> --}}
             <div class="beta-products-details">
               <p class="pull-left">Tìm thấy {{count($type_product)}} sản phẩm</p>
               <div class="clearfix"></div>
@@ -78,8 +106,10 @@
               <div class="clearfix"></div>
             </div>
             <div class="row">
+             
                 @foreach ($product_other as $sp)
                 <div class="col-sm-4">
+                
                   <div class="single-item">
                       @if($sp->promotion_price!=0)
                       <div class="ribbon-wrapper">
