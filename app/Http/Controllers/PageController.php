@@ -247,7 +247,7 @@ class PageController extends Controller
         ['status', '=', 1],
         ])->paginate(2);
        return view('page.manage_customer')->with('customer',$customer);
-   }
+   }//
 
    
 }
