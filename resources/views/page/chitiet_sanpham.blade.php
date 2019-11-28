@@ -31,6 +31,8 @@
                 </div>
               @endif --}}
             <p class="single-item-title"><h2>{{$sanpham->name}}<h2></p>
+               <strong style="font-size: 20px"> Mã sản phẩm:</strong>
+              <p class="single-item-title" style="color: red;font-weight: bold">{{$sanpham->id}}</p>
               <p class="single-item-price" style="font-size: 18px">
                   @if($sanpham->promotion_price !=0)
                     <span class="flash-del">{{number_format($sanpham->unit_price)}} VND</span>
@@ -51,6 +53,7 @@
 
             <p>Lựa chọn:</p>
             <div class="single-item-options">
+              
               <select class="wc-select" name="size">
                 <option>Kích cỡ:</option>
                 <option value="35">35</option>
@@ -71,14 +74,22 @@
                 <option value="Black">Black</option>
                 <option value="White">White</option>
               </select>
-              <select class="wc-select" name="color">
+              {{-- <select class="wc-select" name="color">
                 <option>Số lượng</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-              </select>
+              </select> --}}
+              <label style="margin-top:5px">Số lượng &nbsp;</label> 
+            
+              <input type="number" min="1" name="number" style="height: 34px" value="1" />
+              <style>
+                input[type=number]::-webkit-inner-spin-button {
+                 opacity: 1;
+                }
+              </style>
               <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
               <div class="clearfix"></div>
             </div>
