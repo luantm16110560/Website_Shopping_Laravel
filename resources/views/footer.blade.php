@@ -1,4 +1,4 @@
-<div id="footer" class="color-div">
+<div id="footer" class="footer">
   <div class="container">
     <div class="row">
       <div class="col-sm-3">
@@ -13,11 +13,6 @@
           <div>
             <ul>
               <li><a href="{{route("about")}}"><i class="fa fa-chevron-right"></i>Giới thiệu về chúng tôi</a></li>
-              {{-- <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Thương Hiệu</a></li>
-              <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Sứ Mệnh</a></li>
-              <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Phát Triển</a></li>
-              <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Cơ Hội</a></li>
-              <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Đối Tác</a></li> --}}
             </ul>
           </div>
         </div>
@@ -51,17 +46,4 @@
     </div> <!-- .row -->
   </div> <!-- .container -->
 </div> <!-- #footer -->
-<div class="copysource/right">
-  <div class="container">
-    <p class="text-muted">Copyright © 2017, <a href="https://allaravel.com">All Laravel</a></p>
-      <p class="pull-right pay-options">
-          <a href="#"><img src="source/assets/dest/images/pay/momo.jpg" alt="" height="20px" width="20px" /></a>
-          <a href="#"><img src="source/assets/dest/images/pay/vnpay.png" alt="" height="20px" width="20px"/></a>
-          <a href="#"><img src="source/assets/dest/images/pay/viettelpay.png" alt="" height="20px" width="20px"/></a>
-          <a href="#"><img src="source/assets/dest/images/pay/zalopay.jpg" alt="" height="20px" width="20px"/></a>
-      </p>
-      <div class="clearfix"></div>
-  </div>
-  <!-- .container -->
-</div>
-<!-- .copyright -->
+

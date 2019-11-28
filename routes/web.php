@@ -107,3 +107,19 @@ Route::get('/gender_typeProdouct',[
 	'as'=>'gender_typeProdouct',
 	'uses'=>'PageController@getProductTypeByGender'
 ]);
+Route::get('/manager-page',[
+	'as'=>'manager-page',
+	'uses'=>'PageController@managerPage'
+]);
+Route::get('/manage-product',[
+	'as'=>'manage-product',
+	'uses'=>'PageController@manageProduct'
+]);
+Route::get('/manage-bill',[
+	'as'=>'manage-bill',
+	'uses'=>'PageController@manageBill'
+]);
+Route::get('/manage-customer',[
+	'as'=>'manage-customer',
+	'uses'=>'PageController@manageCustomer'
+]);
