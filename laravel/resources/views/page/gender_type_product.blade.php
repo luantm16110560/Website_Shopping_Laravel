@@ -2,6 +2,7 @@
 @extends('master')
 @section('content')
     
+test
 
 <div class="container">
     <div id="content" class="space-top-none">
