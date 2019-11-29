@@ -12,8 +12,8 @@ class Customer extends Model
 
     public $timestamps=false;
 
-    public function bill()
-    {
-        return $this->hasMany('App\Bill');
-    }
+    // public function bill()
+    // {
+    //     return $this->hasMany('App\Bill');
+    // }
 }
