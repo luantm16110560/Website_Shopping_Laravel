@@ -119,7 +119,7 @@ Route::get('/manage-bill',[
 	'as'=>'manage-bill',
 	'uses'=>'PageController@manageBill'
 ]);
-Route::get('/manage-customer',[
-	'as'=>'manage-customer',
-	'uses'=>'PageController@manageCustomer'
+Route::get('/manage-user',[
+	'as'=>'manage-user',
+	'uses'=>'PageController@manageUser'
 ]);

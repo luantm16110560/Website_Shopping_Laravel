@@ -12,10 +12,10 @@ class Bill extends Model
 
     public $timestamps=false;
 
-    // public function customer()
-    // {
-    //     return $this->belongTo('App\Customer');
-    // }
+    public function user()
+    {
+        return $this->belongTo('App\User');
+    }
     
     public function bill_detail()
     {

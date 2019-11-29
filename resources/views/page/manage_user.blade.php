@@ -1,4 +1,4 @@
-@extends('master')
+{{-- @extends('master')
 @section('content')
 <div class="card">
     <div class="card-body">
@@ -212,4 +212,4 @@
 <br>
 <br>
 <br>
- @endsection
+ @endsection --}}

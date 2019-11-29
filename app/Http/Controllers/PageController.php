@@ -136,6 +136,7 @@ class PageController extends Controller
            $user->address=$req->address;
            $user->username=$req->username;
            $user->email=$req->email;
+           $user->gender=$req->gender;
            $user->password=Hash::make($req->password);
            $user->role=0;
            $user->status=1;
@@ -241,13 +242,10 @@ class PageController extends Controller
    {
        return view('page.manage_bill');
    }
-   public function manageCustomer()
+   public function manageUser()
    {
-    $customer = Customer::where([
-        ['status', '=', 1],
-        ])->paginate(2);
-       return view('page.manage_customer')->with('customer',$customer);
-   }//
+       return view('page.manage_user');
+   }
 
    
 }

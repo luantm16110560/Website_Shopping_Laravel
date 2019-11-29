@@ -55,11 +55,11 @@
                             </div>
                             <div class="col-sm-3">
                                 <div class="card" style="width:13rem; height: 13rem;">
-                                    <a href="{{route('manage-customer')}}">
+                                    <a href="{{route('manage-user')}}">
                                     <img src="source/image/manager/icon-customer.png" alt="Avatar" style="width:13rem; height: 13rem">
                                     </a>
                                     <div class="center">
-                                        <a href="{{route('manage-customer')}}">
+                                        <a href="{{route('manage-user')}}">
                                         <h4><b>Khách hàng</b></h4>
                                       </a>
                                     </div>
