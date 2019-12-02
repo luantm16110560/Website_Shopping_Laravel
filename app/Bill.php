@@ -8,13 +8,13 @@ class Bill extends Model
 {
     protected $table='bills';
 
-    protected $fillable=['date_order','total','payment','note','status','id_customer'];
+    protected $fillable=['date_order','total','payment','note','status'];
 
     public $timestamps=false;
 
-    public function customer()
+    public function user()
     {
-        return $this->belongTo('App\Customer');
+        return $this->belongTo('App\User');
     }
     
     public function bill_detail()

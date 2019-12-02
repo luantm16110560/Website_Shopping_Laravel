@@ -136,6 +136,7 @@ class PageController extends Controller
            $user->address=$req->address;
            $user->username=$req->username;
            $user->email=$req->email;
+           $user->gender=$req->gender;
            $user->password=Hash::make($req->password);
            $user->role=0;
            $user->status=1;
@@ -215,7 +216,7 @@ class PageController extends Controller
             $kq=$kq.$temp[$i];
         }
     }
-   $id_type=(int)$kq;
+      $id_type=(int)$kq;
     $productgendertype = Product::where([
                                         ['gender', 'like', $req->client_gender],
                                         ['status', '=', 1],
@@ -229,5 +230,22 @@ class PageController extends Controller
         
          return view('page.gender_type_product')->with('pro', $productgendertype)->with('_count',$countproductgendertype);
    }
+   public function managerPage()
+   {
+        return view('page.manager');
+   }
+   public function manageProduct()
+   {
+       return view('page.manage_product');
+   }
+   public function manageBill()
+   {
+       return view('page.manage_bill');
+   }
+   public function manageUser()
+   {
+       return view('page.manage_user');
+   }
+
    
 }

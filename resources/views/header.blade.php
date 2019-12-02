@@ -14,8 +14,8 @@
          <li class="pull-left"><a href="#" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Trang của admin</strong></a></li>
           @endcan
           @can('isManager')
-          <li class="pull-left"><a href="#" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Trang bán hàng</strong></a></li>
-           @endcan    
+       <li class="pull-left"><a href="{{route('manager-page')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Trang bán hàng</strong></a></li>
+          @endcan    
       </ul>
     </div>
     <div class="header-body">

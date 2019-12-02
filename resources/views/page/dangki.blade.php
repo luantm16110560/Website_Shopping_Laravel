@@ -40,36 +40,45 @@
                         <form action="{{route('dangki')}}" method="post" class="beta-form-checkout" autocomplete="off">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
-                                <label style="font-size: 17px">Họ tên</label>
-                                <input type="text" class="form-control form-control-lg rounded-0" name="name" required placeholder="Nhập họ tên">
+                                <label style="font-size: 17px;">Họ tên</label>
+                                <input type="text" class="form-control form-control-lg rounded-0" name="name" required style="font-weight: bold" >
+
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 17px">Giới tính</label>
+                        
+                                <select style="width: 55px;height: 37px;font-weight: bold" name="gender" style="font-weight: bold">
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
+                                </select>
 
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Điện thoại</label>
-                                <input type="number" class="form-control form-control-lg rounded-0" name="phone" required placeholder="Nhập số điện thoại">
+                                <input type="number" min="0" class="form-control form-control-lg rounded-0" name="phone" required style="font-weight: bold">
 
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Địa chỉ</label>
-                                <input type="text" class="form-control form-control-lg rounded-0" name="address" required placeholder="Nhập địa chỉ">
+                                <input type="text" class="form-control form-control-lg rounded-0" name="address" required style="font-weight: bold">
 
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Email</label>
-                                <input type="email" class="form-control form-control-lg rounded-0" name="email" required placeholder="Nhập Email">
+                                <input type="email" class="form-control form-control-lg rounded-0" name="email" required style="font-weight: bold">
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Tên đăng nhập</label>
-                                <input type="text" class="form-control form-control-lg rounded-0" name="username" required placeholder="Nhập tên đăng nhập">
+                                <input type="text" class="form-control form-control-lg rounded-0" name="username" required style="font-weight: bold">
 
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Mật khẩu</label>
-                                <input type="password" class="form-control form-control-lg rounded-0" id="password" name="password" required placeholder="Nhập mật khẩu">
+                                <input type="password" class="form-control form-control-lg rounded-0" id="password" name="password" required style="font-weight: bold">
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Xác nhận mật khẩu</label>
-                                <input type="password" class="form-control form-control-lg rounded-0" id="confirm_password" name="cpassword" required placeholder="Xác nhận mật khẩu" onkeyup="check()">
+                                <input type="password" class="form-control form-control-lg rounded-0" id="confirm_password" name="cpassword" required  onkeyup="check()" style="font-weight: bold">
 
                             </div>
                           
