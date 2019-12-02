@@ -14,7 +14,7 @@
                         <li><a href="{{route('upload_product')}}">Đăng bán sản phẩm mới</a></li>
                         <li><a href="{{route('crud_product')}}">Quản lý sản phẩm</a></li>
                         <li><a href="{{route('sale_of_product')}}">Sản phẩm khuyến mãi</a></li>
-                        <li class="active"><a href="{{route('cate_product')}}">Danh mục sản phẩm</a></li>
+                        <li class="active"><a>Danh mục sản phẩm</a></li>
                         <li><a href="{{route('cate_product')}}">Quản lý danh mục</a></li>
                       
                     </ul>
