@@ -31,8 +31,8 @@
                 </div>
               @endif --}}
             <p class="single-item-title"><h2>{{$sanpham->name}}<h2></p>
-               <strong style="font-size: 20px"> Mã sản phẩm:</strong>
-              <p class="single-item-title" style="color: red;font-weight: bold">{{$sanpham->id}}</p>
+               
+              <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sanpham->id}}</p>
               <p class="single-item-price" style="font-size: 18px">
                   @if($sanpham->promotion_price !=0)
                     <span class="flash-del">{{number_format($sanpham->unit_price)}} VND</span>
@@ -66,14 +66,14 @@
                 <option value="42">42</option>
                 <option value="43">43</option>
               </select>
-              <select class="wc-select" name="color">
+              {{-- <select class="wc-select" name="color">
                 <option>Màu sắc</option>
                 <option value="Red">Red</option>
                 <option value="Green">Green</option>
                 <option value="Yellow">Yellow</option>
                 <option value="Black">Black</option>
                 <option value="White">White</option>
-              </select>
+              </select> --}}
               {{-- <select class="wc-select" name="color">
                 <option>Số lượng</option>
                 <option value="1">1</option>
@@ -131,6 +131,7 @@
                 </div>
                 <div class="single-item-body">
                 <p class="single-item-title">{{$sptt->name}}</p>
+                <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sptt->id}}</p>
                   <p class="single-item-price" style="font-size: 18px">
                       @if($sptt->promotion_price !=0)
                         <span class="flash-del">{{number_format($sptt->unit_price)}} VND</span>
@@ -152,7 +153,7 @@
           <div class="row">{{$sp_tuongtu->links()}}</div>
         </div> <!-- .beta-products-list -->
       </div>
-      <div class="col-sm-3 aside">
+      {{-- <div class="col-sm-3 aside">
         <div class="widget">
           <h3 class="widget-title">Best Sellers</h3>
           <div class="widget-body">
@@ -222,7 +223,7 @@
               </div>
             </div>
           </div>
-        </div> <!-- best sellers widget -->
+        </div> <!-- best sellers widget --> --}}
       </div>
     </div>
   </div> <!-- #content -->
