@@ -107,6 +107,10 @@ Route::get('/gender_typeProdouct',[
 	'as'=>'gender_typeProdouct',
 	'uses'=>'PageController@getProductTypeByGender'
 ]);
+
+
+
+//Manager
 Route::get('/manager-page',[
 	'as'=>'manager-page',
 	'uses'=>'PageController@managerPage'
@@ -123,3 +127,21 @@ Route::get('/manage-user',[
 	'as'=>'manage-user',
 	'uses'=>'PageController@manageUser'
 ]);
+// Product manage
+Route::get('/upload_product',[
+	'as'=>'upload_product',
+	'uses'=>'PageController@uploadProduct'
+]);
+Route::get('/crud_product',[
+	'as'=>'crud_product',
+	'uses'=>'PageController@crudProduct'
+]);
+Route::get('/sale_of_product',[
+	'as'=>'sale_of_product',
+	'uses'=>'PageController@saleOfProduct'
+]);
+Route::get('/cate_product',[
+	'as'=>'cate_product',
+	'uses'=>'PageController@crudCate'
+]);
+
