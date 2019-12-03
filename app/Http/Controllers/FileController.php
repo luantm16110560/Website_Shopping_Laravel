@@ -29,7 +29,7 @@ class FileController extends Controller
 
 
 
-            $image       = $request->file('file');
+            $image= $request->file('file');
             $image_resize = Image::make($image->getRealPath());              
             $image_resize->resize(270, 285);
             $image_resize->save(public_path('source/image/slide/'.$filename));

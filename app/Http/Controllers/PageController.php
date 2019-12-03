@@ -250,7 +250,8 @@ class PageController extends Controller
    //
    public function uploadProduct()
    {
-       return view('page.upload_product');
+    $type = Type_Product::where('status','=',1)->get();
+       return view('page.upload_product')->with('type',$type);
    }
    public function crudProduct()
    {
