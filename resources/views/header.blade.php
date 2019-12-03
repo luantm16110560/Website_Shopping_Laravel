@@ -82,18 +82,19 @@
                               </td>
                               <td >
                               <span class="cart-total-value"> 
-                                 @if(($productcart['item']['promotion_price'])==0){{number_format($productcart['item']['unit_price'])}} VND 
-                                 @else {{number_format($productcart['item']['promotion_price'])}}
-                                 @endif </span></span>
+                                 @if(($productcart['item']['promotion_price'])==0){{number_format($productcart['item']['unit_price'])}}   VND 
+                                 @else {{number_format($productcart['item']['promotion_price'])}}   VND @endif </span>
+                                 <span class="flash-del">@if(($productcart['item']['promotion_price'])!=0){{number_format($productcart['item']['unit_price'])}}VND @endif </span>
                               </td>
                            </tr>
                         </table>
+                        <label>Mô tả: </label>
                      </div>
                   </div>
                </div>
                @endforeach
                <div class="cart-caption">
-                  <div class="cart-total text-right"><strong>Tổng tiền:</strong> <span class="cart-total-value">{{number_format(Session('cart')->totalPrice)}} VND</span></div>
+                  <div class="cart-total text-right"><strong>Tạm tính:</strong> <span class="cart-total-value">{{number_format(Session('cart')->totalPrice)}} VND</span></div>
                   <div class="clearfix"></div>
                   <div class="center">
                      <div class="space10">&nbsp;</div>

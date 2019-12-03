@@ -35,7 +35,7 @@ class PageController extends Controller
    public function getProductDetail(Request $res)
    {
         $sanpham=Product::where('id',$res->id)->first();
-        $sp_tuongtu=Product::where('id_type',$sanpham->id_type)->paginate(3);
+        $sp_tuongtu=Product::where('id_type',$sanpham->id_type)->paginate(2);
         return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu);
    }
    public function getContact()
@@ -88,18 +88,9 @@ class PageController extends Controller
    public function postOrder(Request $req)
    {
        $cart=Session::get('cart');
-       $customer= new Customer;
-       $customer->name=$req->name;
-       $customer->gender=$req->gender;
-       $customer->email=$req->email;
-       $customer->address=$req->address;
-       $customer->phone_number=$req->phone;
-       $customer->note=$req->notes;
-       $customer->status=1;
-       $customer->save();
-
+       
        $bill=new Bill;
-       $bill->id_customer=$customer->id;
+       $bill->id_customer=$user->id;
        $bill->date_order=date('Y-m-d');
        $bill->total=$cart->totalPrice;
        $bill->payment=$req->payment_method;
@@ -114,6 +105,7 @@ class PageController extends Controller
         if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
         else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
         $bill_detail->status=1;
+        $bill_detail->size=
         $bill_detail->save();
        }
        Session::forget('cart');

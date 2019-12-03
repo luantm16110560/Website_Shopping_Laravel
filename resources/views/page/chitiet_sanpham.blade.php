@@ -38,7 +38,7 @@
                     <span class="flash-del">{{number_format($sanpham->unit_price)}} VND</span>
                     <span class="flash-sale">{{number_format($sanpham->promotion_price)}} VND</span>
                   @else
-                    <span>{{number_format($sanpham->unit_price)}} VND</span>
+                    <span class="flash-sale">{{number_format($sanpham->unit_price)}} VND</span>
                   @endif
               </p>
             </div>
@@ -90,22 +90,33 @@
                  opacity: 1;
                 }
               </style>
-              <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+              @if(Auth::check())
+                <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+              @else 
+              <a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>
+              @endif
               <div class="clearfix"></div>
             </div>
           </div>
         </div>
-
+        {{-- <div class="space40">&nbsp;</div>
+        <div class="woocommerce-tabs">
+            <label href=""><i>Bảng hướng dẫn đo size giày<i></label>
+              <img src="source\image\size.png" alt="">
+        </div> --}}
         <div class="space40">&nbsp;</div>
         <div class="woocommerce-tabs">
           <ul class="tabs">
-            <li><a href="#tab-description">Mô tả:</a></li>
+            <li><a href="#tab-description">Mô tả</a></li>
+            <li><a href="#tab-image">Hướng dẫn chọn size giày</a></li>
             {{-- <li><a href="#tab-reviews">Reviews (0)</a></li> --}}
           </ul>
-
           <div class="panel" id="tab-description">
             <p>{{$sanpham->description}}</p>
           </div>
+          <div class="panel" id="tab-image">
+              <img src="source\image\size.png" alt="">
+            </div>
           {{-- <div class="panel" id="tab-reviews">
             <p>No Reviews</p>
           </div> --}}
@@ -137,12 +148,12 @@
                         <span class="flash-del">{{number_format($sptt->unit_price)}} VND</span>
                         <span class="flash-sale">{{number_format($sptt->promotion_price)}} VND</span>
                       @else
-                        <span>{{number_format($sptt->unit_price)}} VND</span>
+                        <span class="flash-sale">{{number_format($sptt->unit_price)}} VND</span>
                   @endif
                   </p>
                 </div>
                 <div class="single-item-caption">
-                  <a class="add-to-cart pull-left" href="{{route('addtocard',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                  <a class="add-to-cart pull-left" href="{{route('product-detail',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
                   <a class="beta-btn primary" href="{{route('product-detail',$sptt->id)}}">Chi tiết sản phẩm <i class="fa fa-chevron-right"></i></a>
                   <div class="clearfix"></div>
                 </div>
