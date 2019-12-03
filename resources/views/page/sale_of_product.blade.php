@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-9">
         
-            <h2 style="text-align: center">Trang quản lý sản phẩm</h2>
+            <h2 style="text-align: center">Sản phẩm khuyến mãi </h2>
        
             </div>
         </div>

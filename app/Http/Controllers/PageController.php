@@ -239,5 +239,24 @@ class PageController extends Controller
        return view('page.manage_user');
    }
 
+   //
+   public function uploadProduct()
+   {
+       return view('page.upload_product');
+   }
+   public function crudProduct()
+   {
+       return view('page.crud_product');
+   }
+   public function saleOfProduct()
+   {
+    return view('page.sale_of_product');
+   }
+   public function crudCate()
+   {
+       return view('page.crud_cate');
+   }
+   
+
    
 }

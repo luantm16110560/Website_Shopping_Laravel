@@ -15,7 +15,7 @@
                         <li><a href="{{route('crud_product')}}">Quản lý sản phẩm</a></li>
                         <li><a href="{{route('sale_of_product')}}">Sản phẩm khuyến mãi</a></li>
                         <li class="active"><a>Danh mục sản phẩm</a></li>
-                        <li><a href="{{route('cate_product')}}">Quản lý danh mục</a></li>
+                    <li><a href="{{route('cate_product')}}">Quản lý danh mục</a></li>
                       
                     </ul>
                     {{-- <h5><i class="glyphicon glyphicon-user"></i>
@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-9">
         
-            <h2 style="text-align: center">Trang quản lý sản phẩm</h2>
+            <h2 style="text-align: center">Quản lý danh mục sản phẩm </h2>
        
             </div>
         </div>
