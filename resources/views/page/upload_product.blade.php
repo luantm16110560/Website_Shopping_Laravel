@@ -78,20 +78,13 @@
                             <br>
                             <br>
                             <div class="col-sm-4">
-                                <img id="myimage1" src="source/image/product/no-image.jpg" alt="your image" style="width:90px;height:90px" />
-                                <input  type='file' id="imageInput1" accept="image/*"/>
-                                <br>
+                               
                             </div>
                             <div class="col-sm-4">                             
-                                <img id="myimage2" src="source/image/product/no-image.jpg" alt="your image" style="width:90px;height:90px" />
-                                <input   type='file' id="imageInput2" accept="image/*"/>
-                                <br>
-                                
+                              
                             </div>
                             <div class="col-sm-4">
-                                    <img id="myimage3" src="source/image/product/no-image.jpg" alt="your image" style="width:90px;height:90px" />
-                                    <input   type='file' id="imageInput3" accept="image/*"/>
-                                    <br>
+                                  
                             </div>          
                         </div>
                         <div class="col-sm-8">
