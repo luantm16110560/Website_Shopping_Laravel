@@ -50,42 +50,93 @@
                         <div class="col-sm-4">
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                             <img id="myimage" src="source/image/product/no-image.jpg" alt="your image" style="width:280px;height:280px" />
-                            <input  style="display:none;" type='file' id="imageInput" accept="image/*"/>
+                            <input style="display:none;" type='file' id="imageInput" accept="image/*" />
                             <br>
                             <div style="text-align: center">
-                            <button class="btn btn-primary" id="button" name="button" value="Đăng ảnh" onclick="thisFileUpload();">Đăng ảnh</button>
+                                <button class="btn btn-primary" id="button" name="button" onclick="thisFileUpload();">Upload</button>
                             </div>
-                             <script>
-                                    function readURL(input) {
+                            <script>
+                                function readURL(input) {
+                                    if (input.files && input.files[0]) {
+                                        var reader = new FileReader();
+
+                                        reader.onload = function(e) {
+                                            $('#myimage').attr('src', e.target.result);
+                                        }
+
+                                        reader.readAsDataURL(input.files[0]);
+                                    }
+                                }
+                                $("#imageInput").change(function() {
+                                    readURL(this);
+                                });
+
+                                function thisFileUpload() {
+                                    document.getElementById("imageInput").click();
+                                };
+                            </script>
+                            <br>
+                            <br>
+
+                            <div class="col-sm-4">
+                                <div>
+                                    <img id="output_image" style="width:90px;height:90px" />
+                                    <input style="display:none;" type="file" accept="image/*" id="imageInput1" onchange="preview_image(event)">
+                                </div>
+                                <br>
+                                <div style="text-align: center">
+                                    <button class="btn btn-primary" id="button1" name="button1" onclick="thisFileUpload1();">Hình 1</button>
+                                </div>
+                                <script type='text/javascript'>
+                                    function preview_image(event) {
+                                        var reader = new FileReader();
+                                        reader.onload = function() {
+                                            var output = document.getElementById('output_image');
+                                            output.src = reader.result;
+                                        }
+                                        reader.readAsDataURL(event.target.files[0]);
+                                    }
+
+                                    function thisFileUpload1() {
+                                        document.getElementById("imageInput1").click();
+                                    };
+                                </script>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                                <div>
+                                    <img id="myid" style="width:90px;height:90px" />
+                                    <input accept="image/*" style="display:none;" type='file' id="demo" />
+                                </div>
+                                <br>
+                                <div style="text-align: center">
+                                    <button class="btn btn-primary" id="button2" name="button2" onclick="thisFileUpload2();">Hình 2</button>
+                                </div>
+                                <script>
+                                    function display(input) {
                                         if (input.files && input.files[0]) {
                                             var reader = new FileReader();
-
-                                            reader.onload = function(e) {
-                                                $('#myimage').attr('src', e.target.result);
+                                            reader.onload = function(event) {
+                                                $('#myid').attr('src', event.target.result);
                                             }
-
                                             reader.readAsDataURL(input.files[0]);
                                         }
                                     }
 
-                                    $("#imageInput").change(function() {
-                                        readURL(this);
+                                    $("#demo").change(function() {
+                                        display(this);
                                     });
-                                    function thisFileUpload() {
-                                     document.getElementById("imageInput").click();
-                                      };
-                             </script>
-                            <br>
-                            <br>
+
+                                    function thisFileUpload2() {
+                                        document.getElementById("demo").click();
+                                    }
+                                </script>
+                            </div>
                             <div class="col-sm-4">
                                
-                            </div>
-                            <div class="col-sm-4">                             
-                              
-                            </div>
-                            <div class="col-sm-4">
                                   
-                            </div>          
+                            </div>
                         </div>
                         <div class="col-sm-8">
                             <div class="col-sm-5">
@@ -101,7 +152,7 @@
                                 <h4 class="right" style="margin-left: 75px">Giới tính</h4>
                             </div>
                             <div class="col-sm-7" style="margin-top: 5px">
-                                <input type="radio" name="gender">Nam
+                                <input type="radio" name="gender" required>Nam
                                 <input type="radio" name="gender">Nữ
                             </div>
                         </div>
@@ -118,7 +169,16 @@
                                 </select>
                             </div>
                         </div>
-
+                        <div class="col-sm-4"> </div>
+                        <div class="col-sm-8">
+                            <div class="col-sm-5">
+                                <h4 class="right" style="margin-left: 75px">Giá sản phẩm</h4>
+                            </div>
+                            <div class="col-sm-7" style="margin-top: 5px">
+                                <input type="number"  name="txtGiaGoc" placeholder="Giá gốc" required>
+                                <input type="number" min=0 value="0" name="txtGiaKm" placeholder="Giá khuyến mãi">
+                            </div>
+                        </div>
                         <div class="col-sm-4"> </div>
                         <div class="col-sm-8">
                             <div class="col-sm-5">

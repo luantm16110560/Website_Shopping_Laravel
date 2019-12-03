@@ -13,7 +13,7 @@
 <form method="POST" action="{{route('upload_file')}}"  enctype="multipart/form-data">
   {{ csrf_field() }}
         <div class="form-group">
-          <input type="file" name="file" accept="image/*" >
+          <input type="file" name="abc" accept="image/*" >
                  <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 </body>

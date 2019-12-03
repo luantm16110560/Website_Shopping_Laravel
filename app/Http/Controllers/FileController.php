@@ -16,7 +16,7 @@ class FileController extends Controller
     public function storeFile(request $request)
     {
 
-        if($request->hasFile('file')) {
+        if($request->hasFile('file')) { // name="file"
 
             $myDate = Carbon\Carbon::now()->toDateString();
 

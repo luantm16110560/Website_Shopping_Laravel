@@ -86,7 +86,7 @@
                       </p>
                     </div>
                     <div class="single-item-caption">
-                      <a class="add-to-cart pull-left" href="{{route('product-detail',$p->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                      <a class="add-to-cart pull-left" href="{{route('product-detail',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
                       <a class="beta-btn primary" href="{{route('product-detail',$product->id)}}">Chi tiết sản phẩm <i class="fa fa-chevron-right"></i></a>
                       <div class="clearfix"></div>
                     </div>
