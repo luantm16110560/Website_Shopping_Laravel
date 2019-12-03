@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="center">
-    <h6 class="inner-title"><strong>Đăng ký tài khoản</strong></h6>
+    <h6 class="inner-title"><strong> tài khoản</strong></h6>
 </div>
 
 <div class="container">
@@ -46,8 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Giới tính</label>
-                                <input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
-						        <input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%"><span>Nữ</span>
+                                <input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="checked" style="width: 10%">						        <input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
 
                             </div>
                             <div class="form-group">
@@ -94,7 +93,7 @@
                                 }
                             </script>
   													<span style="font-size: 15px;  font-weight: bold;" class="right" id='message'></span>
-                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng ký</button>
+                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin"></button>
 
                         </form>
                           

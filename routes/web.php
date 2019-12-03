@@ -144,4 +144,9 @@ Route::get('/cate_product',[
 	'as'=>'cate_product',
 	'uses'=>'PageController@crudCate'
 ]);
+//prodct
 
+Route::post('/add_product',[
+	'as'=>'add_product',
+	'uses'=>'PageController@createProduct'
+]);

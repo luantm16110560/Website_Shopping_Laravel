@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -45,15 +45,20 @@
 
                 </div>
                 <div class="col-md-9">
+                    @if(Session::has('thongbao'))
+                    <div class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('thongbao')}}</div>
+                    @endif
                     <h3 style="text-align: left;font-size: 20px">Đăng sản phẩm </h3>
-                    <form>
+                    <form action="{{route('add_product')}}" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="col-sm-4">
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                             <img id="myimage" src="source/image/product/no-image.jpg" alt="your image" style="width:280px;height:280px" />
-                            <input style="display:none;" type='file' id="imageInput" accept="image/*" />
+                            <input style="display:none;" type='file' id="imageInput" name="imageInput" accept="
+                            image/*" />
                             <br>
                             <div style="text-align: center">
-                                <button class="btn btn-primary" id="button" name="button" onclick="thisFileUpload();">Upload</button>
+                                <input type="button" id="button" name="button" class="btn btn-primary" value="Hình" onclick="document.getElementById('imageInput').click();" />
                             </div>
                             <script>
                                 function readURL(input) {
@@ -70,23 +75,16 @@
                                 $("#imageInput").change(function() {
                                     readURL(this);
                                 });
-
-                                function thisFileUpload() {
-                                    document.getElementById("imageInput").click();
-                                };
                             </script>
                             <br>
                             <br>
-
                             <div class="col-sm-4">
                                 <div>
-                                    <img id="output_image" style="width:90px;height:90px" />
-                                    <input style="display:none;" type="file" accept="image/*" id="imageInput1" onchange="preview_image(event)">
+                                    <img id="output_image" style="width:100px;height:100px" />
+                                    <input style="display:none;" type="file"  accept="image/*" id="imageInput1" name="imageInput1" onchange="preview_image(event)">
                                 </div>
                                 <br>
-                                <div style="text-align: center">
-                                    <button class="btn btn-primary" id="button1" name="button1" onclick="thisFileUpload1();">Hình 1</button>
-                                </div>
+                                <input type="button" class="btn btn-primary" id="button1" name="button1" value="Hình 1" onclick="document.getElementById('imageInput1').click();" />
                                 <script type='text/javascript'>
                                     function preview_image(event) {
                                         var reader = new FileReader();
@@ -96,23 +94,17 @@
                                         }
                                         reader.readAsDataURL(event.target.files[0]);
                                     }
-
-                                    function thisFileUpload1() {
-                                        document.getElementById("imageInput1").click();
-                                    };
                                 </script>
                             </div>
 
                             <div class="col-sm-4">
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                                 <div>
-                                    <img id="myid" style="width:90px;height:90px" />
-                                    <input accept="image/*" style="display:none;" type='file' id="demo" />
+                                    <img id="myid" style="width:100px;height:100px" />
+                                    <input style="display:none;" type='file' id="demo" name="imageInput2"  accept="image/*"/>
                                 </div>
                                 <br>
-                                <div style="text-align: center">
-                                    <button class="btn btn-primary" id="button2" name="button2" onclick="thisFileUpload2();">Hình 2</button>
-                                </div>
+                                <input type="button" class="btn btn-primary" id="button2" name="button2" value="Hình 2" onclick="document.getElementById('demo').click();" />
                                 <script>
                                     function display(input) {
                                         if (input.files && input.files[0]) {
@@ -143,7 +135,7 @@
                                 <h4 class="right" style="margin-left: 75px">Tên sản phẩm</h4>
                             </div>
                             <div class="col-sm-7">
-                                <input type="text" style="height: 25px;width: 300px; margin-top: 5px" required></input>
+                                <input type="text" name="name" style="height: 25px;width: 300px; margin-top: 5px" required ></input>
                             </div>
                         </div>
                         <div class="col-sm-4"> </div>
@@ -152,8 +144,8 @@
                                 <h4 class="right" style="margin-left: 75px">Giới tính</h4>
                             </div>
                             <div class="col-sm-7" style="margin-top: 5px">
-                                <input type="radio" name="gender" required>Nam
-                                <input type="radio" name="gender">Nữ
+                                <input type="radio" name="gender" required  value="Nam">Nam
+                                <input type="radio" name="gender" value="Nữ">Nữ
                             </div>
                         </div>
                         <div class="col-sm-4"> </div>
@@ -164,7 +156,7 @@
                             <div class="col-sm-7" style="margin-top: 5px; height: 25px;width: 300px">
                                 <select class="form-control" name="select">
                                     @foreach ($type as $t)
-                                    <option>{{$t->name}}</option>
+                                    <option value="{{$t->id}}">{{$t->name}}</option>                
                                     @endforeach
                                 </select>
                             </div>
@@ -175,8 +167,9 @@
                                 <h4 class="right" style="margin-left: 75px">Giá sản phẩm</h4>
                             </div>
                             <div class="col-sm-7" style="margin-top: 5px">
-                                <input type="number"  name="txtGiaGoc" placeholder="Giá gốc" required>
-                                <input type="number" min=0 value="0" name="txtGiaKm" placeholder="Giá khuyến mãi">
+                                <input type="number"  name="unit_price"  required ><label>Giá gốc</label>
+                                <input type="number" min=0  name="promotion_price" value="0"><label>Giá khuyến mãi</label>
+                             
                             </div>
                         </div>
                         <div class="col-sm-4"> </div>
@@ -192,18 +185,12 @@
                                 </script>
                             </div>
                         </div>
-
-                        {{--
-                        <div class="col-sm-9" style="margin-top: 5px; height: 100px;width: 380px">
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-
-                        </div>
-                        <div class="col-sm-3"></div> --}}
-
+                      
+                             
+                                <input  type="submit" id="button" name="button" class="btn btn-success" value="Lưu"  style="width: 450px;height: 50px ;text-align: center"/>
+                    
                     </form>
+                   
                 </div>
             </div>
         </div>
