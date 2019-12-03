@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="center">
-    <h6 class="inner-title">Đăng ký</h6>
+    <h6 class="inner-title"><strong>Đăng ký tài khoản</strong></h6>
 </div>
 
 <div class="container">
@@ -46,16 +46,13 @@
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Giới tính</label>
-                        
-                                <select style="width: 55px;height: 37px;font-weight: bold" name="gender" style="font-weight: bold">
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-                                </select>
+                                <input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
+						        <input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%"><span>Nữ</span>
 
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Điện thoại</label>
-                                <input type="number" min="0" class="form-control form-control-lg rounded-0" name="phone" required style="font-weight: bold">
+                                <input type="text" min="0" class="form-control form-control-lg rounded-0" name="phone" required style="font-weight: bold">
 
                             </div>
                             <div class="form-group">

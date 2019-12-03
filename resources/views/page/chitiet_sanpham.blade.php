@@ -31,14 +31,14 @@
                 </div>
               @endif --}}
             <p class="single-item-title"><h2>{{$sanpham->name}}<h2></p>
-               <strong style="font-size: 20px"> Mã sản phẩm:</strong>
-              <p class="single-item-title" style="color: red;font-weight: bold">{{$sanpham->id}}</p>
+               
+              <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sanpham->id}}</p>
               <p class="single-item-price" style="font-size: 18px">
                   @if($sanpham->promotion_price !=0)
                     <span class="flash-del">{{number_format($sanpham->unit_price)}} VND</span>
                     <span class="flash-sale">{{number_format($sanpham->promotion_price)}} VND</span>
                   @else
-                    <span>{{number_format($sanpham->unit_price)}} VND</span>
+                    <span class="flash-sale">{{number_format($sanpham->unit_price)}} VND</span>
                   @endif
               </p>
             </div>
@@ -66,14 +66,14 @@
                 <option value="42">42</option>
                 <option value="43">43</option>
               </select>
-              <select class="wc-select" name="color">
+              {{-- <select class="wc-select" name="color">
                 <option>Màu sắc</option>
                 <option value="Red">Red</option>
                 <option value="Green">Green</option>
                 <option value="Yellow">Yellow</option>
                 <option value="Black">Black</option>
                 <option value="White">White</option>
-              </select>
+              </select> --}}
               {{-- <select class="wc-select" name="color">
                 <option>Số lượng</option>
                 <option value="1">1</option>
@@ -90,22 +90,33 @@
                  opacity: 1;
                 }
               </style>
-              <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+              @if(Auth::check())
+                <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+              @else 
+              <a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>
+              @endif
               <div class="clearfix"></div>
             </div>
           </div>
         </div>
-
+        {{-- <div class="space40">&nbsp;</div>
+        <div class="woocommerce-tabs">
+            <label href=""><i>Bảng hướng dẫn đo size giày<i></label>
+              <img src="source\image\size.png" alt="">
+        </div> --}}
         <div class="space40">&nbsp;</div>
         <div class="woocommerce-tabs">
           <ul class="tabs">
-            <li><a href="#tab-description">Mô tả:</a></li>
+            <li><a href="#tab-description">Mô tả</a></li>
+            <li><a href="#tab-image">Hướng dẫn chọn size giày</a></li>
             {{-- <li><a href="#tab-reviews">Reviews (0)</a></li> --}}
           </ul>
-
           <div class="panel" id="tab-description">
             <p>{{$sanpham->description}}</p>
           </div>
+          <div class="panel" id="tab-image">
+              <img src="source\image\size.png" alt="">
+            </div>
           {{-- <div class="panel" id="tab-reviews">
             <p>No Reviews</p>
           </div> --}}
@@ -131,17 +142,18 @@
                 </div>
                 <div class="single-item-body">
                 <p class="single-item-title">{{$sptt->name}}</p>
+                <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sptt->id}}</p>
                   <p class="single-item-price" style="font-size: 18px">
                       @if($sptt->promotion_price !=0)
                         <span class="flash-del">{{number_format($sptt->unit_price)}} VND</span>
                         <span class="flash-sale">{{number_format($sptt->promotion_price)}} VND</span>
                       @else
-                        <span>{{number_format($sptt->unit_price)}} VND</span>
+                        <span class="flash-sale">{{number_format($sptt->unit_price)}} VND</span>
                   @endif
                   </p>
                 </div>
                 <div class="single-item-caption">
-                  <a class="add-to-cart pull-left" href="{{route('addtocard',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                  <a class="add-to-cart pull-left" href="{{route('product-detail',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
                   <a class="beta-btn primary" href="{{route('product-detail',$sptt->id)}}">Chi tiết sản phẩm <i class="fa fa-chevron-right"></i></a>
                   <div class="clearfix"></div>
                 </div>
@@ -152,7 +164,7 @@
           <div class="row">{{$sp_tuongtu->links()}}</div>
         </div> <!-- .beta-products-list -->
       </div>
-      <div class="col-sm-3 aside">
+      {{-- <div class="col-sm-3 aside">
         <div class="widget">
           <h3 class="widget-title">Best Sellers</h3>
           <div class="widget-body">
@@ -222,7 +234,7 @@
               </div>
             </div>
           </div>
-        </div> <!-- best sellers widget -->
+        </div> <!-- best sellers widget --> --}}
       </div>
     </div>
   </div> <!-- #content -->

@@ -76,8 +76,8 @@
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$p->name}}</p>
-                                        <strong> Mã sản phẩm:</strong>
-                                        <p class="single-item-title" style="color: red;font-weight: bold">{{$p->id}}</p>
+                                        
+                                        <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:     </strong>{{$p->id}}</p>
                                         <p class="single-item-price" style="font-size: 18px ">
                                             @if($p->promotion_price==0)
                                             <span class="flash-sale">{{number_format($p->unit_price)}} VND</span> @else
@@ -86,7 +86,7 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{route('addtocard',$p->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="add-to-cart pull-left" href="{{route('product-detail',$p->id)}}"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('product-detail',$p->id)}}">Chi tiết sản phẩm <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
