@@ -26,8 +26,8 @@ class PageController extends Controller
    }
    public function getProductType($type)
    {
-       $type_product=Product::where('id_type',$type)->get();
-       $product_other=Product::where('id_type','<>',$type)->paginate(3);
+       $type_product=Product::where([['id_type',$type], ['status','=',1],])->get();
+       $product_other=Product::where([['id_type','<>',$type],['status','=',1],])->paginate(3);
        $loai=Type_Product::all();
        $loai_sp=Type_Product::where('id',$type)->first();
        return view('page.loai_sanpham')->with("type_product",$type_product)->with("product_other",$product_other)->with("loai",$loai)->with("loai_sp",$loai_sp);
@@ -35,7 +35,7 @@ class PageController extends Controller
    public function getProductDetail(Request $res)
    {
         $sanpham=Product::where('id',$res->id)->first();
-        $sp_tuongtu=Product::where('id_type',$sanpham->id_type)->paginate(2);
+        $sp_tuongtu=Product::where([['id_type',$sanpham->id_type],['id','<>',$sanpham->id],])->paginate(2);
         return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu);
    }
    public function getContact()
