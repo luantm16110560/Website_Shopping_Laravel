@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Slide;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
 use DB;
 use App\Product;
 use App\Type_Product;
@@ -15,6 +16,7 @@ use Session;
 use Hash;
 use Auth;
 use Response;
+use Carbon;
 class PageController extends Controller
 {
    public function getIndex()
@@ -242,7 +244,8 @@ class PageController extends Controller
    //
    public function uploadProduct()
    {
-       return view('page.upload_product');
+    $type = Type_Product::where('status','=',1)->get();
+       return view('page.upload_product')->with('type',$type);
    }
    public function crudProduct()
    {
@@ -255,6 +258,88 @@ class PageController extends Controller
    public function crudCate()
    {
        return view('page.crud_cate');
+   }
+   public function createProduct(Request $req)
+   {
+       $product = new Product();
+       $product->name=$req->name;
+       $product->gender=$req->gender;
+       $product->id_type=$req->select;
+       $product->description=$req->description;
+       $product->status=1;
+       $product->isNew=1;
+       $product->unit_price=$req->unit_price;
+       $product->promotion_price=$req->promotion_price;
+
+      
+
+       if($req->hasFile('imageInput'))// input type name=""
+       {
+           $myDate = Carbon\Carbon::now()->toDateString();
+
+           $myTime =  Carbon\Carbon::now()->hour."h_".Carbon\Carbon::now()->minute."m_".Carbon\Carbon::now()->second."s";
+
+           $myFile=$req->imageInput->getClientOriginalName(); //input type name=""
+
+           $filename =$myDate."_".$myTime."_".$myFile;
+       
+           $image= $req->file('imageInput');
+           $image_resize = Image::make($image->getRealPath());
+           $image_resize->resize(270, 320);
+           $product->image=$filename;
+           $image_resize->save(public_path('source/image/product/'.$filename));
+       }
+       else
+       {
+         $product->image="defaul_product.png";
+       }
+       if($req->hasFile('imageInput1'))// input type name=""
+       {
+           $myDate = Carbon\Carbon::now()->toDateString();
+
+           $myTime =  Carbon\Carbon::now()->hour."h_".Carbon\Carbon::now()->minute."m_".Carbon\Carbon::now()->second."s";
+
+           $myFile=$req->imageInput1->getClientOriginalName(); //input type name=""
+
+           $filename =$myDate."_".$myTime."_".$myFile;;
+       
+           $image= $req->file('imageInput1');
+           $image_resize = Image::make($image->getRealPath());
+           $image_resize->resize(90, 90);
+           $product->img1=$filename;
+           $image_resize->save(public_path('source/image/product/'.$filename));
+       }
+       else
+       {
+           echo "error";
+       }
+       if($req->hasFile('imageInput2'))// input type name=""
+       {
+           $myDate = Carbon\Carbon::now()->toDateString();
+
+           $myTime =  Carbon\Carbon::now()->hour."h_".Carbon\Carbon::now()->minute."m_".Carbon\Carbon::now()->second."s";
+
+           $myFile=$req->imageInput2->getClientOriginalName(); //input type name=""
+
+           $filename =$myDate."_".$myTime."_".$myFile;;
+       
+           $image= $req->file('imageInput2');
+           $image_resize = Image::make($image->getRealPath());
+           $image_resize->resize(90, 90);
+           $product->img2=$filename;
+           $image_resize->save(public_path('source/image/product/'.$filename));
+       }
+       else
+       {
+           echo "error";
+       }
+        $product->amount=1;
+        $product->save();
+        return redirect()->back()->with('thongbao','Thêm sản phẩm thành công');
+       
+      
+       
+
    }
    
 
