@@ -28,7 +28,7 @@ class Cart
 		$giohang['qty']++;
 
 		$giohang['price'] = $item->unit_price * $giohang['qty'];
-		$giohang['size']=36;
+		$giohang['size']=$item->size;
 		$giohang['price2'] = $item->promotion_price * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty++;

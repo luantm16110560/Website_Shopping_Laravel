@@ -33,12 +33,12 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="img-hover-zoom">
-                          <img  src="source/image/product/{{$sanpham->img1}}" alt="">
+                          <img  src="source/image/product/{{$sanpham->img2}}" alt="">
                           </div>
                       </div>
                       <div class="col-sm-4">
                           <div class="img-hover-zoom">
-                              <img  src="source/image/product/{{$sanpham->img1}}" alt="">
+                              <img  src="source/image/product/{{$sanpham->img3}}" alt="">
                               </div>
                     </div>
                           
@@ -93,51 +93,15 @@
             <div class="space20">&nbsp;</div>
 
             <div class="single-item-desc">
-            <p>Còn: {{$sanpham->amount}} sản phẩm</p>
+            <p>@if($sanpham->amount==0) <div class="ribbon">Hết hàng</div> @else {{$sanpham->amount}} sản phẩm @endif</p>
             </div>
             <div class="space20">&nbsp;</div>
-
-            <p>Lựa chọn:</p>
+            <div class="space20">&nbsp;</div>
+          
             <div class="single-item-options">
-
-              <select class="wc-select" name="size">
-                <option>Kích cỡ:</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-              </select>
-              {{-- <select class="wc-select" name="color">
-                <option>Màu sắc</option>
-                <option value="Red">Red</option>
-                <option value="Green">Green</option>
-                <option value="Yellow">Yellow</option>
-                <option value="Black">Black</option>
-                <option value="White">White</option>
-              </select> --}}
-              {{-- <select class="wc-select" name="color">
-                <option>Số lượng</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select> --}}
-              <label style="margin-top:5px">Số lượng &nbsp;</label> 
-
-              <input type="number" min="1" name="number" style="height: 34px" value="1" />
-              <style>
-                input[type=number]::-webkit-inner-spin-button {
-                 opacity: 1;
-                }
-              </style>
+              <p>Size:  {{$sanpham->size}}</p>
               @if(Auth::check())
-                <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+              <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
               @else 
               <a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>
               @endif

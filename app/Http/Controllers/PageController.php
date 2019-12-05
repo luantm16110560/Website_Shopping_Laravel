@@ -94,9 +94,7 @@ class PageController extends Controller
        $bill=new Bill;
        $bill->id_user=$req->id_customer;
        $bill->date_order=date('Y-m-d');
-    //    $bill->total=$cart->totalPrice;
-       if($cart['price2']==0){$bill->total=$value['price']*$req->Qty;}
-       else{$bill->total=$value['price2']**$req->Qty;}
+       $bill->total=$cart->totalPrice;
        $bill->payment=$req->payment_method;
        $bill->note=$req->notes;
        $bill->status=1;
@@ -105,11 +103,11 @@ class PageController extends Controller
         $bill_detail=new Bill_Detail;
         $bill_detail->id_bill=$bill->id;
         $bill_detail->id_product=$key;
-        $bill_detail->amount=$req->Qty;
-        if($value['price2']==0){$bill_detail->unit_price=$value['price'];}
-        else{$bill_detail->unit_price=$value['price2'];}
+        $bill_detail->amount=$value['qty'];
+        if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
+        else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
         $bill_detail->status=1;
-        $bill_detail->size=$req->size;
+        $bill_detail->size=$value['size'];
         $bill_detail->save();
        }
        Session::forget('cart');

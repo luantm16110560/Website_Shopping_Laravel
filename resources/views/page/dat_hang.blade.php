@@ -103,6 +103,7 @@
 												   </td>
 												</tr>
 											 </table>
+											 <label>Size:</label><i>   {{$cart['size']}}</i>
 											{{-- <span class="color-gray your-order-info">Đơn giá:@if($cart['price2']==0) {{number_format($cart['price'])}}@else	{{number_format($cart['price2'])}}@endif	VND</span>
 											<span class="color-gray your-order-info">Số lượng: {{$cart['qty']}}</span> --}}
 										</div>

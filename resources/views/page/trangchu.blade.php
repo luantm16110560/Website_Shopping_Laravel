@@ -77,7 +77,7 @@
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$p->name}}</p>
                                         
-                                        <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:     </strong>{{$p->id}}</p>
+                                        {{-- <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:     </strong>{{$p->id}}</p> --}}
                                         <p class="single-item-price" style="font-size: 18px ">
                                             @if($p->promotion_price==0)
                                             <span class="flash-sale">{{number_format($p->unit_price)}} VND</span> @else
