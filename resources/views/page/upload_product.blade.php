@@ -49,7 +49,7 @@
                     <div class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('thongbao')}}</div>
                     @endif
                     <h3 style="text-align: left;font-size: 20px">Đăng sản phẩm </h3>
-                    <form action="{{route('add_product')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('add_product')}}" method="post" enctype="multipart/form-data"  autocomplete="off">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="col-sm-4">
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -58,7 +58,7 @@
                             image/*" />
                             <br>
                             <div style="text-align: center">
-                                <input type="button" id="button" name="button" class="btn btn-primary" value="Hình" onclick="document.getElementById('imageInput').click();" />
+                                <input type="button" id="button" name="button" class="btn btn-primary" value="Hình"  onclick="document.getElementById('imageInput').click();" />
                             </div>
                             <script>
                                 function readURL(input) {
@@ -78,9 +78,9 @@
                             </script>
                             <br>
                             <br>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <div>
-                                    <img id="output_image" style="width:100px;height:100px" />
+                                    <img id="output_image" style="width:95px;height:95px" />
                                     <input style="display:none;" type="file"  accept="image/*" id="imageInput1" name="imageInput1" onchange="preview_image(event)">
                                 </div>
                                 <br>
@@ -96,11 +96,13 @@
                                     }
                                 </script>
                             </div>
+                            <div class="col-sm-1">
+                            </div>
 
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                                 <div>
-                                    <img id="myid" style="width:100px;height:100px" />
+                                    <img id="myid" style="width:95px;height:95px" />
                                     <input style="display:none;" type='file' id="demo" name="imageInput2"  accept="image/*"/>
                                 </div>
                                 <br>
@@ -125,10 +127,11 @@
                                     }
                                 </script>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-1">
+                            </div>
                                
                                   
-                            </div>
+                           
                         </div>
                         <div class="col-sm-8">
                             <div class="col-sm-5">
@@ -168,7 +171,7 @@
                             </div>
                             <div class="col-sm-7" style="margin-top: 5px">
                                 <input type="number"  name="unit_price"  required ><label>Giá gốc</label>
-                                <input type="number" min=0  name="promotion_price" value="0"><label>Giá khuyến mãi</label>
+                                <input type="number"  min=0  name="promotion_price" value="0"><label>Giá khuyến mãi</label>
                              
                             </div>
                         </div>

@@ -336,12 +336,5 @@ class PageController extends Controller
         $product->amount=1;
         $product->save();
         return redirect()->back()->with('thongbao','Thêm sản phẩm thành công');
-       
-      
-       
-
-   }
-   
-
-   
+       }
 }

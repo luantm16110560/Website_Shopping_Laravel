@@ -1,37 +1,83 @@
-@extends('master')
-@section('content')
+@extends('master') @section('content')
 <div class="inner-header">
-  <div class="container">
-    <div class="pull-left">
-    <h6 class="inner-title">Sản phẩm {{$sanpham->name}}</h6>
+    <div class="container">
+        <div class="pull-left">
+            <h6 class="inner-title">Sản phẩm {{$sanpham->name}}</h6>
+        </div>
+        <div class="pull-right">
+            <div class="beta-breadcrumb font-large">
+                <a href="{{route("home-page")}}">Trang chủ</a> / <span>Thông tin chi tiết sản phẩm</span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="pull-right">
-      <div class="beta-breadcrumb font-large">
-        <a href="{{route("home-page")}}">Trang chủ</a> / <span>Thông tin chi tiết sản phẩm</span>
-      </div>
-    </div>
-    <div class="clearfix"></div>
-  </div>
 </div>
 
 <div class="container">
-  <div id="content">
-    <div class="row">
-      <div class="col-sm-9">
-
+    <div id="content">
         <div class="row">
-          <div class="col-sm-4">
-          <img src="source/image/product/{{$sanpham->image}}" alt="">
-          </div>
-          <div class="col-sm-8">
-            <div class="single-item-body">
-              {{-- @if($sanpham->promotion_price!=0)
-                <div class="ribbon-wrapper">
-                  <div class="ribbon ">Sale</div>
-                </div>
-              @endif --}}
-            <p class="single-item-title"><h2>{{$sanpham->name}}<h2></p>
-               
+            <div class="col-sm-9">
+
+                <div class="row">
+                    <div class="col-sm-4">
+
+                        <img src="source/image/product/{{$sanpham->image}}" alt="">
+                      <br>
+                      <br>
+                      <br>
+                      
+                          <div class="col-sm-4" style="margin-left: -18px" >
+                              <div class="img-hover-zoom">
+                            <img  src="source/image/product/{{$sanpham->img1}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="img-hover-zoom">
+                          <img  src="source/image/product/{{$sanpham->img1}}" alt="">
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <div class="img-hover-zoom">
+                              <img  src="source/image/product/{{$sanpham->img1}}" alt="">
+                              </div>
+                    </div>
+                          
+                      
+                   
+                        <style>
+                            /* [1] The container */
+                            
+                            .img-hover-zoom {
+                                width:150%;
+                                height: 150%; 
+                                
+                                /* [1.1] Set it as per your need */
+                                overflow: hidden;
+                                /* [1.2] Hide the overflowing of child elements */
+                            }
+                            /* [2] Transition property for smooth transformation of images */
+                            
+                            .img-hover-zoom img {
+                                transition: transform .5s ease;
+                            }
+                            /* [3] Finally, transforming the image when container gets hovered */
+                            
+                            .img-hover-zoom:hover img {
+                                transform: scale(2);
+                            }
+                        </style>
+
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="single-item-body">
+                            {{-- @if($sanpham->promotion_price!=0)
+                            <div class="ribbon-wrapper">
+                                <div class="ribbon ">Sale</div>
+                            </div>
+                            @endif --}}
+                            <p class="single-item-title">
+                                <h2>{{$sanpham->name}}<h2></p>
+
               <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sanpham->id}}</p>
               <p class="single-item-price" style="font-size: 18px">
                   @if($sanpham->promotion_price !=0)
@@ -53,7 +99,7 @@
 
             <p>Lựa chọn:</p>
             <div class="single-item-options">
-              
+
               <select class="wc-select" name="size">
                 <option>Kích cỡ:</option>
                 <option value="35">35</option>
@@ -83,7 +129,7 @@
                 <option value="5">5</option>
               </select> --}}
               <label style="margin-top:5px">Số lượng &nbsp;</label> 
-            
+
               <input type="number" min="1" name="number" style="height: 34px" value="1" />
               <style>
                 input[type=number]::-webkit-inner-spin-button {
