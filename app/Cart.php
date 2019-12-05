@@ -19,7 +19,7 @@ class Cart
 	}
 
 	public function add($item, $id){
-		$giohang = ['qty'=>0, 'price' => $item->unit_price,'price2' => $item->promotion_price, 'item' => $item];
+		$giohang = ['qty'=>0, 'price' => $item->unit_price,'price2' => $item->promotion_price, 'item' => $item,'size'=>35];
 		if($this->items){
 			if(array_key_exists($id, $this->items)){
 				$giohang = $this->items[$id];
@@ -28,6 +28,7 @@ class Cart
 		$giohang['qty']++;
 
 		$giohang['price'] = $item->unit_price * $giohang['qty'];
+		$giohang['size']=36;
 		$giohang['price2'] = $item->promotion_price * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty++;
