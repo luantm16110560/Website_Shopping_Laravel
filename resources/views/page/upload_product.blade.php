@@ -181,7 +181,7 @@
                                 <h4 class="right" style="margin-left: 75px">Size</h4>
                             </div>
                             <div class="col-sm-7" style="margin-top: 5px">
-                                <input type="number"  name="size"  required ><label>size</label>
+                                <input type="number"  name="size" min=35 max=43 value="35"  required  ><label>size</label>
                         
                              
                             </div>
