@@ -7,7 +7,7 @@
     </div> --}}
     <div class="pull-left">
       <div class="beta-breadcrumb font-large">
-          <h6><a href="{{route('home-page')}}">Trang chủ</a> / <a>Loại sản phẩm   {{$loai_sp->name}}</div></a><h6>
+          <h6><a href="{{route('home-page')}}">Trang chủ</a> / <span>Loại sản phẩm   {{$loai_sp->name}}</span><h6>
       </div>
     </div>
     <div class="clearfix"></div>
