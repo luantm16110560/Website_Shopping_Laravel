@@ -174,69 +174,33 @@
           <div class="row">{{$sp_tuongtu->links()}}</div>
         </div> <!-- .beta-products-list -->
       </div>
-      {{-- <div class="col-sm-3 aside">
+      <div class="col-sm-3 aside">
         <div class="widget">
-          <h3 class="widget-title">Best Sellers</h3>
+          <h3 class="widget-title">Flash Sale</h3>
           <div class="widget-body">
             <div class="beta-sales beta-lists">
+              @foreach($sp_sale as $sps)
               <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+                <div class="ribbon-wrapper">
+                      <div class="ribbon ">Sale</div>
+                </div>
+                <a class="pull-left"  href="{{route('product-detail',$sps->id)}}"><img src="source/image/product/{{$sps->image}}" alt="" height="250px"></a>
                 <div class="media-body">
-                  Sample Woman Top
-                  <span class="beta-sales-price">$34.55</span>
+                  <a href="{{route('product-detail',$sps->id)}}"><p class="single-item-title">{{$sps->name}}</p></a>
+                  <a href="{{route('product-detail',$sps->id)}}"><span class="beta-sales-price">{{number_format($sps->unit_price)}} VND</span></a>
                 </div>
               </div>
-              <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-                <div class="media-body">
-                  Sample Woman Top
-                  <span class="beta-sales-price">$34.55</span>
-                </div>
-              </div>
-              <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-                <div class="media-body">
-                  Sample Woman Top
-                  <span class="beta-sales-price">$34.55</span>
-                </div>
-              </div>
-              <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-                <div class="media-body">
-                  Sample Woman Top
-                  <span class="beta-sales-price">$34.55</span>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
+          <div class="row">{{$sp_sale->links()}}</div>
         </div> <!-- best sellers widget -->
-        <div class="widget">
+        {{-- <div class="widget">
           <h3 class="widget-title">New Products</h3>
           <div class="widget-body">
             <div class="beta-sales beta-lists">
               <div class="media beta-sales-item">
                 <a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/1.png" alt=""></a>
-                <div class="media-body">
-                  Sample Woman Top
-                  <span class="beta-sales-price">$34.55</span>
-                </div>
-              </div>
-              <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-                <div class="media-body">
-                  Sample Woman Top
-                  <span class="beta-sales-price">$34.55</span>
-                </div>
-              </div>
-              <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/3.png" alt=""></a>
-                <div class="media-body">
-                  Sample Woman Top
-                  <span class="beta-sales-price">$34.55</span>
-                </div>
-              </div>
-              <div class="media beta-sales-item">
-                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>

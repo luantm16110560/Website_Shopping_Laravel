@@ -38,7 +38,8 @@ class PageController extends Controller
    {
         $sanpham=Product::where('id',$res->id)->first();
         $sp_tuongtu=Product::where([['id_type',$sanpham->id_type],['id','<>',$sanpham->id],['status','=',1],])->paginate(3);
-        return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu);
+        $sp_sale=Product::where([['promotion_price','<>',0],['id','<>',$sanpham->id],['status','=',1],])->paginate(5);
+        return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu)->with("sp_sale",$sp_sale);
    }
    public function getContact()
    {
