@@ -336,6 +336,7 @@ class PageController extends Controller
            echo "error";
        }
         $product->amount=1;
+        $product->size=$req->size;
         $product->save();
         return redirect()->back()->with('thongbao','Thêm sản phẩm thành công');
     }

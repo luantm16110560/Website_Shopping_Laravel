@@ -171,10 +171,22 @@
                             </div>
                             <div class="col-sm-7" style="margin-top: 5px">
                                 <input type="number"  name="unit_price"  required ><label>Giá gốc</label>
-                                <input type="number"  min=0  name="promotion_price" value="0"><label>Giá khuyến mãi</label>
+                                <input type="number"  min=0  name="promotion_price" value="0"><label>Khuyến mãi</label>
                              
                             </div>
                         </div>
+                        <div class="col-sm-4"> </div>
+                        <div class="col-sm-8">
+                            <div class="col-sm-5">
+                                <h4 class="right" style="margin-left: 75px">Size</h4>
+                            </div>
+                            <div class="col-sm-7" style="margin-top: 5px">
+                                <input type="number"  name="size"  required ><label>size</label>
+                        
+                             
+                            </div>
+                        </div>
+                        
                         <div class="col-sm-4"> </div>
                         <div class="col-sm-8">
                             <div class="col-sm-5">
