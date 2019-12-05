@@ -37,7 +37,7 @@ class PageController extends Controller
    public function getProductDetail(Request $res)
    {
         $sanpham=Product::where('id',$res->id)->first();
-        $sp_tuongtu=Product::where([['id_type',$sanpham->id_type],['id','<>',$sanpham->id],])->paginate(3);
+        $sp_tuongtu=Product::where([['id_type',$sanpham->id_type],['id','<>',$sanpham->id],['status','=',1],])->paginate(3);
         return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu);
    }
    public function getContact()

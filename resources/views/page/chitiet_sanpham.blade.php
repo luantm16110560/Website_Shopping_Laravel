@@ -122,7 +122,7 @@
             {{-- <li><a href="#tab-reviews">Reviews (0)</a></li> --}}
           </ul>
           <div class="panel" id="tab-description">
-            <p>{{$sanpham->description}}</p>
+            @if($sanpham->description!=null)<p>{{$sanpham->description}}</p> @else <p>Chưa có thông tin mô tả cho sản phẩm</p> @endif
           </div>
           <div class="panel" id="tab-image">
               <img src="source\image\size.png" alt="">
