@@ -88,7 +88,7 @@
                               </td>
                            </tr>
                         </table>
-                        <label>Mô tả: </label>
+                        <label>Size:</label><i>   {{$productcart['size']}}</i>
                      </div>
                   </div>
                </div>

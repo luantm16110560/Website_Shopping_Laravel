@@ -28,8 +28,8 @@ class PageController extends Controller
    }
    public function getProductType($type)
    {
-       $type_product=Product::where('id_type',$type)->get();
-       $product_other=Product::where('id_type','<>',$type)->paginate(3);
+       $type_product=Product::where([['id_type',$type], ['status','=',1],])->get();
+       $product_other=Product::where([['id_type','<>',$type],['status','=',1],])->paginate(3);
        $loai=Type_Product::all();
        $loai_sp=Type_Product::where('id',$type)->first();
        return view('page.loai_sanpham')->with("type_product",$type_product)->with("product_other",$product_other)->with("loai",$loai)->with("loai_sp",$loai_sp);
@@ -37,7 +37,7 @@ class PageController extends Controller
    public function getProductDetail(Request $res)
    {
         $sanpham=Product::where('id',$res->id)->first();
-        $sp_tuongtu=Product::where('id_type',$sanpham->id_type)->paginate(2);
+        $sp_tuongtu=Product::where([['id_type',$sanpham->id_type],['id','<>',$sanpham->id],])->paginate(2);
         return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu);
    }
    public function getContact()
@@ -92,9 +92,11 @@ class PageController extends Controller
        $cart=Session::get('cart');
        
        $bill=new Bill;
-       $bill->id_customer=$user->id;
+       $bill->id_user=$req->id_customer;
        $bill->date_order=date('Y-m-d');
-       $bill->total=$cart->totalPrice;
+    //    $bill->total=$cart->totalPrice;
+       if($cart['price2']==0){$bill->total=$value['price']*$req->Qty;}
+       else{$bill->total=$value['price2']**$req->Qty;}
        $bill->payment=$req->payment_method;
        $bill->note=$req->notes;
        $bill->status=1;
@@ -103,11 +105,11 @@ class PageController extends Controller
         $bill_detail=new Bill_Detail;
         $bill_detail->id_bill=$bill->id;
         $bill_detail->id_product=$key;
-        $bill_detail->amount=$value['qty'];
-        if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
-        else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
+        $bill_detail->amount=$req->Qty;
+        if($value['price2']==0){$bill_detail->unit_price=$value['price'];}
+        else{$bill_detail->unit_price=$value['price2'];}
         $bill_detail->status=1;
-        $bill_detail->size=
+        $bill_detail->size=$req->size;
         $bill_detail->save();
        }
        Session::forget('cart');
@@ -336,5 +338,5 @@ class PageController extends Controller
         $product->amount=1;
         $product->save();
         return redirect()->back()->with('thongbao','Thêm sản phẩm thành công');
-       }
+    }
 }

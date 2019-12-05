@@ -22,21 +22,22 @@
 			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
 			<div class="row">
 				<div class="col-sm-6">
-					@if(Auth::check())
-					<h5><strong>Thông tin khách hàng</strong></h5>
+				<div class="your-order" >
+					<div class="your-order-head"><h5><strong>Thông tin khách hàng</strong></h5></div>
 					<div class="space20">&nbsp;</div>
-
+					<div class="your-order-body" style="padding: 0px 10px">
+					@if(Auth::check())
 					<div class="form-block">
 						<label for="name" style="font-size: 17px"><i>Họ tên</i></label>
 						<input type="text" class="form-control form-control-lg rounded-0" name="name" placeholder="Họ tên" value="{{Auth::user()->name}}" required>
 					</div>
 					@endif
-					{{-- <div class="form-block">
-						<label>Giới tính </label>
-						<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
-						<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
-									
-					</div> --}}
+					@if(Auth::check())
+					<div class="form-block" hidden="true">
+						<label for="name" style="font-size: 17px"><i>Mã Khách Hàng</i></label>
+						<input type="text" class="form-control form-control-lg rounded-0" name="id_customer" placeholder="Họ tên" value="{{Auth::user()->id}}" required>
+					</div>
+					@endif
 					@if(Auth::check())
 					<div class="form-block">
 						<label for="email" style="font-size: 17px"><i>Email</i></label>
@@ -59,6 +60,8 @@
 						<label for="notes" style="font-size: 17px"><i>Ghi chú</i></label>
 						<textarea id="notes" class="form-control form-control-lg rounded-0" name="notes" default="Hãy để lại ghi chú nếu cần thiết"></textarea>
 					</div>
+					</div>
+				</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="your-order">
@@ -84,14 +87,17 @@
 												</tr>
 												<tr>
 												   <td class="text-center">
-													  <span class="cart-item-amount">
-														{{$cart['qty']}}
+														<span class="cart-item-amount" >
+																{{$cart['qty']}}
+														{{-- <input type="number" name="Qty" id="sl"  class="text-left" width="1000px" min="1" value="{{$cart['qty']}}" onchange="myFunction();"> --}}
+
+														</span>
 												   </td>
 												   <td class="text-center">
 												   <p>X</p>
 												   </td>
 												   <td >
-												   <span class="cart-total-value"> 
+												   <span class="cart-total-value" id="dongia"> 
 													@if($cart['price2']==0) {{number_format($cart['price']/$cart['qty'])}}@else	{{number_format($cart['price2']/$cart['qty'])}}@endif	VND </span><br/>
 													<span class="flash-del">@if($cart['price2']!=0){{number_format($cart['price']/$cart['qty'])}}	VND @endif</span>
 												   </td>
@@ -110,7 +116,19 @@
 
 							<div class="your-order-item">
 								<div class="pull-left"><label class="your-order-f18">Tạm tính:</label></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif VND</h5></div>
+								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif   VND</h5></div>
+							{{-- <div class="pull-right"><input type="text" class="color-black" id="abc" value="{{number_format($totalPrice)}}">
+							@else 
+							<div class="pull-right"><input type="text" class="color-black" id="abc" value="0"> --}}
+							{{-- @endif VND</h5></div> --}}
+								{{-- <script>
+									function myFunction()
+									{
+									alert(document.getElementById("abc").value);
+									alert(document.getElementById("dongia").value);// sai cái này ok để lát t xem về cái... útna2yok =ôk
+									alert(document.getElementById("sl").value);
+									}
+								</script> --}}
 								<div class="clearfix"></div>
 							</div>
 							
@@ -158,7 +176,7 @@
 						<div class="your-order-body">
 							<ul class="payment_methods methods">
 								<li class="payment_method_bacs">
-									<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD" checked="checked" data-order_button_text="">
+									<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD(35000VND)" checked="checked" data-order_button_text="">
 									<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
 									<div class="payment_box payment_method_bacs" style="display: block;">
 										Đơn hàng sẽ được giao đến địa chỉ của bạn trong khoảng 3-5 ngày.
