@@ -2,12 +2,12 @@
 @section('content')
 <div class="inner-header">
 		<div class="container">
-			<div class="pull-left">
+			{{-- <div class="pull-left">
 				<h6 class="inner-title">Đặt hàng</h6>
-			</div>
-			<div class="pull-right">
+			</div> --}}
+			<div class="pull-left">
 				<div class="beta-breadcrumb">
-					<a href="{{route("home-page")}}">Trang chủ</a> / <span>Đặt hàng</span>
+					<h6><a href="{{route("home-page")}}">Trang chủ</a> / <a href="{{route('dathang')}}">Đặt hàng</a></h6>
 				</div>
 			</div>
 			<div class="clearfix"></div>

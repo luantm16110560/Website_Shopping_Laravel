@@ -107,8 +107,12 @@ class PageController extends Controller
         if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
         else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
         $bill_detail->status=1;
+        $product=Product::where('id',$key)->first();
+        $product->amount=$product->amount-$value['qty'];
         $bill_detail->size=$value['size'];
         $bill_detail->save();
+        $product->update();
+        
        }
        Session::forget('cart');
        return redirect()->back()->with('thongbao','Đặt hàng thành công');

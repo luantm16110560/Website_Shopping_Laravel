@@ -1,10 +1,10 @@
 @extends('master') @section('content')
 <div class="inner-header">
     <div class="container">
-        <div class="pull-left">
+        {{-- <div class="pull-left">
             <h6 class="inner-title">Sản phẩm {{$sanpham->name}}</h6>
-        </div>
-        <div class="pull-right">
+        </div> --}}
+        <div class="pull-left">
             <div class="beta-breadcrumb font-large">
                 <a href="{{route("home-page")}}">Trang chủ</a> / <span>Thông tin chi tiết sản phẩm</span>
             </div>
@@ -78,7 +78,7 @@
                             <p class="single-item-title">
                                 <h2>{{$sanpham->name}}<h2></p>
 
-              <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sanpham->id}}</p>
+              <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>TOMSHOES{{$sanpham->id}}</p>
               <p class="single-item-price" style="font-size: 18px">
                   @if($sanpham->promotion_price !=0)
                     <span class="flash-del">{{number_format($sanpham->unit_price)}} VND</span>
@@ -101,9 +101,9 @@
             <div class="single-item-options">
               <p>Size:  {{$sanpham->size}}</p>
               @if(Auth::check())
-              <a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+              @if($sanpham->amount!=0)<a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>@endif
               @else 
-              <a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>
+              @if($sanpham->amount!=0)<a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>@endif
               @endif
               <div class="clearfix"></div>
             </div>
@@ -152,7 +152,7 @@
                 </div>
                 <div class="single-item-body">
                 <p class="single-item-title">{{$sptt->name}}</p>
-                <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sptt->id}}</p>
+                <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>TOMSHOES{{$sptt->id}}</p>
                   <p class="single-item-price" style="font-size: 18px">
                       @if($sptt->promotion_price !=0)
                         <span class="flash-del">{{number_format($sptt->unit_price)}} VND</span>
