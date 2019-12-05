@@ -34,8 +34,8 @@
                     <ul class="nav navbar-nav">
                         {{--
                         <li class="active"><a href="#">Home</a></li> --}}
-                        <li><a href="{{route('gender_typeProdouct',['client_gender'=>'Nam','url'=>URL::current()])}}" style="color: blue;font-weight: bold;font-size: 25px;font-family: Open Sans">Nam</a></li>
-                        <li><a href="{{route('gender_typeProdouct',['client_gender'=>'Nữ','url'=>URL::current()])}}" style="color: pink;font-size: 25px;font-weight: bold">Nữ</a></li>
+                        {{-- <li><a href="{{route('gender_typeProdouct',['client_gender'=>'Nam','url'=>URL::current()])}}" style="color: blue;font-weight: bold;font-size: 25px;font-family: Open Sans">Nam</a></li>
+                        <li><a href="{{route('gender_typeProdouct',['client_gender'=>'Nữ','url'=>URL::current()])}}" style="color: pink;font-size: 25px;font-weight: bold">Nữ</a></li> --}}
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -75,13 +75,13 @@
                     </div>
                     <div class="single-item-body">
                       <p class="single-item-title">{{$product->name}}</p>
-                      <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$product->id}}</p>
+                      {{-- <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$product->id}}</p> --}}
                       <p class="single-item-price" style="font-size: 18px ">
                           @if($product->promotion_price !=0)
                             <span class="flash-del">{{number_format($product->unit_price)}} VND</span>
                             <span class="flash-sale">{{number_format($product->promotion_price)}} VND</span>
                           @else
-                          <span>{{number_format($product->unit_price)}} VND</span>
+                          <span class="flash-sale">{{number_format($product->unit_price)}} VND</span>
                           @endif
                       </p>
                     </div>
@@ -120,13 +120,13 @@
                     </div>
                     <div class="single-item-body">
                       <p class="single-item-title">{{$sp->name}}</p>
-                      <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sp->id}}</p>
+                      {{-- <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:   </strong>{{$sp->id}}</p> --}}
                       <p class="single-item-price" style="font-size: 18px ">
                           @if($sp->promotion_price !=0)
                             <span class="flash-del">{{number_format($sp->unit_price)}} VND</span>
                             <span class="flash-sale">{{number_format($sp->promotion_price)}} VND</span>
                           @else
-                          <span>{{number_format($sp->unit_price)}} VND</span>
+                          <span class="flash-sale">{{number_format($sp->unit_price)}} VND</span>
                           @endif
                       </p>
                     </div>
