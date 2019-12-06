@@ -108,7 +108,7 @@ class PageController extends Controller
         $user=User::where('id',Auth::user()->id)->first();
         $user->name=$req->name;
         $user->email=$req->email;
-        $user->phone-$req->phone;
+        $user->phone=$req->phone;
         $user->address=$req->address;
         $user->update();
         return redirect()->back();
