@@ -127,7 +127,9 @@ class PageController extends Controller
        
        $bill=new Bill;
        $bill->id_user=$req->id_customer;
-       $bill->date_order=date('Y-m-d h:i:s',time());
+       $now = new \DateTime();
+       $now=date('Y-m-d h:i:s');
+       $bill->date_order=$now;
        $bill->total=$cart->totalPrice;
        $bill->payment=$req->payment_method;
        $bill->note=$req->notes;
@@ -277,8 +279,8 @@ class PageController extends Controller
         ['status', '=', 1],
         ['isFinish', '<', 2],
       
-        ])->get();
-        // ->paginate(4);
+        ])
+        ->paginate(8);
        return view('page.manage_bill')->with('bill',$bill);
    }
    public function manageUser()

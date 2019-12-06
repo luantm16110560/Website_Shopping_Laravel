@@ -44,10 +44,12 @@
 
             </div>
             <div class="col-md-9">
+
                 @if(Session::has('thongbao'))
                 <div class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('thongbao')}}</div>
                 @endif
-                <h3 style="text-align: left;font-size: 20px">Đăng sản phẩm </h3>
+                   <h2 style="text-align: center">Đăng sản phẩm mới</h2>
+        
                 <form action="{{route('add_product')}}" method="post" enctype="multipart/form-data" autocomplete="off">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="col-sm-4">
