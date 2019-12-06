@@ -98,7 +98,7 @@
                   <div class="clearfix"></div>
                   <div class="center">
                      <div class="space10">&nbsp;</div>
-                     <a href="{{route("dathang")}}" class="beta-btn primary text-center" style="background: #000099; "><strong style="color: white">Tiến hành thanh toán</strong> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        @if($productcart['qty']>$productcart['item']['amount']) <i><strong>Sản phẩm tạm hết hàng</strong><i> @else<a href="{{route("dathang")}}" class="beta-btn primary text-center" style="background: #000099; "><strong style="color: white">Tiến hành thanh toán</strong> <i class="fa fa-chevron-right" aria-hidden="true"></i></a> @endif
                   </div>
                </div>
             </div>

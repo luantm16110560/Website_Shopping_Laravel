@@ -264,6 +264,7 @@ class PageController extends Controller
    {
        return view('page.crud_cate');
    }
+  
    public function createProduct(Request $req)
    {
        $product = new Product();

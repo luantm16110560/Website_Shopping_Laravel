@@ -150,3 +150,5 @@ Route::post('/add_product',[
 	'as'=>'add_product',
 	'uses'=>'PageController@createProduct'
 ]);
+
+

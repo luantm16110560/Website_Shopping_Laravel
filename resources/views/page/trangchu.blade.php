@@ -37,6 +37,7 @@
                             <li class="active"><a href="#">Home</a></li> --}}
                             <li><a href="{{route('gender',['client_gender'=>'Nam'])}}" style="color: blue;font-weight: bold;font-size: 25px;font-family: Open Sans">Nam</a></li>
                             <li><a href="{{route('gender',['client_gender'=>'Nữ'])}}" style="color: pink;font-size: 25px;font-weight: bold">Nữ</a></li>
+                            
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">

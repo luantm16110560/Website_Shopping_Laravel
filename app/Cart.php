@@ -8,6 +8,7 @@ class Cart
 	public $totalQty = 0;
 	public $totalPrice = 0;
 	public $totalPrice2 = 0;
+	public $size=35;
 
 	public function __construct($oldCart){
 		if($oldCart){
@@ -15,11 +16,12 @@ class Cart
 			$this->totalQty = $oldCart->totalQty;
 			$this->totalPrice = $oldCart->totalPrice;
 			$this->totalPrice2 = $oldCart->totalPrice2;
+			$this->size=$oldCart->size;
 		}
 	}
 
 	public function add($item, $id){
-		$giohang = ['qty'=>0, 'price' => $item->unit_price,'price2' => $item->promotion_price, 'item' => $item,'size'=>35];
+		$giohang = ['qty'=>0, 'price' => $item->unit_price,'price2' => $item->promotion_price, 'item' => $item,'size'=>$item->size];
 		if($this->items){
 			if(array_key_exists($id, $this->items)){
 				$giohang = $this->items[$id];

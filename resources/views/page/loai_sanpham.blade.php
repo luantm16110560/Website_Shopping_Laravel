@@ -63,7 +63,7 @@
 
             <div class="row">
               @foreach ($type_product as $product)
-                <div class="col-sm-4">
+                <div class="col-xs-4">
                   <div class="single-item">
                       @if($product->promotion_price!=0)
                       <div class="ribbon-wrapper">

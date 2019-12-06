@@ -2,12 +2,12 @@
 @section('content')
 <div class="inner-header">
   <div class="container">
-    <div class="pull-left">
+    {{-- <div class="pull-left">
       <h6 class="inner-title">Liên Hệ</h6>
-    </div>
-    <div class="pull-right">
+    </div> --}}
+    <div class="pull-left">
       <div class="beta-breadcrumb font-large">
-        <a href="{{route("home-page")}}">Trang chủ</a> / <span>Liên hệ</span>
+        <h6><a href="{{route("home-page")}}">Trang chủ</a> / <span>Liên hệ</span></h6>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -60,13 +60,13 @@
         <h6 class="contact-title">Email:</h6>
         <p>
           Thương hiệu giày <strong style="color: #000099">TOM'S SHOES</strong> <br>
-          <a href="mailto:quyducnguyen2210@gmail.com">tomshoes@gmail.com</a>
+          <a href="mailto:tomshoes@gmail.com">tomshoes@gmail.com</a>
         </p>
         <div class="space20">&nbsp;</div>
         <h6 class="contact-title">Tuyển dụng:</h6>
         <p>
           Hãy cùng tham gia với <strong style="color: #000099">TOM'S SHOES</strong> <br>
-          <a href="mailto:quyducnguyen2210@gmail.com">hrtomshoes@gmail.com</a>
+          <a href="mailto:hrtomshoes@gmail.com">hrtomshoes@gmail.com</a>
         </p>
       </div>
     </div>
