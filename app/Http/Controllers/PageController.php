@@ -273,7 +273,13 @@ class PageController extends Controller
    }
    public function manageBill()
    {
-       return view('page.manage_bill');
+    $bill = Bill::where([
+        ['status', '=', 1],
+        ['isFinish', '=', 0],
+     
+        ])->get();
+        // ->paginate(4);
+       return view('page.manage_bill')->with('bill',$bill);
    }
    public function manageUser()
    {
