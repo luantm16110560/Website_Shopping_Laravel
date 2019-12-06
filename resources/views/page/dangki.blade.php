@@ -1,9 +1,9 @@
 @extends('master') @section('content')
 <div class="inner-header">
     <div class="container">
-        <div class="pull-right">
+        <div class="pull-left">
             <div class="beta-breadcrumb">
-                <a href="{{route('home-page')}}">Trang chủ</a> / <span>Đăng kí</span>
+                <h6><a href="{{route('home-page')}}">Trang chủ</a> / <span>Đăng kí</span></h6>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -45,8 +45,9 @@
 
                             </div>
                             <div class="form-group">
-                                <label style="font-size: 17px">Giới tính</label>
-                                <input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="checked" style="width: 10%">						        <input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
+                                <label style="font-size: 17px">Giới tính</label></br>
+                                <strong>Nam</strong><input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="checked" style="width: 10%">
+                                <strong>Nữ</strong><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
 
                             </div>
                             <div class="form-group">
@@ -92,8 +93,8 @@
                                     }
                                 }
                             </script>
-  													<span style="font-size: 15px;  font-weight: bold;" class="right" id='message'></span>
-                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin"></button>
+  							<span style="font-size: 15px;  font-weight: bold;" class="right" id='message'></span>
+                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng kí</button>
 
                         </form>
                           
