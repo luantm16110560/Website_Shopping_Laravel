@@ -148,7 +148,7 @@ class PageController extends Controller
         
        }
        Session::forget('cart');
-       return redirect()->back()->with('thongbao','Đặt hàng thành công');
+       return redirect()->route('home-page');
    }
    public function postSignin(Request $req){
        $this->validate($req,
