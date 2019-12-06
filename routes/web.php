@@ -156,4 +156,14 @@ Route::post('/add_product',[
 	'uses'=>'PageController@createProduct'
 ]);
 
+Route::get('/infor',[
+	'as'=>'infor',
+	'uses'=>'PageController@getinfor'
+]);
+
+Route::post('/infor',[
+	'as'=>'infor',
+	'uses'=>'PageController@postinfor'
+]);
+
 

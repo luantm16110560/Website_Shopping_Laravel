@@ -98,6 +98,23 @@ class PageController extends Controller
        return view('page.dangki');
    }
 
+   public function getinfor()
+   {
+       return view('page.infor');
+   }
+
+   public function postinfor(Request $req)
+   {
+        $user=User::where('id',Auth::user()->id)->first();
+        $user->name=$req->name;
+        $user->email=$req->email;
+        $user->phone-$req->phone;
+        $user->address=$req->address;
+        $user->update();
+        return redirect()->back();
+   }
+
+
    public function getOrder(){
     return view('page.dat_hang');
     }

@@ -4,7 +4,7 @@
     <div class="pull-right">
        <ul class="top-details menu-beta l-inline">
         @if(Auth::check())   {{-- Kiem tra nguoi dung co dang nhap hay chua --}}
-       <li><a href="" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Chào bạn {{Auth::user()->name}}</strong></a></li>
+       <li><a href="{{route("infor")}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Chào bạn {{Auth::user()->name}}</strong></a></li>
        <li><a href="{{route('dangxuat')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Đăng xuất</strong></a></li>
          @else
             <li><a href="{{route('dangki')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Đăng ký</strong></a></li>
