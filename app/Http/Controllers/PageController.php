@@ -275,8 +275,8 @@ class PageController extends Controller
    {
     $bill = Bill::where([
         ['status', '=', 1],
-        ['isFinish', '=', 0],
-     
+        ['isFinish', '<', 2],
+      
         ])->get();
         // ->paginate(4);
        return view('page.manage_bill')->with('bill',$bill);
