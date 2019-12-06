@@ -126,7 +126,7 @@ class PageController extends Controller
        
        $bill=new Bill;
        $bill->id_user=$req->id_customer;
-       $bill->date_order=date('Y-m-d');
+       $bill->date_order=date('Y-m-d h:i:s',time());
        $bill->total=$cart->totalPrice;
        $bill->payment=$req->payment_method;
        $bill->note=$req->notes;
