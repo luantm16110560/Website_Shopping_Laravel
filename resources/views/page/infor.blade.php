@@ -33,8 +33,8 @@
 					@endif
                     <div class="form-block">
                         <label for="gender" style="font-size: 17px"><i>Giới tính</i></label>
-                        <input id="gender" type="radio" class="input-radio" name="gender" value="Nam" style="width: 10%">						        
-                        <input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
+                        <p>Nam</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="true" style="width: 10%">					        
+                        <p>Nữ</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
                     </div>
 					@if(Auth::check())
 					<div class="form-block">

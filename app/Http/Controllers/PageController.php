@@ -127,7 +127,7 @@ class PageController extends Controller
        
        $bill=new Bill;
        $bill->id_user=$req->id_customer;
-       $bill->date_order=date('Y-m-d');
+       $bill->date_order=date('Y-m-d h:i:s',time());
        $bill->total=$cart->totalPrice;
        $bill->payment=$req->payment_method;
        $bill->note=$req->notes;
@@ -150,7 +150,7 @@ class PageController extends Controller
         
        }
        Session::forget('cart');
-       return redirect()->back()->with('thongbao','Đặt hàng thành công');
+       return redirect()->route('home-page');
    }
    public function postSignin(Request $req){
        $this->validate($req,
