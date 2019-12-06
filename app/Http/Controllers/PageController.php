@@ -17,7 +17,7 @@ use Hash;
 use Auth;
 use Response;
 use Carbon;
-
+use DateTime;
 class PageController extends Controller
 {
    public function getIndex()
@@ -127,8 +127,8 @@ class PageController extends Controller
        
        $bill=new Bill;
        $bill->id_user=$req->id_customer;
-       $now = new \DateTime();
-       $now=date('Y-m-d h:i:s');
+       $now = new DateTime();
+    
        $bill->date_order=$now;
        $bill->total=$cart->totalPrice;
        $bill->payment=$req->payment_method;
