@@ -74,6 +74,20 @@ class PageController extends Controller
        return redirect()->back();
    }
 
+   public function getDelItem($id){
+    $oldCart=Session::has('cart')?Session::get('cart'):null;
+    $cart=new Cart($oldCart);
+    $cart->reduceByOne($id);
+    if(count($cart->items)>0){
+        Session::put('cart',$cart);
+    }
+    else
+    {
+        Session::forget('cart');
+    }
+    return redirect()->back();
+}
+
    public function getLogin()
    {
        return view('page.dangnhap');

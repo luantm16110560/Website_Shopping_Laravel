@@ -54,6 +54,11 @@ Route::get('/delItem-cart/{id}',[
     'uses'=>'PageController@getDelItemCard'
 ]);
 
+Route::get('/delItem/{id}',[
+    'as'=>'deletesp',
+    'uses'=>'PageController@getDelItem'
+]);
+
 Route::get('/dang_nhap',[
     'as'=>'dangnhap',
     'uses'=>'PageController@getLogin'
