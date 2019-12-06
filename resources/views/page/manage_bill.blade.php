@@ -62,10 +62,10 @@
                                 <div class="col-sm-2">
                                     <td>
                                         <a href="#deleteBill" data-toggle="modal">
-                                        <button class="btn btn-danger" style="width: 55px;height:  38px;">Xóa</button>&nbsp;
+                                        <button class="btn btn-danger" style="width: 55px;height:  38px;"><span class="glyphicon glyphicon-trash"></span></button>&nbsp;
                                         </a>
                                         <a href="#editBill" data-toggle="modal">
-                                            <button class="btn btn-primary" style="width: 55px;height:38px;">Sửa</button>
+                                            <button class="btn btn-primary" style="width: 55px;height:38px;"><span class="glyphicon glyphicon-cog"></span></button>
                                         </a>
                                     </td>
                                 </div>
