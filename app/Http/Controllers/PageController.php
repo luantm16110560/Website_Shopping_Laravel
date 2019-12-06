@@ -275,13 +275,7 @@ class PageController extends Controller
    }
    public function manageBill()
    {
-    $bill = Bill::where([
-        ['status', '=', 1],
-        ['isFinish', '<', 2],
-      
-        ])
-        ->paginate(8);
-       return view('page.manage_bill')->with('bill',$bill);
+    return view('page.manage_bill');
    }
    public function manageUser()
    {
@@ -385,5 +379,31 @@ class PageController extends Controller
         $product->size=$req->size;
         $product->save();
         return redirect()->back()->with('thongbao','Thêm sản phẩm thành công');
+    }
+    public function crudView()
+    {
+        $bill = Bill::where([
+            ['status', '=', 1],
+            ['isFinish', '=', 0],
+          
+            ])
+            ->orderBy('date_order', 'desc')->paginate(8);
+           return view('page.crud_bill')->with('bill',$bill);
+    }
+    public function geteditBill($id)
+    {
+        $bill = Bill::find($id);
+       // where([
+            // ['status', '=', 1],
+            // ['id', '=', $id],
+          
+            // ])
+
+            // ->orderBy('date_order', 'desc')->paginate(1);
+           return view('page.edit_bill')->with('bill',$bill);
+    }
+    public function posteditBill(Request $req)
+    {
+      // echo $req->id;
     }
 }

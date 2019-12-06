@@ -43,11 +43,11 @@
                         
                             <div class="col-sm-3">
                                 <div class="card" style="width:13rem; height: 13rem;">
-                                    <a href="{{route('manage-bill')}}">
+                                    <a href="{{route('manage_bill')}}">
                                     <img src="source/image/manager/icon-invoice.jpg" alt="Avatar" style="width:13rem; height: 13rem">
                                     </a>
                                     <div class="center">
-                                        <a href="{{route('manage-bill')}}">
+                                        <a href="{{route('manage_bill')}}">
                                         <h4><b>Hóa đơn</b></h4>
                                         </a>
                                     </div>

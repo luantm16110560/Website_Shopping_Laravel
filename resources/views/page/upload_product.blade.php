@@ -18,8 +18,8 @@
             <div class="col-md-3" style="font-size: 18px">
                 <div id="sidebar" class="well sidebar-nav" style="height: 100%">
                     <h5><i class="glyphicon glyphicon-home"></i>
-                                <a href="{{route('home-page')}}">
-                                    <b>Về trang chủ</b>
+                                <a href="{{route('manager-page')}}">
+                                    <b>Về trang quản trị</b>
                                     </a>
                                 </h5>
                     <ul class="nav nav-pills nav-stacked">

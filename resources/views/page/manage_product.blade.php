@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Đăng sản phẩm</title>
+    <title>Trang quản trị sản phẩm</title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js">
     <script src="//cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
@@ -19,7 +19,7 @@
                 <div id="sidebar" class="well sidebar-nav" style="height: 100%">
                     <h5><i class="glyphicon glyphicon-home"></i>
                                 <a href="{{route('manager-page')}}">
-                                    <b>Về trang chủ</b>
+                                    <b>Về trang quản trị</b>
                                     </a>
                                 </h5>
                     <ul class="nav nav-pills nav-stacked">
@@ -44,7 +44,7 @@
 
             </div>
             <div class="col-md-9">
-                    <h2 style="text-align: center">Quản lý sản phẩm</h2>
+                    <h2 style="text-align: center">Trang quản trị sản phẩm</h2>
 
                     <br>
                

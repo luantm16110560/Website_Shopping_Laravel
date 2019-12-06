@@ -125,7 +125,7 @@ Route::get('/manage-product',[
 	'uses'=>'PageController@manageProduct'
 ]);
 Route::get('/manage-bill',[
-	'as'=>'manage-bill',
+	'as'=>'manage_bill',
 	'uses'=>'PageController@manageBill'
 ]);
 Route::get('/manage-user',[
@@ -165,5 +165,21 @@ Route::post('/infor',[
 	'as'=>'infor',
 	'uses'=>'PageController@postinfor'
 ]);
+//bill
+Route::get('/crud-bill',[
+	'as'=>'crud-bill',
+	'uses'=>'PageController@crudView'
+]);
+
+Route::get('/editbill/{id}',[
+	'as'=>'editbill1',
+	'uses'=>'PageController@geteditBill'
+]);
+Route::post('/editbill/{id}',[
+	'as'=>'editbill',
+	'uses'=>'PageController@posteditBill'
+]);
+
+
 
 
