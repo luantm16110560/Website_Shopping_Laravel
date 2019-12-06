@@ -31,12 +31,11 @@
 						<input type="text" class="form-control form-control-lg rounded-0" name="name" placeholder="Họ tên" value="{{Auth::user()->name}}" required>
 					</div>
 					@endif
-					@if(Auth::check())
-					<div class="form-block" hidden="true">
-						<label for="name" style="font-size: 17px"><i>Mã Khách Hàng</i></label>
-						<input type="text" class="form-control form-control-lg rounded-0" name="id_customer" placeholder="Họ tên" value="{{Auth::user()->id}}" required>
-					</div>
-					@endif
+                    <div class="form-block">
+                        <label for="gender" style="font-size: 17px"><i>Giới tính</i></label>
+                        <input id="gender" type="radio" class="input-radio" name="gender" value="Nam" style="width: 10%">						        
+                        <input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
+                    </div>
 					@if(Auth::check())
 					<div class="form-block">
 						<label for="email" style="font-size: 17px"><i>Email</i></label>

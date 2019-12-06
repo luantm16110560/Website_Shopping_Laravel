@@ -109,6 +109,7 @@ class PageController extends Controller
         $user->name=$req->name;
         $user->email=$req->email;
         $user->phone=$req->phone;
+        $user->gender=$req->gender;
         $user->address=$req->address;
         $user->update();
         return redirect()->back();
