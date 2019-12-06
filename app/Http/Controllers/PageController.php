@@ -17,6 +17,7 @@ use Hash;
 use Auth;
 use Response;
 use Carbon;
+
 class PageController extends Controller
 {
    public function getIndex()
@@ -131,6 +132,7 @@ class PageController extends Controller
        $bill->payment=$req->payment_method;
        $bill->note=$req->notes;
        $bill->status=1;
+       $bill->isFinish=0;
        $bill->save();
        foreach($cart->items as $key=>$value){
         $bill_detail=new Bill_Detail;
