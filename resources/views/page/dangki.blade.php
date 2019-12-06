@@ -46,7 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label style="font-size: 17px">Giới tính</label></br>
-                                <strong>Nam</strong><input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="checked" style="width: 10%">
+                                <strong>Nam</strong><input id="gender" type="radio" class="input-radio" name="gender" checked="true" value="Nam" checked="checked" style="width: 10%">
                                 <strong>Nữ</strong><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
 
                             </div>
