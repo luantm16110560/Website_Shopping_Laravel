@@ -55,6 +55,17 @@
         
                     </div>
                     <div class="col-md-9">
+                            @if(Session::has('xoathanhcong'))
+                            <div style="text-align: center;font-weight: bold" id="message" class="alert alert-danger">
+                                {{Session::get('xoathanhcong')}}  
+                            </div>     
+                            @endif
+                            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                            <script type="text/javascript"> 
+                              $(document).ready( function() {
+                                $('#message').delay(1500).fadeOut();
+                              });
+                            </script>
                             <h2 style="text-align: center">Quản lý hóa đơn</h2>
                             <br>
                             <div style="overflow-x:auto;">
@@ -124,8 +135,10 @@
                                                       
                                                      
                                                   
-                                                    <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')" href="{{route('deletebill',['id_bill'=>$b->id])}}"><i class="fa fa-trash"></i></a>
-                                                    <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
+                       
+                                                  
+                                                     <a  type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"  href="{{route('deletebill',['id_bill'=>$b->id])}}">Xóa
+                                                     <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
                                                     {{-- <button href="" class="btn btn-primary" style="width: 55px;height:38px;">Sửa</button> --}}
 
                                                     </td>

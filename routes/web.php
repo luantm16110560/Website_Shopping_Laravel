@@ -165,16 +165,17 @@ Route::post('/infor',[
 	'as'=>'infor',
 	'uses'=>'PageController@postinfor'
 ]);
-//bill
+//BILL
 Route::get('/crud-bill',[
 	'as'=>'crud-bill',
 	'uses'=>'PageController@crudView'
 ]);
-
+//get bill by id
 Route::get('/editbill/{id}',[
 	'as'=>'editbill',
 	'uses'=>'PageController@geteditBill'
 ]);
+//update bill
 Route::post('/editbill/{id}',[
 	'as'=>'editbill',
 	'uses'=>'PageController@posteditBill'
@@ -185,6 +186,13 @@ Route::get('search_bill',[
 	'as'=>'search_bill',
 	'uses'=>'PageController@searchBill'
 ]);
+//delete bill
+Route::get('/deletebill/{id}',[
+	'as'=>'deletebill',
+	'uses'=>'PageController@postdeleteBill'
+]);
+
+
 
 
 
