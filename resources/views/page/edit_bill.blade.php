@@ -55,13 +55,26 @@
         
                     </div>
                     <div class="col-md-9">
-                        <div class="col-sm-4">
+                          
+                     
+                        <div class="col-sm-2">
                           </div>
-                      <div class="col-sm-4">
+                      <div class="col-sm-6">
+                            <div style="padding: 8px; border: 10px inset #8FBC8F; word-wrap: break-word;">
                             <h2 style="text-align: center">Sửa hóa đơn</h2>
                             <br>
-                            <form autocomplete="off" method="post" >
-                              <div class="form-group">
+                            @if(Session::has('thanhcong'))
+                            <div class="alert alert-success">
+                                {{Session::get('thanhcong')}}  
+                            </div>     
+                            @endif
+                                
+                                 
+                              
+                          
+                      <form autocomplete="off" method="post" action="{{route('editbill',$bill->id)}}" >
+                        {{ csrf_field() }}
+                        <div class="form-group">
                                   <label>ID</label>
                                   <input style="width: 100px" type="text" name="id" id="id" value="{{$bill->id}}" class="form-control" disabled>
                               </div>
@@ -77,14 +90,19 @@
                           
                               <div class="form-group">
                                   <label>Thanh toán</label>
-                                  <select id="payment" >
+                                  <select name="payment" id="payment" >
+                                      @if($bill->payment=="COD")
                                      <option value="COD">COD</option>
                                      <option value="ATM">ATM</option>
+                                        @else
+                                        <option value="ATM">ATM</option>
+                                        <option value="COD">COD</option>
+                                        @endif
                                   </select>
                               </div>
                               <div class="form-group">
                                   <label>Ghi chú</label>
-                              <textarea style="width: 200px" name="note" id="note" class="form-control">{{$bill->note}}</textarea>
+                              <textarea name="note" style="width: 200px"  id="note" class="form-control" >{{$bill->note}}</textarea>
                               </div>
                               <div class="form-group">
                                   <label>Khách hàng</label>
@@ -97,7 +115,7 @@
                                   <input type="hidden" id="phone" value="{{$user->phone}}">
                               </div>
                               <div class="form-group">
-                                  <select id="isFinish" >
+                                  <select name="isFinish" id="isFinish" >
                                       <option value="1" style="color: green"><b>Xác nhận</b></option>
                                       <option value="0" style="color: red"><b>Hủy xác nhận</b></option>
                                    </select>
@@ -106,6 +124,7 @@
                               <input type="submit" value="Lưu thay đổi" class="btn btn-success">
                           </form>
                         </div>
+                    </div>
                         <div class="col-sm-4">
                         </div>
 
