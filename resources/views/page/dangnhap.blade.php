@@ -3,7 +3,7 @@
    <div class="container">
       <div class="pull-left">
          <div class="beta-breadcrumb">
-            <h6><a href="{{route("home-page")}}">Home</a> / <span>Đăng nhập</span></h6>
+            <h6><a href="{{route("home-page")}}">Trang chủ</a> / <span>Đăng nhập</span></h6>
          </div>
       </div>
       <div class="clearfix"></div>
