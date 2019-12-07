@@ -443,6 +443,7 @@ class PageController extends Controller
     // return view('page.search')->with("bill_search",$bill_search);
         // $user_by_bill = $bill->id_user;
         // return view('page.search_bill')->with('bill_search',$bill)->with('user_by_bill',$user_by_bill);
+
     }
     public function postdeleteBill($id)
     {
@@ -450,5 +451,7 @@ class PageController extends Controller
         Bill::where('id',$id )
         ->update(['status' => 0]);
        return redirect()->back()->with('xoathanhcong','Xóa thành công');
+
+
     }
 }

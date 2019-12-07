@@ -135,10 +135,15 @@
                                                       
                                                      
                                                   
+
                        
                                                   
                                                      <a  type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"  href="{{route('deletebill',['id_bill'=>$b->id])}}">Xóa
                                                      <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
+
+                                                    <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')" href="{{route('deletebill',['id_bill'=>$b->id])}}"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
+
                                                     {{-- <button href="" class="btn btn-primary" style="width: 55px;height:38px;">Sửa</button> --}}
 
                                                     </td>
