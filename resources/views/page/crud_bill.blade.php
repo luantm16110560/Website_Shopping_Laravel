@@ -6,24 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quản lý hóa đơn</title>
-    <link rel="icon" href="{!! asset('source/image/icon/icon-web-title.png') !!}"/>
-    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="source/assets/dest/css/font-awesome.min.css">
-    <link rel="stylesheet" href="source/assets/dest/vendors/colorbox/example3/colorbox.css">
-    <link rel="stylesheet" href="source/assets/dest/rs-plugin/css/settings.css">
-    <link rel="stylesheet" href="source/assets/dest/rs-plugin/css/responsive.css">
-    <link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
-    <link rel="stylesheet" href="source/assets/dest/css/animate.css">
-    <link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
-    <script src="source/assets/dest/js/jquery.js"></script>
-    <script src="source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="source/assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
-    <script src="source/assets/dest/vendors/colorbox/jquery.colorbox-min.js"></script>
-    <script src="source/assets/dest/vendors/animo/Animo.js"></script>
-    <script src="source/assets/dest/vendors/dug/dug.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
  
 
 
@@ -133,10 +123,10 @@
                                                     <td>
                                                       
                                                         <button class="btn btn-danger" style="width: 55px;height:  38px;">Xóa</button>&nbsp;
-                                                 
-                                                    <a href="{{route('editbill1',$b->id)}}" type="button" class="btn btn-primary">Sửa
+                                                     
+                                                    <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
                                                     {{-- <button href="" class="btn btn-primary" style="width: 55px;height:38px;">Sửa</button> --}}
-                                                      
+
                                                     </td>
                                                 </div>
                                             </tr>

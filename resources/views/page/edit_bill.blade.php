@@ -5,26 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quản lý hóa đơn</title>
-    <link rel="icon" href="{!! asset('source/image/icon/icon-web-title.png') !!}"/>
-    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="source/assets/dest/css/font-awesome.min.css">
-    <link rel="stylesheet" href="source/assets/dest/vendors/colorbox/example3/colorbox.css">
-    <link rel="stylesheet" href="source/assets/dest/rs-plugin/css/settings.css">
-    <link rel="stylesheet" href="source/assets/dest/rs-plugin/css/responsive.css">
-    <link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
-    <link rel="stylesheet" href="source/assets/dest/css/animate.css">
-    <link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
-    <script src="source/assets/dest/js/jquery.js"></script>
-    <script src="source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="source/assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
-    <script src="source/assets/dest/vendors/colorbox/jquery.colorbox-min.js"></script>
-    <script src="source/assets/dest/vendors/animo/Animo.js"></script>
-    <script src="source/assets/dest/vendors/dug/dug.js"></script>
- 
+    <title>Sửa hóa đơn</title>
+    
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
     <!--customjs-->
@@ -65,46 +55,74 @@
         
                     </div>
                     <div class="col-md-9">
-                            <h2 style="text-align: center">Quản lý hóa đơn</h2>
+                        <div class="col-sm-4">
+                          </div>
+                      <div class="col-sm-4">
+                            <h2 style="text-align: center">Sửa hóa đơn</h2>
                             <br>
-                            
-                            <div class="col-sm-6">       
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                    <label>Mã hóa đơn</label>
-                                    <input type="text" disabled class="form-control" id="id" >
-                                  </div>
-                                  <div class="form-group col-md-6">
-                                    <label>Tổng tiền</label>
-                                    <input type="number" min="0" class="form-control" id="total">
-                                  </div>
-                                </div>
+                            <form autocomplete="off" method="post" >
+                              <div class="form-group">
+                                  <label>ID</label>
+                                  <input style="width: 100px" type="text" name="id" id="id" value="{{$bill->id}}" class="form-control" disabled>
                               </div>
+                              <div class="form-group">
+                                  <label>Ngày đặt</label>
+                                  <input style="width: 200px" type="datetime" name="date_order" id="date_order" value="{{$bill->date_order}}" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label>Tổng tiền</label>
                                 
-                            <div class="col-sm-6">    
-                                <div class="form-group">
-                                  <label for="inputAddress">Ngày đặt</label >
-                                  <input style="width: 250px"; type="datetime-local" class="form-control" id="date_order" placeholder="1234 Main St">
-                                </div>
+                              <input style="width: 150px" type="number" min="0" name="total" id="total" value="{{$bill->total}}" class="form-control">VND
                               </div>
-                              <div class="col-sm-4">    
-                                <div class="form-group">
-                                  <label >Note</label>
-                                  <textarea style="margin-left: 10px"  class="form-control" id="note"></textarea>
-                                </div>
+                          
+                              <div class="form-group">
+                                  <label>Thanh toán</label>
+                                  <select id="payment" >
+                                     <option value="COD">COD</option>
+                                     <option value="ATM">ATM</option>
+                                  </select>
                               </div>
-                              <div class="col-sm-3"> 
-                             
+                              <div class="form-group">
+                                  <label>Ghi chú</label>
+                              <textarea style="width: 200px" name="note" id="note" class="form-control">{{$bill->note}}</textarea>
+                              </div>
+                              <div class="form-group">
+                                  <label>Khách hàng</label>
+                               
+                                  <button type="button" style="width: 200px" name="id_user" id="id_user" onclick="getUser();" class="btn btn-primary" value="{{$user->id}}">{{$user->name}}</button>
+                                  <input type="hidden" id="name" value="{{$user->name}}">
+                                  <input type="hidden" id="email" value="{{$user->email}}">
+                                  <input type="hidden" id="address" value="{{$user->address}}">
+                                  <input type="hidden" id="gender" value="{{$user->gender}}">
+                                  <input type="hidden" id="phone" value="{{$user->phone}}">
+                              </div>
+                              <div class="form-group">
+                                  <select id="isFinish" >
+                                      <option value="1" style="color: green"><b>Xác nhận</b></option>
+                                      <option value="0" style="color: red"><b>Hủy xác nhận</b></option>
+                                   </select>
+                              </div>
+                          
+                              <input type="submit" value="Lưu thay đổi" class="btn btn-success">
+                          </form>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+
+                        <script>
+                          function getUser()
+                              {
                               
-                                    <label>Thanh toán</label>
-                                    <input type="text" class="form-control" id="payment" style="width: 100px">
-                                    <div class="col-sm-3"> 
-                                  
-                                <div class="col-sm-3"> 
-                                <button style="margin-top: 10px" type="submit" class="btn btn-primary">Thay đổi</button>
-                                <div class="col-sm-5"> 
-                              </form>
-                    </div>
+                               var name=document.getElementById("name").value;
+                               var gender=document.getElementById("gender").value;
+                               var email=document.getElementById("email").value;
+                               var address=document.getElementById("address").value;
+                               var phone=document.getElementById("phone").value;
+                                alert(name +"\n" +gender+"\n"+email+"\n"+address+"\n"+phone);
+                              
+                            }
+                        </script>
+                      </div>
                 </div>
         
             </div>

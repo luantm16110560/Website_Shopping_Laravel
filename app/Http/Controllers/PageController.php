@@ -390,9 +390,11 @@ class PageController extends Controller
             ->orderBy('date_order', 'desc')->paginate(8);
            return view('page.crud_bill')->with('bill',$bill);
     }
-    public function geteditBill($id)
+    public function geteditBill($id_bill)
     {
-        $bill = Bill::find($id);
+        $bill = Bill::find($id_bill);
+        $user_by_id = $bill->id_user;
+        $user = User::find($user_by_id);
        // where([
             // ['status', '=', 1],
             // ['id', '=', $id],
@@ -400,7 +402,7 @@ class PageController extends Controller
             // ])
 
             // ->orderBy('date_order', 'desc')->paginate(1);
-           return view('page.edit_bill')->with('bill',$bill);
+           return view('page.edit_bill')->with('bill',$bill)->with('user',$user);
     }
     public function posteditBill(Request $req)
     {

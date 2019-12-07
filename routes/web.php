@@ -172,7 +172,7 @@ Route::get('/crud-bill',[
 ]);
 
 Route::get('/editbill/{id}',[
-	'as'=>'editbill1',
+	'as'=>'editbill',
 	'uses'=>'PageController@geteditBill'
 ]);
 Route::post('/editbill/{id}',[
