@@ -1,9 +1,9 @@
 @extends('master') @section('content')
 <div class="inner-header">
    <div class="container">
-      <div class="pull-right">
+      <div class="pull-left">
          <div class="beta-breadcrumb">
-            <a href="{{route("home-page")}}">Home</a> / <span>Đăng nhập</span>
+            <h6><a href="{{route("home-page")}}">Trang chủ</a> / <span>Đăng nhập</span></h6>
          </div>
       </div>
       <div class="clearfix"></div>
