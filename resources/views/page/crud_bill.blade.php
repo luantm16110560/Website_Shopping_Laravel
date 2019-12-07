@@ -35,7 +35,6 @@
                             <ul class="nav nav-pills nav-stacked" >
                                 <li class="active"><a>Hóa đơn</a></li>
                                 <li><a href="{{route('crud-bill')}}">Quản lý hóa đơn</a></li>
-                                <li><a href="#">Tra cứu hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn chờ xác nhận</a></li>
                                 <li class="active"><a>Thống kê hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn theo ngày</a></li>
@@ -68,6 +67,23 @@
                             </script>
                             <h2 style="text-align: center">Quản lý hóa đơn</h2>
                             <br>
+                        
+                            <form autocomplete="off" method="GET" action="{{route('search_bill')}}">
+                                    <div class="input-group">
+                                        <input type="search" id="search" name="id_search" class="form-control" placeholder="Nhập mã hóa đơn" onchange="listen()">               
+                                        <span class="input-group-prepend">
+                                            <button id="btnSearch" style="submit" class="btn btn-primary" onclick="my_function()">Tìm Kiếm</button>
+                                        </span>
+                                        <script>
+                                            public function my_function()
+                                            {
+                                                document.getElementById('btnSearch').value="Reset";
+                                            }
+                                        </script>
+                                        
+                                    </div>
+                                </form>
+                          
                             <div style="overflow-x:auto;">
                                     <table class="table table-hover">
                                         <thead>
@@ -131,21 +147,9 @@
                                                     @endif
                                                 </div>
                                                 <div class="col-sm-1">
-                                                    <td>
-                                                      
-                                                     
-                                                  
-
-                       
-                                                  
-                                                     <a  type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"  href="{{route('deletebill',['id_bill'=>$b->id])}}">Xóa
-                                                     <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
-
-                                                    <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')" href="{{route('deletebill',['id_bill'=>$b->id])}}"><i class="fa fa-trash"></i></a>
+                                                    <td>       
+                                                    <a href="{{route('deletebill',['id_bill'=>$b->id])}}" type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')">Xóa
                                                     <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
-
-                                                    {{-- <button href="" class="btn btn-primary" style="width: 55px;height:38px;">Sửa</button> --}}
-
                                                     </td>
                                                 </div>
                                             </tr>
@@ -155,9 +159,7 @@
                                         </tbody>
                                         
                                     </table>
-                                    <div style="text-align: center">
-                                            {{$bill->links()}}
-                                    </div>
+                                   
                                 </div>
                        
         

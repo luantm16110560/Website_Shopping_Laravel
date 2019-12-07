@@ -395,27 +395,13 @@ class PageController extends Controller
         $bill = Bill::find($id_bill);
         $user_by_id = $bill->id_user;
         $user = User::find($user_by_id);
-       // where([
-            // ['status', '=', 1],
-            // ['id', '=', $id],
-          
-            // ])
-
-            // ->orderBy('date_order', 'desc')->paginate(1);
-           return view('page.edit_bill')->with('bill',$bill)->with('user',$user);
+           return view('page.edit_bill')->with('bill',$bill)->with('user',$user)
+         ;
     }
     public function posteditBill(Request $req,$id)
     {
         $bill_want_edit = Bill::find($id);
-        // echo $req->total;
-        // echo "\n";
-        // echo $req->date_order;
-        // echo "\n";
-        // echo $req->payment;
-        // echo "\n";
-        // echo $req->note;
-        // echo "\n";
-        // echo $req->isFinish;
+      
         $bill_want_edit->total = $req->total;
         $bill_want_edit->payment= $req->payment;
         $bill_want_edit->date_order =$req->date_order;
@@ -433,17 +419,9 @@ class PageController extends Controller
     }
     public function searchBill(Request $req)
     {
-        // echo $req->id_bill_search;
-        // $bill=Bill::find($req->id_bill_search);
-
-    //     $bill_search = Bill::where([
-    //         ['id','=',$req->id_bill_search],
-    //         ['status','=',1],                            
-    //         ])->get();                  
-    // return view('page.search')->with("bill_search",$bill_search);
-        // $user_by_bill = $bill->id_user;
-        // return view('page.search_bill')->with('bill_search',$bill)->with('user_by_bill',$user_by_bill);
-
+        $id_bill_want_search=$req->id_search;
+        $bill_want_search=Bill::where('status',1)->where('id','like','%'.$id_bill_want_search.'%')->where('isFinish',1)->get();
+        return view('page.crud_bill')->with('bill',$bill_want_search);
     }
     public function postdeleteBill($id)
     {
