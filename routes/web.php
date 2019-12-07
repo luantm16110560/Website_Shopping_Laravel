@@ -181,5 +181,14 @@ Route::post('/editbill/{id}',[
 ]);
 
 
+Route::get('search_bill',[
+	'as'=>'search_bill',
+	'uses'=>'PageController@searchBill'
+]);
+
+
+
+
+
 
 

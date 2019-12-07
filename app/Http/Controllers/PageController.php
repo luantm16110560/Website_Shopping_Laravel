@@ -384,7 +384,7 @@ class PageController extends Controller
     {
         $bill = Bill::where([
             ['status', '=', 1],
-            ['isFinish', '=', 0],
+            ['isFinish', '=', 1],
           
             ])
             ->orderBy('date_order', 'desc')->paginate(8);
@@ -404,8 +404,44 @@ class PageController extends Controller
             // ->orderBy('date_order', 'desc')->paginate(1);
            return view('page.edit_bill')->with('bill',$bill)->with('user',$user);
     }
-    public function posteditBill(Request $req)
+    public function posteditBill(Request $req,$id)
     {
-      // echo $req->id;
+        $bill_want_edit = Bill::find($id);
+        // echo $req->total;
+        // echo "\n";
+        // echo $req->date_order;
+        // echo "\n";
+        // echo $req->payment;
+        // echo "\n";
+        // echo $req->note;
+        // echo "\n";
+        // echo $req->isFinish;
+        $bill_want_edit->total = $req->total;
+        $bill_want_edit->payment= $req->payment;
+        $bill_want_edit->date_order =$req->date_order;
+        $bill_want_edit->note =$req->note;
+        $bill_want_edit->isFinish=$req->isFinish;
+
+        $bill_want_edit->save();
+
+        return redirect()->back()->with('thanhcong','Sửa thành công');
+
+    }
+    public function getBill()
+    {
+        return view('page.search_bill');
+    }
+    public function searchBill(Request $req)
+    {
+        // echo $req->id_bill_search;
+        // $bill=Bill::find($req->id_bill_search);
+
+    //     $bill_search = Bill::where([
+    //         ['id','=',$req->id_bill_search],
+    //         ['status','=',1],                            
+    //         ])->get();                  
+    // return view('page.search')->with("bill_search",$bill_search);
+        // $user_by_bill = $bill->id_user;
+        // return view('page.search_bill')->with('bill_search',$bill)->with('user_by_bill',$user_by_bill);
     }
 }
