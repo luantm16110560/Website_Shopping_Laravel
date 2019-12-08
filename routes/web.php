@@ -217,6 +217,15 @@ Route::get('get_bill_day',[
 	'as'=>'get_bill_day',
 	'uses'=>'PageController@get_bill_day'
 ]);
+//Thong ke hoa don theo quy
+Route::get('get_bill_quy',[
+	'as'=>'get_bill_quy',
+	'uses'=>'PageController@get_bill_quy'
+]);
+Route::get('result_bill_quy',[
+	'as'=>'result_bill_quy',
+	'uses'=>'PageController@result_bill_quy'
+]);
 
 
 

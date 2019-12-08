@@ -499,4 +499,23 @@ class PageController extends Controller
         return view('page.result_bill_day')->with('bill',$bill_day)->with('day',$req->id_search);
         //return Response::json($bill_day, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
+    public function get_bill_quy()
+    {
+        return view('page.bill_quy');
+    }
+    public function result_bill_quy(Request $req)
+    {
+        $fromDate= $req->id_search_start.' 00:00:00'; 
+        $toDate= $req->id_search_end.' 23:59:59';
+
+        $from= $req->id_search_start; 
+        $to= $req->id_search_end;
+
+        $bill = Bill::where('status',1)
+        ->where('date_order','>=',$fromDate)
+        ->where('date_order','<=',$toDate)->get();
+       // return Response::json($bill, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        // $bill_day=Bill::where('date_order','like','%'.$req->id_search.'%')->paginate(3);
+         return view('page.result_bill_quy')->with('bil',$bill)->with('start',$from)->with('end',$to);
+    }
 }

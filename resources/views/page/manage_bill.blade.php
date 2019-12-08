@@ -29,7 +29,7 @@
                         <li><a href="{{route('confirm')}}">Hóa đơn chờ xác nhận</a></li>
                         <li class="active"><a>Thống kê hóa đơn</a></li>
                         <li><a href="{{route('bill_day')}}">Hóa đơn theo ngày</a></li>
-                        <li><a href="#">Hóa đơn theo quý</a></li>
+                        <li><a href="{{route('get_bill_quy')}}">Hóa đơn theo quý</a></li>
                         <li>
                             <div class="pull-right">
                                 <a href="{{route('dangxuat')}}">

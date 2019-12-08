@@ -66,7 +66,7 @@
                                 $('#message').delay(1500).fadeOut();
                               });
                             </script>
-                            <h2 style="text-align: center">Hóa đơn ngày {{Carbon\Carbon::parse($day)->format('d/m/Y')}}</h2>
+                            <h2 style="text-align: center">Hóa đơn từ {{Carbon\Carbon::parse($start)->format('d/m/Y')}} -- {{Carbon\Carbon::parse($end)->format('d/m/Y')}} </h2>
                             <br>
                         
                            
@@ -102,7 +102,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($bill as $b)
+                                            @foreach($bil as $b)
                                             <tr>
                                                 <div class="col-sm-1">
                                                     <td>{{$b->id}}</td>
@@ -141,13 +141,14 @@
                                                 </div>
                                             </tr>
                                             @endforeach
-                                           
                                             
+                                              
+                    
                                         </tbody>
                                         
                                     </table>
                                   
-                                           <div> {{$bill->links()}}</div>
+                                       
                                  
                                 </div>
                        

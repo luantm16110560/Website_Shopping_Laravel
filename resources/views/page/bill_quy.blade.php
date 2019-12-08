@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sửa hóa đơn</title>
+    <title>Thống kê hóa đơn theo quý</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -33,7 +33,7 @@
                               <li><a href="{{route('confirm')}}">Hóa đơn chờ xác nhận</a></li>
                                 <li class="active"><a>Thống kê hóa đơn</a></li>
                                 <li><a href="{{route('bill_day')}}">Hóa đơn theo ngày</a></li>
-                                <li><a href="{{route('get_bill_quy')}}">Hóa đơn theo quý</a></li>
+                            <li><a href="{{route('get_bill_quy')}}">Hóa đơn theo quý</a></li>
                                 <li>
                                     <div class="pull-right">
                                         <a href="{{route('dangxuat')}}">
@@ -49,14 +49,24 @@
         
                     </div>
                    
-                        <form autocomplete="off" action="{{route('search_bill')}}" method="get">
+                <form autocomplete="off" action="{{route('result_bill_quy')}}" method="get">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
-                                    <label style="font-size: 20px">Mã hóa đơn</label>
-                                    <input type="text" name="id_search"  style="font-weight: bold" >
+                                    <label style="font-size: 20px">Ngày bắt đầu</label>
+                                    <input type="date" name="id_search_start"  style="font-weight: bold" >
+                                    <label style="font-size: 20px">Ngày kết thúc</label>
+                                    <input type="date" name="id_search_end"  style="font-weight: bold" >
                                     <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Tìm kiếm</button>
                              </div>
+                             
                         </form>
+                        @if(Session::has('ngaynull'))
+                        <div class="col-sm-6">
+                        <div id="nottrue" style="text-align: center;font-weight: bold" id="message" class="alert alert-danger">
+                            {{Session::get('ngaynull')}}  
+                        </div>     
+                      </div>   
+                        @endif
                         @if(Session::has('khongtimthay'))
                         <div class="col-sm-6">
                         <div id="result_search" style="text-align:center;font-weight: bold" class="alert alert-danger">
@@ -67,6 +77,9 @@
                         <script type="text/javascript"> 
                           $(document).ready( function() {
                             $('#result_search').delay(1500).fadeOut();
+                          });
+                          $(document).ready( function() {
+                            $('#nottrue').delay(1500).fadeOut();
                           });
                         </script>
                          </div>
