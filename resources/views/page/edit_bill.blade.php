@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sửa hóa đơn</title>
+    <title>Xem hóa đơn</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -36,7 +36,7 @@
                                 <li class="active"><a>Hóa đơn</a></li>
                                 <li><a href="{{route('crud-bill')}}">Quản lý hóa đơn</a></li>
                               <li><a href="{{route('tracuu')}}">Tra cứu hóa đơn</a></li>
-                                <li><a href="#">Hóa đơn chờ xác nhận</a></li>
+                              <li><a href="{{route('confirm')}}">Hóa đơn chờ xác nhận</a></li>
                                 <li class="active"><a>Thống kê hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn theo ngày</a></li>
                                 <li><a href="#">Hóa đơn theo quý</a></li>
@@ -61,17 +61,13 @@
                           </div>
                       <div class="col-sm-6">
                             <div style="padding: 8px; border: 10px inset #8FBC8F; word-wrap: break-word;">
-                            <h2 style="text-align: center">Sửa hóa đơn</h2>
+                            <h2 style="text-align: center">Hóa đơn</h2>
                             <br>
                             @if(Session::has('thanhcong'))
                             <div class="alert alert-success">
                                 {{Session::get('thanhcong')}}  
                             </div>     
-                            @endif
-                                
-                                 
-                              
-                          
+                            @endif           
                       <form autocomplete="off" method="post" action="{{route('editbill',$bill->id)}}" >
                         {{ csrf_field() }}
                         <div class="form-group">

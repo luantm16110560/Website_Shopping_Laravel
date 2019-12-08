@@ -199,6 +199,12 @@ Route::get('search_bill',[
 	'uses'=>'PageController@searchBill'
 ]);
 
+Route::get('confirm',[
+	'as'=>'confirm',
+	'uses'=>'PageController@billConfirm'
+]);
+
+
 
 
 

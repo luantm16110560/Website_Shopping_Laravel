@@ -36,7 +36,7 @@
                                 <li class="active"><a>Hóa đơn</a></li>
                                 <li><a href="{{route('crud-bill')}}">Quản lý hóa đơn</a></li>
                                 <li><a href="{{route('tracuu')}}">Tra cứu hóa đơn</a></li>
-                                <li><a href="#">Hóa đơn chờ xác nhận</a></li>
+                            <li><a href="{{route('confirm')}}">Hóa đơn chờ xác nhận</a></li>
                                 <li class="active"><a>Thống kê hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn theo ngày</a></li>
                                 <li><a href="#">Hóa đơn theo quý</a></li>
@@ -135,8 +135,8 @@
                                                 </div>
                                                 <div class="col-sm-1">
                                                     <td>       
-                                                    <a href="{{route('deletebill',['id_bill'=>$b->id])}}" type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')">Xóa
-                                                    <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary">Sửa
+                                                    <a href="{{route('deletebill',['id_bill'=>$b->id])}}" type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"><span class="glyphicon glyphicon-trash"></span>
+                                                    <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span>
                                                     </td>
                                                 </div>
                                             </tr>

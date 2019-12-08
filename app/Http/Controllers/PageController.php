@@ -387,7 +387,7 @@ class PageController extends Controller
             ['isFinish', '=', 1],
           
             ])
-            ->orderBy('date_order', 'desc')->paginate(2);
+            ->orderBy('date_order', 'desc')->paginate(8);
            return view('page.crud_bill')->with('bill',$bill);
     }
     public function geteditBill($id_bill)
@@ -457,5 +457,16 @@ class PageController extends Controller
     public function viewTraCuu()
     {
         return view('page.tracuu');
+    }
+    public function billConfirm()
+    {
+        // $bill = Bill::where([
+        //     ['status', '=', 1],
+        //     ['isFinish', '=', 0],
+          
+        //     ])
+        //     ->orderBy('date_order', 'desc')->paginate(2);
+           
+        // return view('page.wait_confirm')->with('bill',$bill);
     }
 }

@@ -35,7 +35,7 @@
                         <li class="active"><a>Hóa đơn</a></li>
                         <li><a href="{{route('crud-bill')}}">Quản lý hóa đơn</a></li>
                         <li><a href="{{route('tracuu')}}">Tra cứu hóa đơn</a></li>
-                        <li><a href="#">Hóa đơn chờ xác nhận</a></li>
+                        <li><a href="{{route('confirm')}}">Hóa đơn chờ xác nhận</a></li>
                         <li class="active"><a>Thống kê hóa đơn</a></li>
                         <li><a href="#">Hóa đơn theo ngày</a></li>
                         <li><a href="#">Hóa đơn theo quý</a></li>
@@ -54,18 +54,13 @@
 
             </div>
             <div class="col-md-9">
-
                 <div class="col-sm-2">
                 </div>
                 <div class="col-sm-6">
                         <div style="padding: 8px; border: 10px inset #8FBC8F; word-wrap: break-word;">
                         <h2 style="text-align: center">Hóa đơn</h2>
                         <br> 
-                     
-                        
-                        
-                     
-                        <form autocomplete="off" method="" action="">
+                        <form autocomplete="off" method="post" action="{{route('editbill',$bill->id)}}">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label>ID</label>
@@ -80,7 +75,6 @@
 
                                 <input style="width: 150px" type="number" min="0" name="total" id="total" value="{{$bill->total}}" class="form-control">VND
                             </div>
-
                             <div class="form-group">
                                 <label>Thanh toán</label>
                                 <select name="payment" id="payment">
@@ -99,7 +93,6 @@
                             </div>
                             <div class="form-group">
                                 <label>Khách hàng</label>
-
                                 <button type="button" style="width: 200px" name="id_user" id="id_user" onclick="getUser();" class="btn btn-primary" value="{{$user->id}}">{{$user->name}}</button>
                                 <input type="hidden" id="name" value="{{$user->name}}">
                                 <input type="hidden" id="email" value="{{$user->email}}">
