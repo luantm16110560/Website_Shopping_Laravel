@@ -411,6 +411,7 @@ class PageController extends Controller
         $bill_want_edit->save();
 
         return redirect()->back()->with('thanhcong','Sửa thành công');
+        
 
     }
     public function getBill()
@@ -460,14 +461,14 @@ class PageController extends Controller
     }
     public function billConfirm()
     {
-        // $bill = Bill::where([
-        //     ['status', '=', 1],
-        //     ['isFinish', '=', 0],
+        $bill = Bill::where([
+            ['status', '=', 1],
+            ['isFinish', '=', 0],
           
-        //     ])
-        //     ->orderBy('date_order', 'desc')->paginate(2);
+            ])
+            ->orderBy('date_order', 'desc')->paginate(2);
            
-        // return view('page.wait_confirm')->with('bill',$bill);
+        return view('page.wait_confirm')->with('bill',$bill);
     }
     public function getDetail($id_bill)
     {

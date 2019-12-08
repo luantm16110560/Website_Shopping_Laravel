@@ -65,11 +65,16 @@
                             <h2 style="text-align: center">Hóa đơn</h2>
                             <br>
                             @if(Session::has('thanhcong'))
-                            <div class="alert alert-success">
+                            <div id="success_" class="alert alert-success">
                                 {{Session::get('thanhcong')}}  
                             </div>     
                             @endif     
-                       
+                            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                            <script type="text/javascript"> 
+                              $(document).ready( function() {
+                                $('#success_').delay(1500).fadeOut();
+                              });
+                            </script>
                             <a href="{{route('billdetail',['id_bill'=>$bill->id])}}" class="pull-right">
                                     <button class="btn btn-info">Chi tiết hóa đơn</button>
                               </a>      
@@ -117,6 +122,7 @@
                               </div>
                               <div class="form-group">
                                   <select name="isFinish" id="isFinish" >
+                                      
                                       <option value="1" style="color: green"><b>Xác nhận</b></option>
                                       <option value="0" style="color: red"><b>Hủy xác nhận</b></option>
                                    </select>
