@@ -204,6 +204,11 @@ Route::get('confirm',[
 	'uses'=>'PageController@billConfirm'
 ]);
 
+Route::get('billdetail/{id}',[
+	'as'=>'billdetail',
+	'uses'=>'PageController@getDetail'
+]);
+
 
 
 

@@ -469,4 +469,17 @@ class PageController extends Controller
            
         // return view('page.wait_confirm')->with('bill',$bill);
     }
+    public function getDetail($id_bill)
+    {
+       // echo $id_bill;
+        $bill_detail = Bill_Detail::where('id_bill','=',$id_bill)->first();
+        
+        $product = Product::where('id','=',$bill_detail->id_product)->first();
+
+    
+        return view('page.bill_detail')
+        ->with('bill', $bill_detail)->with('pro', $product);
+     
+        
+    }
 }

@@ -42,6 +42,7 @@
                                 <li><a href="#">Hóa đơn theo quý</a></li>
                                 <li>
                                     <div class="pull-right">
+                                        
                                         <a href="{{route('dangxuat')}}">
                                             <button type="button" class="btn btn-danger">Đăng xuất</button>
                                         </a>
@@ -67,7 +68,11 @@
                             <div class="alert alert-success">
                                 {{Session::get('thanhcong')}}  
                             </div>     
-                            @endif           
+                            @endif     
+                       
+                            <a href="{{route('billdetail',['id_bill'=>$bill->id])}}" class="pull-right">
+                                    <button class="btn btn-info">Chi tiết hóa đơn</button>
+                              </a>      
                       <form autocomplete="off" method="post" action="{{route('editbill',$bill->id)}}" >
                         {{ csrf_field() }}
                         <div class="form-group">
@@ -116,9 +121,13 @@
                                       <option value="0" style="color: red"><b>Hủy xác nhận</b></option>
                                    </select>
                               </div>
-                          
+                              
                               <input type="submit" value="Lưu thay đổi" class="btn btn-success">
+                            
+                           
+                            
                           </form>
+                        
                         </div>
                     </div>
                         <div class="col-sm-4">
