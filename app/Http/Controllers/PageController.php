@@ -112,7 +112,7 @@ class PageController extends Controller
         $user->phone=$req->phone;
         $user->gender=$req->gender;
         $user->address=$req->address;
-        $user->update();
+        $user->save();
         return redirect()->back();
    }
 

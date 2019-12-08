@@ -16,7 +16,7 @@
 
 <div class="container">
 	<div id="content">
-		<form action="{{route('infor')}}" method="post" class="beta-form-checkout">
+		<form action="{{route('infor')}}" method="post" class="beta-form-checkout" autocomplete="off">
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
 			<div class="row">
@@ -32,9 +32,14 @@
 					</div>
 					@endif
                     <div class="form-block">
-                        <label for="gender" style="font-size: 17px"><i>Giới tính</i></label>
+												<label for="gender" style="font-size: 17px"><i>Giới tính</i></label>
+												@if(Auth::user()->gender=="Nam")
                         <p>Nam</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="true" style="width: 10%">					        
-                        <p>Nữ</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
+												<p>Nữ</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
+												@else
+												<p>Nam</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nam"  style="width: 10%">					        
+												<p>Nữ</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" checked="true" style="width: 10%">
+												@endif
                     </div>
 					@if(Auth::check())
 					<div class="form-block">
