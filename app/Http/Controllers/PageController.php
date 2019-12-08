@@ -387,7 +387,7 @@ class PageController extends Controller
             ['isFinish', '=', 1],
           
             ])
-            ->orderBy('date_order', 'desc')->paginate(8);
+            ->orderBy('date_order', 'desc')->paginate(2);
            return view('page.crud_bill')->with('bill',$bill);
     }
     public function geteditBill($id_bill)
@@ -420,8 +420,30 @@ class PageController extends Controller
     public function searchBill(Request $req)
     {
         $id_bill_want_search=$req->id_search;
-        $bill_want_search=Bill::where('status',1)->where('id','like','%'.$id_bill_want_search.'%')->where('isFinish',1)->get();
-        return view('page.crud_bill')->with('bill',$bill_want_search);
+        $bill_want_search=Bill::where('status',1)
+        ->where('id','=',$id_bill_want_search)
+        ->where('isFinish','<',2)
+        ->first();
+
+        
+        $count=Bill::where('status',1)
+        ->where('id','=',$id_bill_want_search)
+        ->where('isFinish','<',2)
+        ->count();
+
+        if($count<=0)
+        {
+            return redirect()->back()->with('khongtimthay','Mã hóa đơn không tồn tại');
+        }
+        else
+        {
+        $user_by_id = $bill_want_search->id_user;
+        $user = User::find($user_by_id);
+            return view('page.result_tracuu')
+            ->with('bill',$bill_want_search)
+            ->with('user',$user);
+        }
+       //return Response::json($bill_want_search, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
     public function postdeleteBill($id)
     {
@@ -431,5 +453,9 @@ class PageController extends Controller
        return redirect()->back()->with('xoathanhcong','Xóa thành công');
 
 
+    }
+    public function viewTraCuu()
+    {
+        return view('page.tracuu');
     }
 }

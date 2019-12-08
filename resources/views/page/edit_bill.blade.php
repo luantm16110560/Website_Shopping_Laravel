@@ -35,6 +35,7 @@
                             <ul class="nav nav-pills nav-stacked" >
                                 <li class="active"><a>Hóa đơn</a></li>
                                 <li><a href="{{route('crud-bill')}}">Quản lý hóa đơn</a></li>
+                              <li><a href="{{route('tracuu')}}">Tra cứu hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn chờ xác nhận</a></li>
                                 <li class="active"><a>Thống kê hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn theo ngày</a></li>

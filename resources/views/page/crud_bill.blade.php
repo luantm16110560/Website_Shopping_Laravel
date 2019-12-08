@@ -35,6 +35,7 @@
                             <ul class="nav nav-pills nav-stacked" >
                                 <li class="active"><a>Hóa đơn</a></li>
                                 <li><a href="{{route('crud-bill')}}">Quản lý hóa đơn</a></li>
+                                <li><a href="{{route('tracuu')}}">Tra cứu hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn chờ xác nhận</a></li>
                                 <li class="active"><a>Thống kê hóa đơn</a></li>
                                 <li><a href="#">Hóa đơn theo ngày</a></li>
@@ -68,21 +69,7 @@
                             <h2 style="text-align: center">Quản lý hóa đơn</h2>
                             <br>
                         
-                            <form autocomplete="off" method="GET" action="{{route('search_bill')}}">
-                                    <div class="input-group">
-                                        <input type="search" id="search" name="id_search" class="form-control" placeholder="Nhập mã hóa đơn" onchange="listen()">               
-                                        <span class="input-group-prepend">
-                                            <button id="btnSearch" style="submit" class="btn btn-primary" onclick="my_function()">Tìm Kiếm</button>
-                                        </span>
-                                        <script>
-                                            public function my_function()
-                                            {
-                                                document.getElementById('btnSearch').value="Reset";
-                                            }
-                                        </script>
-                                        
-                                    </div>
-                                </form>
+                           
                           
                             <div style="overflow-x:auto;">
                                     <table class="table table-hover">
@@ -154,12 +141,14 @@
                                                 </div>
                                             </tr>
                                             @endforeach
-                                            
+                                           
                                             
                                         </tbody>
                                         
                                     </table>
-                                   
+                                  
+                                           <div> {{$bill->links()}}</div>
+                                 
                                 </div>
                        
         

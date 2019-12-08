@@ -182,14 +182,21 @@ Route::post('/editbill/{id}',[
 ]);
 
 
-Route::get('search_bill',[
-	'as'=>'search_bill',
-	'uses'=>'PageController@searchBill'
-]);
+
 //delete bill
 Route::get('/deletebill/{id}',[
 	'as'=>'deletebill',
 	'uses'=>'PageController@postdeleteBill'
+]);
+
+//search
+Route::get('tracuu',[
+	'as'=>'tracuu',
+	'uses'=>'PageController@viewTraCuu'
+]);
+Route::get('search_bill',[
+	'as'=>'search_bill',
+	'uses'=>'PageController@searchBill'
 ]);
 
 
