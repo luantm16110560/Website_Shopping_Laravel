@@ -483,4 +483,20 @@ class PageController extends Controller
      
         
     }
+    public function bill_day()
+    {
+        return view ('page.bill_day');
+    }
+    public function get_bill_day(Request $req)
+    {
+        //if($req->id_search >=10)
+        if($req->id_search =="")
+        {
+            return redirect()->back()->with('ngaynull','Ngày không hợp lệ');
+        }
+
+        $bill_day=Bill::where('date_order','like','%'.$req->id_search.'%')->paginate(3);
+        return view('page.result_bill_day')->with('bill',$bill_day)->with('day',$req->id_search);
+        //return Response::json($bill_day, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+    }
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quản lý hóa đơn</title>
+    <title>Thống kê hóa đơn theo ngày</title>
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -66,7 +66,7 @@
                                 $('#message').delay(1500).fadeOut();
                               });
                             </script>
-                            <h2 style="text-align: center">Quản lý hóa đơn</h2>
+                            <h2 style="text-align: center">Hóa đơn ngày {{Carbon\Carbon::parse($day)->format('d/m/Y')}}</h2>
                             <br>
                         
                            
@@ -135,8 +135,8 @@
                                                 </div>
                                                 <div class="col-sm-1">
                                                     <td>       
-                                                    <a href="{{route('deletebill',['id_bill'=>$b->id])}}" type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"><span class="glyphicon glyphicon-trash"></span>
-                                                    <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>
+                                                    {{-- <a href="{{route('deletebill',['id_bill'=>$b->id])}}" type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"><span class="glyphicon glyphicon-trash"></span> --}}
+                                                    <a href="{{route('editbill',['id_bill'=>$b->id,'id_user'=>$b->id_user])}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span>
                                                     </td>
                                                 </div>
                                             </tr>

@@ -198,16 +198,26 @@ Route::get('search_bill',[
 	'as'=>'search_bill',
 	'uses'=>'PageController@searchBill'
 ]);
-
+//confirm bill
 Route::get('confirm',[
 	'as'=>'confirm',
 	'uses'=>'PageController@billConfirm'
 ]);
-
+//bill detail
 Route::get('billdetail/{id}',[
 	'as'=>'billdetail',
 	'uses'=>'PageController@getDetail'
 ]);
+//Thong ke hoa don theo ngay
+Route::get('bill_day',[
+	'as'=>'bill_day',
+	'uses'=>'PageController@bill_day'
+]);
+Route::get('get_bill_day',[
+	'as'=>'get_bill_day',
+	'uses'=>'PageController@get_bill_day'
+]);
+
 
 
 
