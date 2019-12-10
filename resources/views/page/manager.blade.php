@@ -28,7 +28,9 @@
                     </style>
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-3">
+                            @if(count($bill)>0)
+                            <div class="col-sm-3">    
+                                <br>
                                 <div class="card" style="width:13rem; height: 13rem;">
                                     <a href="{{route('manage-product')}}">
                                     <img src="source/image/manager/shoes-icon.jpg" alt="Avatar" style="width:13rem; height: 13rem">
@@ -39,10 +41,51 @@
                                         </a>
                                     </div>
                                 </div>
+                            </div>                
+                            <div class="col-sm-3">    
+                                    <marquee class="pull-left" style="color: red;font-size: 18px;font-weight: bold" behavior="alternate" width="10%">>></marquee>
+                                    <p style="text-align: center;color: red;font-weight: bold;font-size: 14px">Có {{count($bill)}} hóa đơn cần xử lý</p>                                         
+                                  <div class="card" style="width:13rem; height: 13rem;">                 
+                                    <a href="{{route('manage_bill')}}">
+                                    <img src="source/image/manager/icon-invoice.jpg" alt="Avatar" style="width:13rem; height: 13rem">
+                                    </a>
+                                    <div class="center">
+                                        <a href="{{route('manage_bill')}}">
+                                        <h4><b>Hóa đơn</b></h4>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        
                             <div class="col-sm-3">
+                             <br>
                                 <div class="card" style="width:13rem; height: 13rem;">
+                                    <a href="{{route('manage-user')}}">
+                                    <img src="source/image/manager/icon-customer.png" alt="Avatar" style="width:13rem; height: 13rem">
+                                    </a>
+                                    <div class="center">
+                                        <a href="{{route('manage-user')}}">
+                                        <h4><b>Khách hàng</b></h4>
+                                      </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">                            
+                            </div>
+                            @else
+                            <div class="col-sm-3">       
+                                <div class="card" style="width:13rem; height: 13rem;">
+                                    <a href="{{route('manage-product')}}">
+                                    <img src="source/image/manager/shoes-icon.jpg" alt="Avatar" style="width:13rem; height: 13rem">
+                                    </a>
+                                    <div class="center">
+                                        <a href="{{route('manage-product')}}">
+                                        <h4><b>Sản phẩm</b></h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>                
+                            <div class="col-sm-3">                                    
+                                  <div class="card" style="width:13rem; height: 13rem;">                 
                                     <a href="{{route('manage_bill')}}">
                                     <img src="source/image/manager/icon-invoice.jpg" alt="Avatar" style="width:13rem; height: 13rem">
                                     </a>
@@ -65,8 +108,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">                            
+                            </div>
+                            @endif
+
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -267,7 +267,19 @@ class PageController extends Controller
    }
    public function managerPage()
    {
-        return view('page.manager');
+   
+    //$mytime = Carbon\Carbon::now()->toDateString('Y-m-d');
+ //   $today_start=$mytime.' 00:00:00';
+   // $today_end=$mytime.' 23:59:59';
+
+    
+    
+    $bill = Bill::where('status',1)
+    ->where('isFinish','=',0)->get();
+  //  ->where('date_order','>=',$today_start)
+    //->where('date_order','<=',$today_end)->get();
+   
+        return view('page.manager')->with('bill',$bill);
    }
    public function manageProduct()
    {
@@ -472,15 +484,27 @@ class PageController extends Controller
     }
     public function getDetail($id_bill)
     {
-       // echo $id_bill;
-        $bill_detail = Bill_Detail::where('id_bill','=',$id_bill)->first();
+    //     //lấy ra trong chi tiết hđ những hóa đơn có id=$id_bill
+         $bill_detail = Bill_Detail::where('id_bill','=',$id_bill);
+    //     ->join('product')
         
-        $product = Product::where('id','=',$bill_detail->id_product)->first();
-
+    $bill_detail = DB::table('bill_detail')
+    ->select(
+        'products.id as product_id',
+        'products.name as product_name',
+        'products.unit_price as unit_price',
+        'products.size as size',
+        'products.amount as amount',
+        'products.image as product_image',
+        'bill_detail.unit_price',
+        'bill_detail.amount',
+        'bill_detail.size')
+    ->where('id_bill',  '=', $id_bill)
+    ->join('products','bill_detail.id_product','=','products.id')->paginate(1);
     
-        return view('page.bill_detail')
-        ->with('bill', $bill_detail)->with('pro', $product);
-     
+       return view('page.bill_detail')
+       ->with('billdetail', $bill_detail);
+    //  return Response::json($bill_detail, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         
     }
     public function bill_day()

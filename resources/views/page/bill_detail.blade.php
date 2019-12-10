@@ -63,61 +63,41 @@
                             {{Session::get('thanhcong')}}
                         </div>
                         @endif
-                        <form autocomplete="off" method="" action="">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        @foreach($billdetail as $bd)
+                        <form>
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
-                                <label>Sản phẩm</label>
-                                <label  name="id_product" id="id_product"  class="form-control">{{$pro->name}}</label>
+                                    <label>Sản phẩm</label>
+                                    <br>
+                                    <label style="text-align: center;color: royalblue"   name="name_product" id="name_product">{{$bd->product_name}}</label>
+                            
                             </div>
                             <div class="form-group">
-                              <label>Size</label>
-                              <label style="width: 200px" type="number" min="35" name="size" id="size" class="form-control">{{$bill->size}}</label>
-                          </div>
-                            <div class="form-group">
-                                <label>Số lượng</label>
-                                <label style="width: 150px" type="number" min="1" name="amount" id="amount" class="form-control">{{$bill->amount}}</label>
+                                    <label>Mã sản phẩm</label>
+                                    <br>
+                                    <label style="text-align: center;color: royalblue"   name="id_product" id="id_product">{{$bd->product_id}}</label>                               
                             </div>
                             <div class="form-group">
-                                <label>Đơn giá</label>
-                                <label type="number" min="0" name="unit_prict" style="width: 200px" id="unit_prict" class="form-control">{{$bill->unit_price}}</label>
-                            </div>
-                            {{--
-                            <div class="form-group">
-                                <label>Khách hàng</label>
-
-                                <button type="button" style="width: 200px" name="id_user" id="id_user" onclick="getUser();" class="btn btn-primary" value="{{$user->id}}">{{$user->name}}</button>
-                                <input type="hidden" id="name" value="{{$user->name}}">
-                                <input type="hidden" id="email" value="{{$user->email}}">
-                                <input type="hidden" id="address" value="{{$user->address}}">
-                                <input type="hidden" id="gender" value="{{$user->gender}}">
-                                <input type="hidden" id="phone" value="{{$user->phone}}">
+                                    <label>Đơn giá</label>
+                                    <br>
+                                    <label style="text-align: center;color: royalblue"   name="unit_price" id="unit_price">{{$bd->unit_price}}</label>                               
                             </div>
                             <div class="form-group">
-                                <select name="isFinish" id="isFinish">
-                                    <option value="1" style="color: green"><b>Xác nhận</b></option>
-                                    <option value="0" style="color: red"><b>Hủy xác nhận</b></option>
-                                </select>
-                            </div> --}}
-                            {{-- <input type="submit" value="Lưu thay đổi" class="btn btn-success"> --}}
+                                    <label>Số lượng</label>
+                                    <br>
+                                    <label style="text-align: center;color: royalblue"   name="amount" id="amount">{{$bd->amount}}</label>                               
+                            </div>
+                           
+                      
                         </form>
+                        @endforeach
+                        <div class="center">
+                                {{$billdetail->links()}}
+                            </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                 </div>
-
-                {{--
-                <script>
-                    function getUser() {
-
-                        var name = document.getElementById("name").value;
-                        var gender = document.getElementById("gender").value;
-                        var email = document.getElementById("email").value;
-                        var address = document.getElementById("address").value;
-                        var phone = document.getElementById("phone").value;
-                        alert(name + "\n" + gender + "\n" + email + "\n" + address + "\n" + phone);
-
-                    }
-                </script> --}}
             </div>
         </div>
 

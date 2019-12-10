@@ -90,9 +90,9 @@
                                                 <div class="col-sm-2">
                                                     <th>Ghi chú</th>
                                                 </div>
-                                                <div class="col-sm-2">
+                                                {{-- <div class="col-sm-2">
                                                     <th>Khách hàng</th>
-                                                </div>
+                                                </div> --}}
                                                 <div class="col-sm-1">
                                                     <th>Trạng thái</th>
                                                 </div>
@@ -119,9 +119,9 @@
                                                 <div class="col-sm-2">
                                                     <td>{{$b->note}}</td>
                                                 </div>
-                                                <div class="col-sm-2">
+                                                {{-- <div class="col-sm-2">
                                                     <td>{{$b->id_user}}</td>
-                                                </div>
+                                                </div> --}}
                                                 <div class="col-sm-1">
                                                     @if($b->isFinish==0)
                                                     <td>
