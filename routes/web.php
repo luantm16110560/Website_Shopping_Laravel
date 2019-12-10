@@ -227,6 +227,17 @@ Route::get('result_bill_quy',[
 	'uses'=>'PageController@result_bill_quy'
 ]);
 
+//Change password
+Route::get('change_password',[
+	'as'=>'change_password',
+	'uses'=>'PageController@changePassword'
+]);
+Route::post('postChangePassword',[
+	'as'=>'postChangePassword',
+	'uses'=>'PageController@postChangePassword'
+]);
+
+
 
 
 

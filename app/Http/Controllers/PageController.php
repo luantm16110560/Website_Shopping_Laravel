@@ -518,4 +518,35 @@ class PageController extends Controller
         // $bill_day=Bill::where('date_order','like','%'.$req->id_search.'%')->paginate(3);
          return view('page.result_bill_quy')->with('bil',$bill)->with('start',$from)->with('end',$to);
     }
+    public function changePassword()
+    {
+        return view('page.change_password');
+    }
+    public function postChangePassword(Request $req)
+    {
+        if (!(Hash::check($req->get('old_password'), Auth::user()->password))) {
+            // The passwords not matches
+            return redirect()->back()->with("error","Mật khẩu cũ không đúng");
+        }
+   
+        if(strcmp($req->get('old_password'), $req->get('new_password')) == 0){
+            //Current password and new password are same
+           return redirect()->back()->with("error","Mật khẩu mới không được giống mật khẩu cũ");
+            //return response()->json(['errors' => ['current'=> ['New Password cannot be same as your current password']]], 422);
+        }
+        if(($req->get('confirm_password')!=$req->get('new_password'))){
+            //Current password and new password are same
+           return redirect()->back()->with("error","Mật khẩu xác nhận phải giống mật khẩu mới");
+            //return response()->json(['errors' => ['current'=> ['New Password cannot be same as your current password']]], 422);
+        }
+        $validatedData = $req->validate([
+            'old_password' => 'required',
+            'new_password' => 'required',
+        ]);
+        //Change Password
+        $user = Auth::user();
+        $user->password = Hash::make($req->get('new_password'));
+        $user->save();
+        return redirect()->back()->with("success","Đổi mật khẩu thành công");
+    }
 }
