@@ -547,6 +547,6 @@ class PageController extends Controller
         $user = Auth::user();
         $user->password = Hash::make($req->get('new_password'));
         $user->save();
-        return redirect()->back()->with("success","Đổi mật khẩu thành công");
+        return redirect()->back()->with("success","Đổi mật khẩu thành công, hãy đăng nhập lại");
     }
 }

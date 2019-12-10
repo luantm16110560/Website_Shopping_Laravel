@@ -44,18 +44,32 @@
                             <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Xác nhận</button>
 
                         </form>
+                       
                         @if(Session::has('error'))
                         <div class="alert alert-danger" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('error')}}</div>
                          @endif
                     @if(Session::has('success'))
-                    <div class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('success')}}</div>
+                    <div id="success" class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('success')}}</div>
+                    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                    <script type="text/javascript"> 
+                      $(document).ready( function() {
+                        $('#success').delay(1000).fadeOut();
+                        document.getElementById("temp").click();
+                      });
+                    </script>
                     @endif
                           
                     </div>
                     <!--/card-block-->
                 </div>
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              	<a href="{{route('dangxuat')}}">
+										<div class="right">
+											<button id="temp"  style="display: none" type="button" class="btn btn-success">Đăng xuất</button>
+										</div>
+									</a>
+            </div>
         </div>
 
     </div>
