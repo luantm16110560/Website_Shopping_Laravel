@@ -238,6 +238,18 @@ Route::post('postChangePassword',[
 ]);
 
 
+//PRODUCT
+//update product
+Route::get('/edit_product/{id_pro}/{id_type}',[
+	'as'=>'edit_product',
+	'uses'=>'PageController@get_editProduct'
+]);
+Route::post('/edit_product/{id_pro}/{id_type}',[
+	'as'=>'edit_product',
+	'uses'=>'PageController@post_editProduct'
+]);
+
+
 
 
 

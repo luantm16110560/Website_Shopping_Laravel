@@ -23,7 +23,7 @@ class PageController extends Controller
    public function getIndex()
    {
     $slide = DB::table('slides')->get();
-    $product = Product::where('status','=',1)->paginate(4);
+    $product = Product::where('status','=',1)->paginate(8);
     $count =  Product::where('status','=',1)->count();
     return view('page.trangchu')->with('my_slide',$slide)->with('product',$product)->with('_count',$count);
    }
@@ -301,8 +301,11 @@ class PageController extends Controller
        return view('page.upload_product')->with('type',$type);
    }
    public function crudProduct()
-   {
-       return view('page.crud_product');
+   {  
+    $product = Product::where('products.status',  '=', 1)->paginate(8);
+    // ->join('type_products','products.id_type','=','type_products.id')->paginate(8);
+    
+    return view('page.crud_product')->with('product',$product);
    }
    public function saleOfProduct()
    {
@@ -478,7 +481,7 @@ class PageController extends Controller
             ['isFinish', '=', 0],
           
             ])
-            ->orderBy('date_order', 'desc')->paginate(2);
+            ->orderBy('date_order', 'desc')->paginate(8);
            
         return view('page.wait_confirm')->with('bill',$bill);
     }
@@ -572,5 +575,20 @@ class PageController extends Controller
         $user->password = Hash::make($req->get('new_password'));
         $user->save();
         return redirect()->back()->with("success","Đổi mật khẩu thành công, hãy đăng nhập lại");
+    }
+    public function get_editProduct(Request $req,$id_product,$id_type_product)
+    {
+      
+        $product = Product::where('status',1)
+        ->where('id',$id_product)->first();
+        
+        $type=Type_Product::where('status',1)->get();
+        $type_by_id=Type_Product::where('id',$id_type_product)->first();
+      
+        return view('page.edit_product')
+        ->with('p',$product)
+        ->with('t',$type)
+        ->with('tid',$type_by_id);
+       // return Response::json($product, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 }
