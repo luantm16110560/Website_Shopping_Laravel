@@ -15,7 +15,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <base href="{{asset('')}}">
     <!--customjs-->
 
 </head>
@@ -66,12 +66,15 @@
                         @foreach($billdetail as $bd)
                         <form>
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <div class="col-sm-6">
                             <div class="form-group">
                                     <label>Sản phẩm</label>
                                     <br>
                                     <label style="text-align: center;color: royalblue"   name="name_product" id="name_product">{{$bd->product_name}}</label>
-                            
                             </div>
+                            <img src="source/image/product/{{$bd->product_image}}" id="output_image" style="width:95px;height:95px" />
+                            </div>
+                       
                             <div class="form-group">
                                     <label>Mã sản phẩm</label>
                                     <br>

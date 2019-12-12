@@ -302,7 +302,7 @@ class PageController extends Controller
    }
    public function crudProduct()
    {  
-    $product = Product::where('products.status',  '=', 1)->paginate(8);
+    $product = Product::where('products.status',  '=', 1)->orderBy('id','desc')->paginate(8);
     // ->join('type_products','products.id_type','=','type_products.id')->paginate(8);
     
     return view('page.crud_product')->with('product',$product);
@@ -590,5 +590,9 @@ class PageController extends Controller
         ->with('t',$type)
         ->with('tid',$type_by_id);
        // return Response::json($product, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+    }
+    public function post_editProduct(Request $req,$id_product)
+    {
+        echo $id_product;
     }
 }
