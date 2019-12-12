@@ -254,6 +254,25 @@ Route::get('/deleteproduct/{id}',[
 	'uses'=>'PageController@postdeleteProduct'
 ]);
 
+//TYPE_PRODUCT
+//edit cate
+Route::get('/edit_cate/{id}',[
+	'as'=>'edit_cate',
+	'uses'=>'PageController@geteditCate'
+]);
+Route::post('/edit_cate/{id}',[
+	'as'=>'edit_cate',
+	'uses'=>'PageController@posteditcate'
+]);
+//delet cate
+Route::get('/deletecate/{id}',[
+	'as'=>'deletecate',
+	'uses'=>'PageController@deletecate'
+]);
+
+
+
+
 
 
 

@@ -330,7 +330,8 @@ class PageController extends Controller
    }
    public function crudCate()
    {
-       return view('page.crud_cate');
+        $cate=Type_Product::where('status',1)->paginate(10);
+       return view('page.crud_cate')->with('cate',$cate);
    }
   
    public function createProduct(Request $req)
@@ -700,6 +701,28 @@ class PageController extends Controller
     public function postdeleteProduct($id)
     {
         Product::where('id',$id )
+        ->update(['status' => 0]);
+       return redirect()->back()->with('xoathanhcong','Xóa thành công');
+    }
+    public function geteditCate($id_cate)
+    {
+        $cate=Type_Product::where('id',$id_cate)->first();
+        return view('page.edit_cate')->with('cate',$cate);
+    }
+    public function posteditcate(Request $req,$id_cate)
+    {
+        $cate_want_edit = Type_Product::find($id_cate);
+      
+        $cate_want_edit->name = $req->name;
+      
+
+        $cate_want_edit->save();
+
+        return redirect()->back()->with('thanhcong','Sửa thành công');
+    }
+    public function deletecate($id_cate)
+    {
+        Type_Product::where('id',$id_cate )
         ->update(['status' => 0]);
        return redirect()->back()->with('xoathanhcong','Xóa thành công');
     }

@@ -136,8 +136,9 @@
                         <div class="col-sm-5">
                             <h4 class="right" style="margin-left: 75px">Tên sản phẩm</h4>
                         </div>
-                        <div class="col-sm-7">
-                            <input type="text" name="name" style="height: 25px;width: 300px; margin-top: 5px" required></input>
+                        <div class="col-sm-7">     
+                            <input type="text" name="name" style="height: 25px;width: 300px; margin-top: 5px" required />
+                            {{-- <input type="text"  maxlength="35" name="name" style="height: 25px;width: 300px; margin-top: 5px" required onkeypress="return isNumberKey(event)" /> --}}
                         </div>
                     </div>
                     <div class="col-sm-4"> </div>
