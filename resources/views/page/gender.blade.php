@@ -20,7 +20,7 @@
                                     <li><a href="{{route('gender',['client_gender'=>'Nữ'])}}" style="color: pink;font-size: 25px;font-weight: bold">Nữ</a></li>
         
                                 </ul>
-                                <ul class="nav navbar-nav navbar-right">
+                                {{-- <ul class="nav navbar-nav navbar-right">
                                     <li>
                                         <div class="dropdown" style="margin-top: 15px">
                                             <a data-toggle="dropdown" style="font-size: 20px; margin-right:7px;">Sắp xếp giá<span class="caret"></span></a>
@@ -32,7 +32,7 @@
                                         </div>
                                     </li>
         
-                                </ul>
+                                </ul> --}}
                             </div>
                         </nav>
                 <div class="col-sm-12">

@@ -43,9 +43,11 @@
                                 </div>
                             </div>                
                             <div class="col-sm-3">    
+                                <a href="confirm">
                                     <marquee class="pull-left" style="color: red;font-size: 18px;font-weight: bold" behavior="alternate" width="10%">>></marquee>
-                                    <p style="text-align: center;color: red;font-weight: bold;font-size: 14px">Có {{count($bill)}} hóa đơn cần xử lý</p>                                         
-                                  <div class="card" style="width:13rem; height: 13rem;">                 
+                                    <p  style="text-align: center;color: red;font-weight: bold;font-size: 14px">Có {{count($bill)}} hóa đơn cần xử lý</p>                                         
+                                </a>
+                                    <div class="card" style="width:13rem; height: 13rem;">                 
                                     <a href="{{route('manage_bill')}}">
                                     <img src="source/image/manager/icon-invoice.jpg" alt="Avatar" style="width:13rem; height: 13rem">
                                     </a>

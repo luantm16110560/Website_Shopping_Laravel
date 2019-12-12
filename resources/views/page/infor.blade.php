@@ -60,7 +60,7 @@
 					@if(Auth::check())
 					<div class="form-block">
 						<label for="phone" style="font-size: 17px;font-weight: bold"><i>Điện thoại</i></label>
-						<input style="font-weight: bold" type="text" class="form-control form-control-lg rounded-0" id="phone" name="phone" required value="{{Auth::user()->phone}}">
+						<input style="font-weight: bold" type="number" min="" class="form-control form-control-lg rounded-0" id="phone" name="phone" required value="{{Auth::user()->phone}}">
 					</div>
 					@endif
 							</div>
