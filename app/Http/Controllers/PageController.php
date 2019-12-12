@@ -323,7 +323,10 @@ class PageController extends Controller
    }
    public function saleOfProduct()
    {
-    return view('page.sale_of_product');
+    $sale_of = Product::where('status',1)
+    ->where('promotion_price','<>',0)
+    ->paginate(8);
+    return view('page.sale_of_product')->with('product',$sale_of);
    }
    public function crudCate()
    {
