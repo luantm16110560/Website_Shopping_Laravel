@@ -244,9 +244,14 @@ Route::get('/edit_product/{id_pro}/{id_type}',[
 	'as'=>'edit_product',
 	'uses'=>'PageController@get_editProduct'
 ]);
-Route::post('/edit_product/{id_pro}/{id_type}',[
-	'as'=>'edit_product',
+Route::post('/editproduct/{id_pro}',[
+	'as'=>'editproduct',
 	'uses'=>'PageController@post_editProduct'
+]);
+//delete product
+Route::get('/deleteproduct/{id}',[
+	'as'=>'deleteproduct',
+	'uses'=>'PageController@postdeleteProduct'
 ]);
 
 

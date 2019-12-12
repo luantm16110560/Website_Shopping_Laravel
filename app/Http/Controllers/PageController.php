@@ -302,8 +302,22 @@ class PageController extends Controller
    }
    public function crudProduct()
    {  
-    $product = Product::where('products.status',  '=', 1)->orderBy('id','desc')->paginate(8);
-    // ->join('type_products','products.id_type','=','type_products.id')->paginate(8);
+       $product=DB::table('products')
+       ->select(
+           'products.id as id',
+           'products.name as name',
+           'products.gender as gender',
+           'products.unit_price as unit_price',
+           'products.promotion_price as promotion_price',
+           'products.size as size',
+           'products.id_type as id_type',
+           'products.image as image',
+           'type_products.name as name_type'
+           )
+           ->where('products.status',  '=', 1)
+           ->join('type_products','products.id_type','=','type_products.id')
+           ->orderBy('products.id','desc')
+           ->paginate(8);
     
     return view('page.crud_product')->with('product',$product);
    }
@@ -593,6 +607,97 @@ class PageController extends Controller
     }
     public function post_editProduct(Request $req,$id_product)
     {
-        echo $id_product;
+        //echo $id_product;
+        $product_want_edit = Product::find($id_product);
+      
+        $product_want_edit->name = $req->name;
+        $product_want_edit->description = $req->description;
+        $product_want_edit->unit_price = $req->unit_price;
+        $product_want_edit->promotion_price = $req->promotion_price;
+        $product_want_edit->gender = $req->gender;
+        $product_want_edit->size = $req->size;
+        $product_want_edit->id_type = $req->select;
+
+
+
+
+
+
+
+
+      
+
+       if($req->hasFile('imageInput'))// input type name=""
+       {
+           $myDate = Carbon\Carbon::now()->toDateString();
+
+           $myTime =  Carbon\Carbon::now()->hour."h_".Carbon\Carbon::now()->minute."m_".Carbon\Carbon::now()->second."s";
+
+           $myFile=$req->imageInput->getClientOriginalName(); //input type name=""
+
+           $filename =$myDate."_".$myTime."_".$myFile;
+       
+           $image= $req->file('imageInput');
+           $image_resize = Image::make($image->getRealPath());
+           $image_resize->resize(270, 320);
+           $product_want_edit->image=$filename;
+           $image_resize->save(public_path('source/image/product/'.$filename));
+       }
+       else
+       {
+         $product_want_edit->image="defaul_product.png";
+       }
+       if($req->hasFile('imageInput1'))// input type name=""
+       {
+           $myDate = Carbon\Carbon::now()->toDateString();
+
+           $myTime =  Carbon\Carbon::now()->hour."h_".Carbon\Carbon::now()->minute."m_".Carbon\Carbon::now()->second."s";
+
+           $myFile=$req->imageInput1->getClientOriginalName(); //input type name=""
+
+           $filename =$myDate."_".$myTime."_".$myFile;;
+       
+           $image= $req->file('imageInput1');
+           $image_resize = Image::make($image->getRealPath());
+           $image_resize->resize(90, 90);
+           $product_want_edit->img1=$filename;
+           $image_resize->save(public_path('source/image/product/'.$filename));
+       }
+       else
+       {
+           echo "error";
+       }
+       if($req->hasFile('imageInput2'))// input type name=""
+       {
+           $myDate = Carbon\Carbon::now()->toDateString();
+
+           $myTime =  Carbon\Carbon::now()->hour."h_".Carbon\Carbon::now()->minute."m_".Carbon\Carbon::now()->second."s";
+
+           $myFile=$req->imageInput2->getClientOriginalName(); //input type name=""
+
+           $filename =$myDate."_".$myTime."_".$myFile;;
+       
+           $image= $req->file('imageInput2');
+           $image_resize = Image::make($image->getRealPath());
+           $image_resize->resize(90, 90);
+           $product_want_edit->img2=$filename;
+           $image_resize->save(public_path('source/image/product/'.$filename));
+       }
+       else
+       {
+           echo "error";
+       }
+    
+      
+
+        $product_want_edit->save();
+        return redirect()->back()->with("success","Sửa thành công");
+        
+    }
+    public function postdeleteProduct($id)
+    {
+        Product::where('id',$id )
+        ->update(['status' => 0]);
+       return redirect()->back()->with('xoathanhcong','Xóa thành công');
     }
 }

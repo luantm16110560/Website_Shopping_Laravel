@@ -44,7 +44,17 @@
 
             </div>
             <div class="col-md-9">
-                   
+                    @if(Session::has('xoathanhcong'))
+                    <div id="message" style="text-align: center;font-weight: bold" id="message" class="alert alert-danger">
+                        {{Session::get('xoathanhcong')}}  
+                    </div>     
+                    @endif
+                    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                    <script type="text/javascript"> 
+                      $(document).ready( function() {
+                        $('#message').delay(1500).fadeOut();
+                      });
+                    </script>
                     <h2 style="text-align: center">Quản lý sản phẩm</h2>
                     <br>
         
@@ -87,8 +97,8 @@
                                             <div class="col-sm-1">
                                                     <th>{{$p->id}}</th>
                                                 </div>
-                                                <div class="col-sm-3">
-                                                    <th>{{$p->name}}</th>
+                                                <div  class="col-sm-3">
+                                                    <th style="width: 300px">{{$p->name}}</th>
                                                 </div>
                                                 <div class="col-sm-2">
                                                         <th>
@@ -99,20 +109,20 @@
                                                      <th>{{$p->gender}}</th>
                                                 </div>
                                                 <div class="col-sm-1">
-                                                        <th>{{$p->id_type}}</th>
+                                                        <th>{{$p->name_type}}</th>
                                                    </div>
                                                 <div class="col-sm-1">
                                                     <th>{{$p->unit_price}}</th>
                                                 </div>
                                                 <div class="col-sm-1">
                                                     <th>{{$p->promotion_price}}</th>
-                                                </div>
+                                             </div>
                                                 <div class="col-sm-1">
                                                     <th>{{$p->size}}</th>
                                                 </div>
                                         <div class="col-sm-1">
-                                            <td>       
-                                            <a href="#" type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"><span class="glyphicon glyphicon-trash"></span>
+                                            <td>    
+                                            <a href="{{route('deleteproduct',['id_product'=>$p->id])}}" type="button" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa')"><span class="glyphicon glyphicon-trash"></span>   
                                             <a href="{{route('edit_product',['id_product'=>$p->id,'id_user'=>$p->id_type])}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span>
                                            
                                             </td>

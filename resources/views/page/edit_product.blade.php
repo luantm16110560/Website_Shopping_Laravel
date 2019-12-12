@@ -46,16 +46,20 @@
             </div>
             <div class="col-md-9">
 
-                @if(Session::has('thongbao'))
-                <div class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('thongbao')}}</div>
+                @if(Session::has('thanhcong'))
+                <div  id="success" class="alert alert-success" style="text-align: center; font-size: 16px; font-weight: bold">{{Session::get('thongbao')}}</div>
                 @endif
                    <h2 style="text-align: center">Thông tin sản phẩm</h2>
-        
-                <form action="" method="" enctype="multipart/form-data" autocomplete="off">
+                   <script type="text/javascript"> 
+                    $(document).ready( function() {
+                      $('#success').delay(1500).fadeOut();
+                    });
+                  </script>
+            <form action="{{route('editproduct',['id_product'=>$p->id])}}" method="post" enctype="multipart/form-data" autocomplete="off">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="col-sm-4">
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                        <img id="myimage" src="source/image/product/{{$p->image}}" alt="your image" style="width:280px;height:280px" />
+                        <img id="myimage" src="source/image/product/{{$p->image}}" alt="your image" style="width:100%;height:100%" />
                    
                         <input style="display:none;" type='file' id="imageInput" name="imageInput" accept="
                                     image/*" />
@@ -168,12 +172,13 @@
                         </div>
                         <div class="col-sm-7" style="margin-top: 5px; height: 25px;width: 300px">
                             <select class="form-control" name="select" id="select">
-                                <option value="{{$tid->id}}" selected disabled hidden >{{$tid->name}}</option>
+                                <option value="{{$tid->id}}">{{$tid->name}}</option>
                                 @foreach ($t as $type)
-                                <option value="{{$type->id}}">
+                                <option  value="{{$type->id}}">
                                   {{$type->name}}
                                 </option>
                                 @endforeach
+                              
                             </select>
                         
                         </div>
