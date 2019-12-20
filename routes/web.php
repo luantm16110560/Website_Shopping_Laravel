@@ -269,6 +269,8 @@ Route::get('/deletecate/{id}',[
 	'as'=>'deletecate',
 	'uses'=>'PageController@deletecate'
 ]);
+Route::get('auth/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 
 

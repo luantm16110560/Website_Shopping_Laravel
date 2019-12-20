@@ -33,5 +33,10 @@ return [
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
+    'google' => [
+        'client_id' => '849499091320-qn8nig309nebn44tj24nagvm2j974ura.apps.googleusercontent.com',
+        'client_secret' => 'P6ENoiBtIIWC--WwrUSVUFXb',
+        'redirect' => 'http://localhost/laravel/public/auth/google/callback',
+    ],
 
 ];

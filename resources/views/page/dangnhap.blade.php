@@ -49,15 +49,29 @@
                         </label>
                      </div>
                      --}}
-                     <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng nhập</button>
+                     <button  style="height: 40px;font-size: 15px" type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Đăng nhập</button>
+                 
                   </form>
+                 
                </div>
+               
                <!--/card-block-->
             </div>
+          
          </div>
-         <div class="col-sm-4"></div>
+        
+         <div class="col-sm-4">
+          
+         </div>
+        
       </div>
+     
    </div>
+   <div class="center">
+      <a href="{{ url('auth/google') }}" class="btn btn-danger">
+         <i style="font-size: 20px" class="fa fa-google-plus" aria-hidden="true"></i></span> Đăng nhập với Google
+       </a>
+      </div>
    <!-- #content -->
 </div>
 <!--/container-->

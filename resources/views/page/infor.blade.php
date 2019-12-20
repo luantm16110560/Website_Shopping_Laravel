@@ -48,13 +48,13 @@
 					@if(Auth::check())
 					<div class="form-block">
 						<label for="email" style="font-size: 17px;font-weight: bold"><i>Email</i></label>
-						<input style="font-weight: bold" type="email" class="form-control form-control-lg rounded-0" id="email" name="email" required placeholder="ducquy@gmail.com" value="{{Auth::user()->email}}">
+						<input style="font-weight: bold" type="email" class="form-control form-control-lg rounded-0" id="email" name="email" required value="{{Auth::user()->email}}">
 					</div>
 					@endif
 					@if(Auth::check())
 					<div class="form-block">
 						<label for="adress" style="font-size: 17px;font-weight: bold"><i>Địa chỉ</i></label>
-						<input style="font-weight: bold" type="text" class="form-control form-control-lg rounded-0" id="address" name="address" placeholder="Street Address" required value="{{Auth::user()->address}}">
+						<input style="font-weight: bold" type="text" class="form-control form-control-lg rounded-0" id="address" name="address"  required value="{{Auth::user()->address}}">
 					</div>
 					@endif
 					@if(Auth::check())
@@ -68,6 +68,7 @@
 							
 							<div class="text-center"><button type="submit" class="beta-btn primary" href="#">Cập nhật<i class="fa fa-chevron-right"></i></button></div>
 						</div>
+						@if(Auth::user()->phone  and Auth::user()->address)
 						<div class="col-sm-6">
 								<a href="{{route('change_password')}}">
 										<div class="right">
@@ -76,13 +77,10 @@
 									</a>
 											
 						</div>
-						
-					
+						@endif
 				</div>
 			</div>
-		
 		</form>
-
 	</div> <!-- #content -->
 </div> <!-- .container -->
 

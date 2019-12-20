@@ -16,12 +16,17 @@
 
 <div class="container">
 	<div id="content">
-		
-		<form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
+		@if(Session::has('message'))
+		<div style="text-align: center;font-weight: bold;font-size: 25px" class="alert alert-danger">
+			{{Session::get('message')}}
+		</div>
+		@endif
+		<form autocomplete="off" action="{{route('dathang')}}" method="post" class="beta-form-checkout">
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<div class="row">
 				@if(Session::has('thongbao')){{Session::get('thongbao')}}
 				@endif
+			
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
@@ -31,8 +36,8 @@
 					<div class="your-order-body" style="padding: 0px 10px">
 					@if(Auth::check())
 					<div class="form-block">
-						<label for="name" style="font-size: 17px"><i>Họ tên</i></label>
-						<input type="text" class="form-control form-control-lg rounded-0" name="name" placeholder="Họ tên" value="{{Auth::user()->name}}" required>
+						<label for="name" style="font-size: 17px;font-weight: bold"><i>Họ tên</i></label>
+						<input style="font-weight: bold"  type="text" class="form-control form-control-lg rounded-0" name="name" placeholder="Họ tên" value="{{Auth::user()->name}}" required>
 					</div>
 					@endif
 					@if(Auth::check())
@@ -43,25 +48,25 @@
 					@endif
 					@if(Auth::check())
 					<div class="form-block">
-						<label for="email" style="font-size: 17px"><i>Email</i></label>
-						<input type="email" class="form-control form-control-lg rounded-0" id="email" name="email" required placeholder="ducquy@gmail.com" value="{{Auth::user()->email}}">
+						<label for="email" style="font-size: 17px;font-weight: bold"><i>Email</i></label>
+						<input style="font-weight: bold" type="email" class="form-control form-control-lg rounded-0" id="email" name="email" required  value="{{Auth::user()->email}}">
 					</div>
 					@endif
 					@if(Auth::check())
 					<div class="form-block">
-						<label for="adress" style="font-size: 17px"><i>Địa chỉ</i></label>
-						<input type="text" class="form-control form-control-lg rounded-0" id="address" name="address" placeholder="Street Address" required value="{{Auth::user()->address}}">
+						<label for="adress" style="font-size: 17px;font-weight: bold"><i>Địa chỉ</i></label>
+						<input style="font-weight: bold" type="text" class="form-control form-control-lg rounded-0" id="address" name="address"  required value="{{Auth::user()->address}}">
 					</div>
 					@endif
 					@if(Auth::check())
 					<div class="form-block">
-						<label for="phone" style="font-size: 17px"><i>Điện thoại</i></label>
-						<input type="number" min="0" class="form-control form-control-lg rounded-0" id="phone" name="phone" required value="{{Auth::user()->phone}}">
+						<label for="phone" style="font-size: 17px;font-weight: bold"><i>Điện thoại</i></label>
+						<input style="font-weight: bold" type="number" min="0" class="form-control form-control-lg rounded-0" id="phone" name="phone" required value="{{Auth::user()->phone}}">
 					</div>
 					@endif
 					<div class="form-block">
-						<label for="notes" style="font-size: 17px"><i>Ghi chú</i></label>
-						<textarea id="notes" class="form-control form-control-lg rounded-0" name="notes" default="Hãy để lại ghi chú nếu cần thiết"></textarea>
+						<label for="notes" style="font-size: 17px;font-weight: bold"><i>Ghi chú</i></label>
+						<textarea id="notes" class="form-control form-control-lg rounded-0" name="notes" placeholder="Hãy để lại ghi chú nếu cần thiết"></textarea>
 					</div>
 					</div>
 				</div>
@@ -139,7 +144,7 @@
 							<div class="your-order-item">
 								<div class="pull-left"><label style="font-size: 17px">Phí vận chuyển:	</label></div>
 								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format(35000)}}@else 0 @endif VND</h5></div>
-								<div class="pull-left"><i>**Chúng tôi áp dụng chính sách bình ổn phí vận chuyển cho tất cả các khu vực</i></div>
+								<div class="pull-left" style="font-weight:bold;color: red"><i>**Chúng tôi áp dụng chính sách bình ổn phí vận chuyển cho tất cả các khu vực</i></div>
 								<div class="clearfix"></div>
 									
 									{{-- <script language="javascript">
@@ -168,9 +173,11 @@
 								<div class="clearfix"></div>
 							</div> --}}
 							<div class="your-order-item">
-								<div class="pull-left"><label class="your-order-f18">Tổng cộng:</label><i>(Đã bao gồm 10% VAT)</i></div>
+								<div class="pull-left"><label class="your-order-f18">Tổng cộng:</label></div>
 								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice+35000)}}@else 0 @endif VND</h5></div><br/>
-								
+				<div class="right">
+								<i style="color: royalblue;font-weight: bold">(Đã bao gồm 10% VAT)</i>
+							</div>	
 								<div class="clearfix"></div>
 							</div>
 							
@@ -181,8 +188,8 @@
 							<ul class="payment_methods methods">
 								<li class="payment_method_bacs">
 									<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD(35000VND)" checked="checked" data-order_button_text="">
-									<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
-									<div class="payment_box payment_method_bacs" style="display: block;">
+									<label style="font-weight: bold" for="payment_method_bacs">Thanh toán khi nhận hàng </label>
+									<div class="payment_box payment_method_bacs" style="display: block; font-weight: bold">
 										Đơn hàng sẽ được giao đến địa chỉ của bạn trong khoảng 3-5 ngày.
 									</div>						
 								</li>

@@ -124,35 +124,44 @@ class PageController extends Controller
    public function postOrder(Request $req)
    {
        $cart=Session::get('cart');
-       
-       $bill=new Bill;
-       $bill->id_user=$req->id_customer;
-       $now = new DateTime();
-    
-       $bill->date_order=$now;
-       $bill->total=$cart->totalPrice;
-       $bill->payment=$req->payment_method;
-       $bill->note=$req->notes;
-       $bill->status=1;
-       $bill->isFinish=0;
-       $bill->save();
-       foreach($cart->items as $key=>$value){
-        $bill_detail=new Bill_Detail;
-        $bill_detail->id_bill=$bill->id;
-        $bill_detail->id_product=$key;
-        $bill_detail->amount=$value['qty'];
-        if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
-        else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
-        $bill_detail->status=1;
-        $product=Product::where('id',$key)->first();
-        $product->amount=$product->amount-$value['qty'];
-        $bill_detail->size=$value['size'];
-        $bill_detail->save();
-        $product->update();
-        
+
+       if (Session::has('cart')) {
+        $bill=new Bill;
+        $bill->id_user=$req->id_customer;
+        $now = new DateTime();
+     
+        $bill->date_order=$now;
+        $bill->total=$cart->totalPrice;
+        $bill->payment=$req->payment_method;
+        $bill->note=$req->notes;
+        $bill->status=1;
+        $bill->isFinish=0;
+        $bill->save();
+        foreach($cart->items as $key=>$value){
+         $bill_detail=new Bill_Detail;
+         $bill_detail->id_bill=$bill->id;
+         $bill_detail->id_product=$key;
+         $bill_detail->amount=$value['qty'];
+         if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
+         else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
+         $bill_detail->status=1;
+         $product=Product::where('id',$key)->first();
+         $product->amount=$product->amount-$value['qty'];
+         $bill_detail->size=$value['size'];
+         $bill_detail->save();
+         $product->update();
+         
+        }
+        Session::forget('cart');
+        return redirect()->route('home-page');
        }
-       Session::forget('cart');
-       return redirect()->route('home-page');
+       else
+       {
+        return redirect()->back()->with('message','Giỏ hàng của bạn đang trống');
+       }
+       
+       
+
    }
    public function postSignin(Request $req){
        $this->validate($req,
