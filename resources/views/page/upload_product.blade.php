@@ -127,6 +127,9 @@
                                     document.getElementById("demo").click();
                                 }
                             </script>
+                        <div style="text-align: left; margin-top: 100px">
+                             <input type="submit" id="button" name="button" class="btn btn-success" value="Lưu" style="width: 300px;height: 50px ;text-align: center" />
+                        </div>
                         </div>
                         <div class="col-sm-1">
                         </div>
@@ -203,7 +206,7 @@
                         </div>
                     </div>
 
-                    <input type="submit" id="button" name="button" class="btn btn-success" value="Lưu" style="width: 450px;height: 50px ;text-align: center" />
+                   
 
                 </form>
 
