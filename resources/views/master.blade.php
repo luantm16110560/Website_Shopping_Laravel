@@ -23,11 +23,11 @@
 <body>
     @include('header')
     <div class="rev-slider">
-        @yield('content');
+        @yield('content')
     </div>
     <!-- .container -->
 
-    @include('footer');
+    @include('footer')
    
     <!-- include js files -->
     <script src="source/assets/dest/js/jquery.js"></script>
