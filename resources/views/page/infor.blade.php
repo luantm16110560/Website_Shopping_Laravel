@@ -68,7 +68,7 @@
 							
 							<div class="text-center"><button type="submit" class="beta-btn primary" href="#">Cập nhật<i class="fa fa-chevron-right"></i></button></div>
 						</div>
-						@if(Auth::user()->phone  and Auth::user()->address)
+						@if(!Auth::user()->google_id)
 						<div class="col-sm-6">
 								<a href="{{route('change_password')}}">
 										<div class="right">
