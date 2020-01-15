@@ -1,31 +1,36 @@
-@extends('master') @section('content')
-<div class="fullwidthbanner-container">
-    <div class="fullwidthbanner">
-        <div class="bannercontainer">
-            <div class="banner">
-                <ul>
-                    @foreach($my_slide as $sl)
+@extends('master')
+ @section('content')
 
-                    <li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-                        <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="source/image/slide/{{$sl->image}}" data-src="source/image/slide/{{$sl->image}}" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('source/image/slide/{{$sl->image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-                            </div>
-                        </div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
 
-                    </li>
-                    @endforeach
+      <div class="item active"  data-interval="0">
+        <img  src="source\image\slide\1.jpg"  style="width:100%;height: 250px">
+      
+      </div>
 
-                </ul>
-            </div>
+      @foreach($my_slide as $sl)
+      <div data-interval="1000" class="item"  >
+      <img  src="source\image\slide\{{$sl->image}}" style="width:100%;height: 250px">
         </div>
-
-        <div class="tp-bannertimer"></div>
+    @endforeach
+     
     </div>
-</div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 <div class="container">
     <div id="content" class="space-top-none">
         <div class="main-content">
-            <div class="space60">&nbsp;</div>
+            <div style="margin:10px"></div>
             <div class="row">
                 <nav class="navbar navbar-inverse" style="background-color: #EDEDED;border-color: #EDEDED">
                     <div class="container-fluid">

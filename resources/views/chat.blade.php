@@ -1,4 +1,5 @@
 {{-- <div style=" position: fixed; right: 10px; bottom: 0;"> --}}
+  {{-- <div  style="z-index: 1000; position: fixed; right: 0; bottom: 0;"> --}}
   <div  style="z-index: 1000; position: fixed; right: 0; bottom: 0;">
   
     <div style="position:relative; top: 8px;">
@@ -13,7 +14,7 @@
   <textarea  style="background-color: azure;display: block"  name="msg" disabled></textarea>
 
   <div>
-    <input class="left" id="input" name="input" style="width: 250px;height:30px">
+    <input class="left" id="input" name="input" style="width: 250px;height:30px;font-weight: bold">
   <button  style="right; height:30px" type="submit" class="btn btn-success">Gửi</button>
 </div>
 </form>
