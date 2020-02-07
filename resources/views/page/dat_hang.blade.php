@@ -125,7 +125,7 @@
 
 							<div class="your-order-item">
 								<div class="pull-left"><label class="your-order-f18">Tạm tính:</label></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif   VND</h5></div>
+								<div class="pull-right"><h5 id="tamtinh" class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif   VND</h5></div>
 							{{-- <div class="pull-right"><input type="text" class="color-black" id="abc" value="{{number_format($totalPrice)}}">
 							@else 
 							<div class="pull-right"><input type="text" class="color-black" id="abc" value="0"> --}}
@@ -154,24 +154,6 @@
 								<div class="pull-right">@if(Session::has('cart'))<h5 class="color-black" id="ship"></h5>@else <h5 class="color-black">0 VND</h5> @endif</div>
 								<div class="clearfix"></div>
 									
-									<script language="javascript">
-										function Ship(obj)
-											{
-												var message = document.getElementById('ship');
-												var value = obj.value;
-												if (value === ''){
-													message.innerText = "Chọn khu vực ship";
-												}
-												else if (value === '1'){
-													message.innerText ="40,000 VND";
-
-												}
-												else if (value === '0'){
-													message.innerText = "35,000 VND";
-												}
-											}
-									</script>
-									
 									{{-- <br/>
 									<br/>
 									<input id="ship" type="radio" class="input-radio" name="ship" value="20000" checked="checked" style="width: 10%"><span>Q9, Q1, Q2,Q5, Q10, Q.Gò Vấp, Q.Phú Nhuận</span><br/>
@@ -188,9 +170,33 @@
 									<label class="your-order-f18">Tổng cộng:</label>
 									<i style="color:black;font-weight: bold">(Đã bao gồm 10% VAT)</i>
 								</div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif VND</h5></div><br/>
+								<div class="pull-right"><h5 id="fee" class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif VND</h5></div><br/>
 								<div class="clearfix"></div>
 							</div>
+
+							<script language="javascript">
+								function Ship(obj)
+									{
+										var message = document.getElementById('ship');
+										var temp=document.getElementById("fee");
+										var value = obj.value;
+										if (value === ''){
+											message.innerText = "Chọn khu vực ship";
+										}
+										else if (value === '1'){
+											message.innerText ="40,000 VND";
+											temp=document.getElementById("tamtinh").value;
+											alert(temp);
+
+										}
+										else if (value === '0'){
+											message.innerText = "35,000 VND";
+											temp=document.getElementById("tamtinh").value;
+											alert(temp);
+										}
+									}
+							</script>
+
 						</div>
 						<div class="your-order-head"><h5>Hình thức thanh toán</h5></div>
 						
