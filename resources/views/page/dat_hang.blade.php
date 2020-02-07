@@ -142,24 +142,35 @@
 							</div>
 							
 							<div class="your-order-item">
-								<div class="pull-left"><label style="font-size: 17px">Phí vận chuyển:	</label></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format(35000)}}@else 0 @endif VND</h5></div>
-								<div class="pull-left" style="font-weight:bold;color: red"><i>**Chúng tôi áp dụng chính sách bình ổn phí vận chuyển cho tất cả các khu vực</i></div>
+								<div class="form-group" >
+									<label style="font-size: 17px" class="color-black"><select id="khuvuc"  onchange="Ship(this)">
+										<option value=""> -- Chọn khu vực -- </option>
+										<option value="1">Khu vực ngoại thành</option>
+										<option value="0"> Khu vực nội thành </option>
+									</select></label>
+								</div>
+							</br>
+								<div class="pull-left"><label style="font-size: 17px">Phí vận chuyển: 	</label></div>
+								<div class="pull-right">@if(Session::has('cart'))<h5 class="color-black" id="ship"></h5>@else <h5 class="color-black">0 VND</h5> @endif</div>
 								<div class="clearfix"></div>
 									
-									{{-- <script language="javascript">
-
-											document.getElementById("giaship").onclick = function ()
+									<script language="javascript">
+										function Ship(obj)
 											{
-												var checkbox = document.getElementsByName("ship");
-                								for (var i = 0; i < checkbox.length; i++){
-                   								if (checkbox[i].checked === true){
-                        						alert(checkbox[i].value);
-													}
+												var message = document.getElementById('ship');
+												var value = obj.value;
+												if (value === ''){
+													message.innerText = "Chọn khu vực ship";
 												}
-												<div class="pull-right"><h5 class="color-black"><span></span> VND</h5></div>
-											};
-									</script> --}}
+												else if (value === '1'){
+													message.innerText ="40,000 VND";
+
+												}
+												else if (value === '0'){
+													message.innerText = "35,000 VND";
+												}
+											}
+									</script>
 									
 									{{-- <br/>
 									<br/>
