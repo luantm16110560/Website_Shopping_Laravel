@@ -184,14 +184,13 @@
 								<div class="clearfix"></div>
 							</div> --}}
 							<div class="your-order-item">
-								<div class="pull-left"><label class="your-order-f18">Tổng cộng:</label></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice+35000)}}@else 0 @endif VND</h5></div><br/>
-				<div class="right">
-								<i style="color: royalblue;font-weight: bold">(Đã bao gồm 10% VAT)</i>
-							</div>	
+								<div class="pull-left">
+									<label class="your-order-f18">Tổng cộng:</label>
+									<i style="color:black;font-weight: bold">(Đã bao gồm 10% VAT)</i>
+								</div>
+								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif VND</h5></div><br/>
 								<div class="clearfix"></div>
 							</div>
-							
 						</div>
 						<div class="your-order-head"><h5>Hình thức thanh toán</h5></div>
 						
