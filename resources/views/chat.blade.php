@@ -9,7 +9,7 @@
   <div id="show" style="display: none" class="chat-popup" >
     <div class="right"><button id="btnClose" style="height: 25px;width: 19px;font-size: 8px;font-weight: bold;  padding:0;margin:0;border-radius: 0; display: block"  class="btn btn-danger" onclick="handleClick()">X</button></div>
 <form autocomplete="off">
- <label style="text-align: center;background-color: cornflowerblue;width: 93.6%;height: 25px;padding:0;margin:0;border-radius: 0; color: azure">Chat Online</label>
+ <label style="text-align: center;background-color: cornflowerblue;width: 93.6%;height: 25px;padding:0;margin:0;border-radius: 0; color: azure">Chat</label>
   
   <textarea  style="background-color: azure;display: block"  name="msg" disabled></textarea>
 

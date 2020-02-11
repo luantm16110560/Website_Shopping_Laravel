@@ -231,15 +231,23 @@ class PageController extends Controller
    }
    public function getProductByGender(Request $req)
    { 
-    $productgender = Product::where([
+
+    if($req->client_gender!=null)
+    {
+     $productgender = Product::where([
                                     ['gender', 'like', $req->client_gender],
                                     ['status', '=', 1]
                                     ])->paginate(4);
-        $countProductByGender = Product:: where([
+     $countProductByGender = Product:: where([
                                     ['gender', 'like','%'.$req->client_gender.'%'],
                                     ['status', '=', 1],
                                   ])->count();
-       return view('page.gender')->with('pro', $productgender)->with('_count',$countProductByGender);
+     return view('page.gender')->with('pro', $productgender)->with('_count', $countProductByGender);
+    }
+    else
+    {
+        return back();
+    }
    }
    public function getProductTypeByGender(Request $req)
    {

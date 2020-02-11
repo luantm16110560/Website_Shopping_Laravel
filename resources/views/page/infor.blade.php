@@ -17,13 +17,13 @@
 
 
 		
-<div class="container">
+
 	<div id="content" class="center">
 			
 		<form action="{{route('infor')}}" method="post" class="beta-form-checkout" autocomplete="off">
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
-			<div class="row" >
+			<div class="row">
 				<div class="col-sm-6" >
 				<div class="your-order" >
 					<div class="your-order-head"><h5><strong>Thông tin cá nhân</strong></h5></div>
