@@ -124,8 +124,12 @@
 							</div>
 
 							<div class="your-order-item">
-								<div class="pull-left"><label class="your-order-f18">Tạm tính:</label></div>
-								<div class="pull-right"><h5 id="tamtinh" class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif   VND</h5></div>
+								<div class="pull-left">
+									<label class="your-order-f18">Tạm tính:</label>
+									<i style="color:black;font-weight: bold">(Đơn vị tính VND)</i>
+								</div>
+								<div class="pull-right"><h5 id="tamtinh" class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif</h5></div>
+								
 							{{-- <div class="pull-right"><input type="text" class="color-black" id="abc" value="{{number_format($totalPrice)}}">
 							@else 
 							<div class="pull-right"><input type="text" class="color-black" id="abc" value="0"> --}}
@@ -150,8 +154,16 @@
 									</select></label>
 								</div>
 							</br>
-								<div class="pull-left"><label style="font-size: 17px">Phí vận chuyển: 	</label></div>
-								<div class="pull-right">@if(Session::has('cart'))<h5 class="color-black" id="ship"></h5>@else <h5 class="color-black">0 VND</h5> @endif</div>
+								<div class="pull-left">
+									<label style="font-size: 17px">Phí vận chuyển: 	</label>
+									<i style="color:black;font-weight: bold">(Đơn vị tính VND)</i>
+								</div>
+								<div class="pull-right">
+									@if(Session::has('cart'))
+									<h5 class="color-black" id="ship"></h5>
+									@else <h5 class="color-black">0</h5> 
+									@endif
+								</div>
 								<div class="clearfix"></div>
 									
 									{{-- <br/>
@@ -168,12 +180,20 @@
 							<div class="your-order-item">
 								<div class="pull-left">
 									<label class="your-order-f18">Tổng cộng:</label>
-									<i style="color:black;font-weight: bold">(Đã bao gồm 10% VAT)</i>
+									<i style="color:black;font-weight: bold">(Đơn vị tính VND)</i>
 								</div>
-								<div class="pull-right"><h5 id="fee" class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif VND</h5></div><br/>
+								<div class="pull-right">
+								
+										@if(Session::has('cart'))
+								<h5 id="fee" class="color-black" value={{number_format($totalPrice)}}></h5>
+											@else
+											<h5>0</h5>
+										@endif
+								
+									</div><br/>
 								<div class="clearfix"></div>
 							</div>
-
+							<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 							<script language="javascript">
 								function Ship(obj)
 									{
@@ -182,23 +202,29 @@
 										var value = obj.value;
 										if (value === ''){
 											message.innerText = "Chọn khu vực ship";
+											kq={{$totalPrice}}
+											document.getElementById("fee").innerHTML =kq.toLocaleString('us', {maximumFractionDigits: 2});;
 										}
 										else if (value === '1'){
-											message.innerText ="40,000 VND";
-											temp=document.getElementById("tamtinh").value;
-											alert(temp);
+											var x=40000;
+										
+											ship=document.getElementById("ship").innerHTML =x.toLocaleString('us', {maximumFractionDigits: 2});
+											kq={{$totalPrice}}+x
+											document.getElementById("fee").innerHTML =kq.toLocaleString('us', {maximumFractionDigits: 2});;
+										// document.getElementById("fee").innerHTML = "<p style="hidden">40000</p>";
+										// alertdocument.getElementById("fee").value().toLocaleString('us', {maximumFractionDigits: 2});
 
 										}
 										else if (value === '0'){
-											message.innerText = "35,000 VND";
-											temp=document.getElementById("tamtinh").value;
-											alert(temp);
+											var x=35000;
+											ship=document.getElementById("ship").innerHTML = x.toLocaleString('us', {maximumFractionDigits: 2});
+											kq={{$totalPrice}}+x;
+											document.getElementById("fee").innerHTML =kq.toLocaleString('us', {maximumFractionDigits: 2});
 										}
 									}
 							</script>
-
 						</div>
-						<div class="your-order-head"><h5>Hình thức thanh toán</h5></div>
+						<div class="your-order-head"><h5><strong>Hình thức thanh toán</strong></h5></div>
 						
 						<div class="your-order-body">
 							<ul class="payment_methods methods">
@@ -210,16 +236,16 @@
 									</div>						
 								</li>
 
-								{{-- <li class="payment_method_cheque">
+								<li class="payment_method_cheque">
 									<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" data-order_button_text="">
-									<label for="payment_method_cheque">Chuyển khoản </label>
-									<div class="payment_box payment_method_cheque" style="display: none;">
+									<label style="font-weight: bold" for="payment_method_cheque">Chuyển khoản </label>
+									<div class="payment_box payment_method_cheque" style="display: none; font-weight: bold">
 										Chuyển tiền đến tài khoản sau:
-										<br>- Số tài khoản: 123 456 789
-										<br>- Chủ TK: Nguyễn A
-										<br>- Ngân hàng ACB, Chi nhánh TPHCM
+										<br>- Số tài khoản: 0381000431582
+										<br>- Chủ TK: Nguyễn Đức Quy
+										<br>- Vietcombank Chi nhánh Thủ Đức
 									</div>						
-								</li> --}}
+								</li>
 								
 							</ul>
 						</div>

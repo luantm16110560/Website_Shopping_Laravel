@@ -100,6 +100,18 @@
           
             <div class="single-item-options">
               <p>Size:  {{$sanpham->size}}</p>
+              {{-- <select class="wc-select" name="size" id="size" onchange="Size(this)">
+                <option value="">-- Size --</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+              </select> --}}
               @if(Auth::check())
               @if($sanpham->amount!=0)<a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>@endif
               @else 
@@ -109,6 +121,66 @@
             </div>
           </div>
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+							<script language="javascript">
+								function Size(obj)
+									{
+										var value = obj.value;
+										if (value === ''){
+                      var kq="Vui lòng chọn size"
+											arlet(kq);
+
+										}
+										else if (value === '35'){
+											var kq=document.getElementById('size').value;
+                     // {{$sanpham->size}}=kq;
+                      alert(kq);
+
+										}
+										else if (value === '36'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+                    else if (value === '37'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+                    else if (value === '38'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+                    else if (value === '39'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+                    else if (value === '40'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+                    else if (value === '41'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+                    else if (value === '42'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+                    else if (value === '43'){
+											var kq=document.getElementById('size').value;
+                      //{{$sanpham->size}}=kq;
+                      alert(kq);
+										}
+									}
+							</script>
+
         {{-- <div class="space40">&nbsp;</div>
         <div class="woocommerce-tabs">
             <label href=""><i>Bảng hướng dẫn đo size giày<i></label>
@@ -132,6 +204,7 @@
           {{-- <div class="panel" id="tab-reviews">
             <p>No Reviews</p>
           </div> --}}
+          
         </div>
         <div class="space50">&nbsp;</div>
         <div class="beta-products-list">
