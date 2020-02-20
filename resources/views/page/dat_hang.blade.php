@@ -207,7 +207,6 @@
 										}
 										else if (value === '1'){
 											var x=40000;
-										
 											ship=document.getElementById("ship").innerHTML =x.toLocaleString('us', {maximumFractionDigits: 2});
 											kq={{$totalPrice}}+x
 											document.getElementById("fee").innerHTML =kq.toLocaleString('us', {maximumFractionDigits: 2});;

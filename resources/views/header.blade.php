@@ -76,6 +76,7 @@
                            <tr>
                               <td class="text-center">
                                  <span class="cart-item-amount">
+                                    {{-- <a href="{{route('addbyone',$productcart['item']['id'])}}"><i class="fa fa-plus-circle"></i></a> --}}
                                     {{$productcart['qty']}}    
                                     <a href="{{route('deletesp',$productcart['item']['id'])}}"><i class="fa fa-minus-circle"></i></a>
                               </td>

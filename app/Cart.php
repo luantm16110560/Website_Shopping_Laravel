@@ -84,4 +84,26 @@ class Cart
 		}
 		unset($this->items[$id]);
 	}
+
+	public function AddByOne($id){
+		$this->items[$id]['qty']++;
+		// if($this->items[$id]['price2'] == 0)
+		// {
+		// 	$this->items[$id]['price'] -= $this->items[$id]['price'];
+		// }
+		// else
+		// {
+		// 	$this->items[$id]['price'] -= $this->items[$id]['price2'];
+		// }
+		$this->totalQty++;
+		// $this->totalPrice -= $this->items[$id]['item']['price'];
+		if($this->items[$id]['price2'] == 0)
+		{
+			$this->totalPrice += $this->items[$id]['price'];
+		}
+		else
+		{
+			$this->totalPrice += $this->items[$id]['price2'];
+		}
+	}
 }

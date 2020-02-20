@@ -49,6 +49,11 @@ Route::get('/add-to-card/{id}',[
     'uses'=>'PageController@getAddtoCard'
 ]);
 
+Route::get('/add-by-one/{id}',[
+    'as'=>'addbyone',
+    'uses'=>'PageController@AddByOne'
+]);
+
 Route::get('/delItem-cart/{id}',[
     'as'=>'deletegiohang',
     'uses'=>'PageController@getDelItemCard'

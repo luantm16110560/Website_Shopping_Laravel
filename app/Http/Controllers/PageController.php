@@ -61,6 +61,16 @@ class PageController extends Controller
        return redirect()->back();
    }
 
+   public function AddByOne(Request $res, $id)
+   {
+       $product=Product::find($id);
+       $oldCart=Session('cart')?Session::get('cart'):null;
+       $cart=new Cart($oldCart);
+       $cart->AddByOne($product, $id);
+       $res->session()->put('cart',$cart);
+       return redirect()->back();
+   }
+
    public function getDelItemCard($id){
        $oldCart=Session::has('cart')?Session::get('cart'):null;
        $cart=new Cart($oldCart);
