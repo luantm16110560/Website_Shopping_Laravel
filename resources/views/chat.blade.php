@@ -15,7 +15,7 @@
 
   <div>
     <input class="left" id="input" name="input" style="width: 250px;height:30px;font-weight: bold">
-  <button  style="right; height:30px" type="submit" class="btn btn-success">Gửi</button>
+  <button  style="right; height:30px" type="submit" class="btn btn-success">Send</button>
 </div>
 </form>
 </div>
