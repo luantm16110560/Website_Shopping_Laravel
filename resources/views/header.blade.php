@@ -64,7 +64,7 @@
                      <a class="pull-left"  href="{{route('product-detail',$productcart['item']['id'])}}"><img src="source/image/product/{{$productcart['item']['image']}}" alt="" height="30px"></a>
                      <div class="media-body">
                         <span class="cart-item-title"><strong>{{$productcart['item']['name']}}</strong></span>                    
-                        <table >
+                        <table>
                            <tr>
                               <th >Số lượng: 
                               </th>
