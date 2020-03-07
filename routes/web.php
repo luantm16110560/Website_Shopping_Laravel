@@ -101,10 +101,10 @@ Route::get('search',[
 	'as'=>'search',
 	'uses'=>'PageController@getSearch'
 ]);
-Route::get('search',[
-	'as'=>'search',
-	'uses'=>'PageController@getSearch'
-]);
+// Route::get('search',[
+// 	'as'=>'search',
+// 	'uses'=>'PageController@getSearch'
+// ]);
 Route::get('searchView',[
 	'as'=>'searchView',
 	'uses'=>'PageController@getsearchView'

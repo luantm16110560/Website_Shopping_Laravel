@@ -4,7 +4,7 @@
     <div class="pull-right">
        <ul class="top-details menu-beta l-inline">
         @if(Auth::check())   {{-- Kiem tra nguoi dung co dang nhap hay chua --}}
-       <li><a href="{{route("infor")}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Chào bạn {{Auth::user()->name}}</strong></a></li>
+       <li><a href="{{route('infor')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Chào bạn {{Auth::user()->name}}</strong></a></li>
        <li><a href="{{route('dangxuat')}}" style="background: #000099; "><i class="fa fa-lock" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Đăng xuất</strong></a></li>
          @else
             <li><a href="{{route('dangki')}}" style="background: #000099; " ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:18px; color: white"></i><strong style="color: white">Đăng ký</strong></a></li>
@@ -34,19 +34,19 @@
     <nav class="navbar navbar-inverse" style="background-color:#000099 " >
        <div class="col-sm-6">
           <ul class="nav navbar-nav" >
-             <li> <a href="{{route("about")}}"><img src="source/image/logo/logo.png" width="141.77px" height="45px" alt=""></a></li>
-             <li><a href="{{route("home-page")}}" style="font-size:18px; color:white; margin-top: 13px">Trang chủ</a></li>
+             <li> <a href="{{route('about')}}"><img src="source/image/logo/logo.png" width="141.77px" height="45px" alt=""></a></li>
+             <li><a href="{{route('home-page')}}" style="font-size:18px; color:white; margin-top: 13px">Trang chủ</a></li>
              <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-size:18px; color:white; margin-top: 13px" >Sản phẩm
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                    @foreach($loai_sp as $loai)
-                   <li style="font-size:18px"><a href="{{route("product-type",$loai->id)}}">{{$loai->name}}</a></li>
+                   <li style="font-size:18px"><a href="{{route('product-type',$loai->id)}}">{{$loai->name}}</a></li>
                    @endforeach
                 </ul>
              </li>
-             <li><a href="{{route("about")}}" style="font-size:18px; color:white; margin-top: 13px">Giới thiệu</a></li>
-             <li><a href="{{route("contact")}}" style="font-size:18px; color:white; margin-top: 13px">Liên hệ</a></li>
+             <li><a href="{{route('about')}}" style="font-size:18px; color:white; margin-top: 13px">Giới thiệu</a></li>
+             <li><a href="{{route('contact')}}" style="font-size:18px; color:white; margin-top: 13px">Liên hệ</a></li>
              
        </div>
        <div class="col-sm-3" style="margin-top: 19px;">
@@ -113,7 +113,8 @@
        <form style="margin-top: 19px;" role="search" method="get" id="searchform" action="{{route('searchView')}}" autocomplete="off">
        <strong><input style="font-size:16px;" type="text" class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
        <script type="text/javascript">
-         var path ="{{route('search')}}";
+         var path ="{{route('search')}}";// đường dẫn đến api để lấy kết quả dạng json
+         //type ahead để auto complete
      
          $('input.typeahead').typeahead({
              source:function(query,process){
