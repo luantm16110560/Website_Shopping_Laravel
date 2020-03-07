@@ -37,7 +37,9 @@ class CreateGoodsReceiptTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['id_product']);
+        Schema::table('goods_receipt', function (Blueprint $table) {
+            $table->dropForeign(['id_product']); 
+        });
         Schema::dropIfExists('goods_receipt');
     }
 }

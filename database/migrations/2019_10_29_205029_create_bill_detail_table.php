@@ -40,8 +40,11 @@ class CreateBillDetailTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['id_bill']);
-        $table->dropForeign(['id_product']);
-        Schema::dropIfExists('bill_detail');
+       
+        Schema::table('bill_detail', function (Blueprint $table) {
+            $table->dropForeign(['id_bill']);
+            $table->dropForeign(['id_product']);      
+        });
+        Schema::dropIfExists('bill_detail');    
     }
 }

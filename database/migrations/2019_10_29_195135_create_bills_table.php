@@ -37,7 +37,10 @@ class CreateBillsTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['id_customer']);
+      
+        Schema::table('bills', function (Blueprint $table) {
+            $table->dropForeign(['id_customer']);
+        });
         Schema::dropIfExists('bills');
     }
 }
