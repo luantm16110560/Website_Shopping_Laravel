@@ -718,9 +718,6 @@ class PageController extends Controller
        {
            echo "error";
        }
-    
-      
-
         $product_want_edit->save();
         return redirect()->back()->with("success","Sửa thành công");
         

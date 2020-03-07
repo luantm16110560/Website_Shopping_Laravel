@@ -211,10 +211,10 @@
     <div class="row">
       <div class="col-sm-6 wow fadeInLeft">
         <div class="bets-img-hover">
-          <img class="pull-left" src="source/image/employee/quy.png" alt="">
+          <img class="pull-left" src="source/image/employee/quy.jpg" alt="">
           <div class="media-body beta-person-body">
             </br>
-            <h5>Mr.Duc Quy</h5>
+            <h5>Mr. Duc Quy</h5>
             <p class="font-large">Founder</p>
             <p>Người sáng lập nên thương hiệu giày <strong style="color: #000099">TOM'S SHOES</strong> với nhiều năm kinh nghiệm trong lĩnh vực Kinh doanh và Marketing.</p>
             <a href="https://www.facebook.com/profile.php?id=100009638520081">View profile <i class="fa fa-chevron-right"></i></a>
@@ -226,7 +226,7 @@
           <img class="pull-left" src="source/image/employee/luan.png" alt="">
           <div class="media-body beta-person-body">
           </br>
-            <h5>Mr.Minh Luan</h5>
+            <h5>Mr. Minh Luan</h5>
             <p class="font-large">President</p>
             <p>Tốt nghiệp chuyên ngành Quản trị kinh doanh Đại học Ngoại Thương, nhiều năm kinh niệm trên thị trường thương mại Việt Nam và Quốc Tế.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
@@ -246,7 +246,7 @@
           <img src="source/image/employee/anh.png" alt="">
       </div>
           <div class="beta-person-body">
-            <h5>Mr.Duc Anh</h5>
+            <h5>Mr. Duc Anh</h5>
             <p class="font-large">Sale Manager</p>
             <p>Tốt nghiệp chuyên ngành Quản trị kinh doanh Đại học Kinh tế Quốc Dân, hiểu biết rõ về thị trường Việt Nam và thế giới.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
@@ -259,7 +259,7 @@
           <img src="source/image/employee/nhi.png" alt="">
         </div>
           <div class="beta-person-body">
-            <h5>Mrs.Yen Nhi</h5>
+            <h5>Mrs. Yen Nhi</h5>
             <p class="font-large">Marketing Manager</p>
             <p>Tốt nghiệp chuyên ngành Thiết kế đồ họa trường đại học FPT, nhiều năm kinh nghiệm trong lĩnh vực design và quảng cáo.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
@@ -272,7 +272,7 @@
           <img src="source/image/employee/hung.png" alt="">
         </div>
           <div class="beta-person-body">
-            <h5>Mr.Duy Hung</h5>
+            <h5>Mr. Duy Hung</h5>
             <p class="font-large">Market Manager</p>
             <p>Tốt nghiệp chuyên ngành Quản lý thị trường Đại học Tôn Đức Thắng, nhiều năm kinh nghiệm trong lĩnh vực đánh giá, phân tích thị hiếu của người tiêu dùng.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
@@ -285,7 +285,7 @@
           <img src="source/image/employee/tranh.png" alt="">
         </div>
           <div class="beta-person-body">
-            <h5>Mrs.Bang Tranh</h5>
+            <h5>Mrs. Bang Tranh</h5>
             <p class="font-large">Customers Manager</p>
             <p>Tốt nghiệp chuyên ngành Quan hệ quốc tế Đại học Khoa Học Xã Hội và Nhân Văn, nhiều năm kinh nghiệm trong lĩnh vực chăm sóc và dịch vụ khách hàng.</p>
             <a href="single_type_gallery.html">View profile <i class="fa fa-chevron-right"></i></a>
