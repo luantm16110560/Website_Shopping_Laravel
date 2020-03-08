@@ -19,7 +19,7 @@
             <div class="col-sm-9">
 
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
 
                         <img src="source/image/product/{{$sanpham->image}}" alt="">
                       <br>
@@ -27,18 +27,18 @@
                       <br>
                       
                           <div class="col-sm-4" style="margin-left: -18px" >
-                              <div class="img-hover-zoom">
-                            <img  src="source/image/product/{{$sanpham->img1}}" alt="">
+                              <div >
+                            <img style="height: 120px;width: 150px;"src="source/image/product/{{$sanpham->img1}}" alt="">
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="img-hover-zoom">
-                          <img  src="source/image/product/{{$sanpham->img2}}" alt="">
+                            <div >
+                          <img  style="height: 120px;width: 150px;" src="source/image/product/{{$sanpham->img2}}" alt="">
                           </div>
                       </div>
                       <div class="col-sm-4">
-                          <div class="img-hover-zoom">
-                              <img  src="source/image/product/{{$sanpham->img3}}" alt="">
+                          <div >
+                              <img style="height: 120px;width: 150px;" src="source/image/product/{{$sanpham->img3}}" alt="">
                               </div>
                     </div>
                           
@@ -68,7 +68,7 @@
                         </style>
 
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                         <div class="single-item-body">
                             {{-- @if($sanpham->promotion_price!=0)
                             <div class="ribbon-wrapper">

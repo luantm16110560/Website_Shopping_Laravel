@@ -49,7 +49,7 @@
              <li><a href="{{route('contact')}}" style="font-size:18px; color:white; margin-top: 13px">Liên hệ</a></li>
              
        </div>
-       <div class="col-sm-3" style="margin-top: 19px;">
+       <div class="col-sm-1" style="margin-top: 19px;">
          @if(Session::has('cart'))
          <div class="cart">      
                    <marquee class="pull-left" style="color: red;font-size: 18px;font-weight: bold" behavior="alternate" width="10%">>></marquee>
@@ -108,10 +108,10 @@
          </div>
          @endif
        </div>
-       <div class="col-sm-3">
+       <div class="col-sm-5">
      
        <form style="margin-top: 19px;" role="search" method="get" id="searchform" action="{{route('searchView')}}" autocomplete="off">
-       <strong><input style="font-size:16px;" type="text" class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
+       <strong><input onkeypress="myFunction(event)" id="id_search" style="font-size:16px;" type="text" class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
        <script type="text/javascript">
          var path ="{{route('search')}}";// đường dẫn đến api để lấy kết quả dạng json
          //type ahead để auto complete
@@ -120,15 +120,31 @@
              source:function(query,process){
                  return $.get(path,{query:name},function(data){
                      return process(data);
+                     alert(data.id);
+                 
+
                  });
              }
          });
+
      
-     
+   
      </script>
        <button class="fa fa-search" aria-hidden="true" type="submit" id="searchsubmit"></button>
        </form>
-       </div>
+       @if(Auth::check())
+     <div class="pull-right">
+      
+      <button class="btn btn-primary" style="margin-top:19px">
+       <span  style="font-size: 19px;color: white" class="glyphicon glyphicon-list-alt">
+  
+      </span>
+     <strong style="font-size: 15px;color: white;"> Lịch sử mua hàng  </strong>
+      </div>
+   </button>
+   @endif
+
+   </div>
        </li>
  </div>
  </ul>

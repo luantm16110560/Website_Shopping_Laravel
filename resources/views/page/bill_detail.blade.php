@@ -53,9 +53,8 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="col-sm-2">
-                </div>
-                <div class="col-sm-6">
+              
+                <div class="col-sm-10">
                     <div style="padding: 8px; border: 10px inset #D44B47; word-wrap: break-word;">
                         <h2 style="text-align: center">Chi tiết hóa đơn</h2>
                         <br> @if(Session::has('thanhcong'))
@@ -63,8 +62,8 @@
                             {{Session::get('thanhcong')}}
                         </div>
                         @endif
-                        @foreach($billdetail as $bd)
-                        <form>
+                     
+                        {{-- <form>
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="col-sm-6">
                             <div class="form-group">
@@ -92,14 +91,42 @@
                             </div>
                            
                       
-                        </form>
-                        @endforeach
-                        <div class="center">
-                                {{$billdetail->links()}}
-                            </div>
+                        </form> --}}
+                        <table class="table table-hover">
+                           
+                            <thead>
+                              <tr>
+                                <th  valign="center">Mã sản phẩm</th>
+                                <th  valign="center">Tên sản phẩm</th>
+                                <th  valign="center"></th>
+                                <th  valign="center">Đơn giá</th>
+                                <th  valign="center">Số lượng</th>
+                             
+                              </tr>
+                            </thead>
+                            @foreach($billdetail as $bd)
+                            <tbody>
+                              <tr>
+                                <th>{{$bd->product_id}}</th>
+                                <td style="width: 200px">{{$bd->product_name}}</td>
+                                <td>
+                                <img src="source/image/product/{{$bd->product_image}}" id="output_image" style="width:95px;height:95px"/>
+                                </td>
+                                <td>{{$bd->unit_price}}</td>
+                                <td>{{$bd->amount}}</td>
+                              
+                              </tr>
+                             
+                            </tbody>
+                            @endforeach
+                          </table>
+                     
+                       
                     </div>
                 </div>
-                <div class="col-sm-4">
+                {{-- <div class="col-sm-2">
+                </div> --}}
+               <div class="col-sm-2">
                 </div>
             </div>
         </div>

@@ -548,7 +548,7 @@ class PageController extends Controller
         'bill_detail.amount',
         'bill_detail.size')
     ->where('id_bill',  '=', $id_bill)
-    ->join('products','bill_detail.id_product','=','products.id')->paginate(1);
+    ->join('products','bill_detail.id_product','=','products.id')->get();
     
        return view('page.bill_detail')
        ->with('billdetail', $bill_detail);
