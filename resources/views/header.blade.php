@@ -49,20 +49,20 @@
              <li><a href="{{route('contact')}}" style="font-size:18px; color:white; margin-top: 13px">Liên hệ</a></li>
              
        </div>
-       <div class="col-sm-1" style="margin-top: 19px;">
+       <div class="col-sm-2" style="margin-top: 19px;">
          @if(Session::has('cart'))
-         <div class="cart">      
-                   <marquee class="pull-left" style="color: red;font-size: 18px;font-weight: bold" behavior="alternate" width="10%">>></marquee>
-            <div class="beta-select"><strong style="color: white;  font-size: 25px;" class="fa fa-shopping-cart" aria-hidden="true"></strong> &nbsp <strong style="color: white">Giỏ Hàng (@if(Session::has('cart')){{Session('cart')->totalQty}}@else 0 @endif sản phẩm)</strong><i style="color: white" class="fa fa-chevron-down"></i>   
+         <div class="cart" style="width:150px">      
+                   <marquee class="pull-left" style="color: red;font-size: 18px;font-weight: bold" behavior="alternate" width="20%">>></marquee>
+            <div class="beta-select"><strong style="color: white;  font-size: 25px;" class="fa fa-shopping-cart" aria-hidden="true"></strong> &nbsp <strong style="color: white">(@if(Session::has('cart')){{Session('cart')->totalQty}}@else 0 @endif )</strong><i style="color: white" class="fa fa-chevron-down"></i>   
          </div>
-            <div class="beta-dropdown cart-body">
+            <div class="beta-dropdown cart-body" style="width:300px">
                @foreach ($product_cart as $productcart)
                <div class="cart-item">
                   <a class="cart-item-delete" href="{{route('deletegiohang',$productcart['item']['id'])}}"><i class="fa fa-times"></i></a>
                   
                   <div class="media">
                      <a class="pull-left"  href="{{route('product-detail',$productcart['item']['id'])}}"><img src="source/image/product/{{$productcart['item']['image']}}" alt="" height="30px"></a>
-                     <div class="media-body">
+                     <div class="media-body" style="width:100%">
                         <span class="cart-item-title"><strong>{{$productcart['item']['name']}}</strong></span>                    
                         <table>
                            <tr>
@@ -108,7 +108,7 @@
          </div>
          @endif
        </div>
-       <div class="col-sm-5">
+       <div class="col-sm-4">
      
        <form style="margin-top: 19px;" role="search" method="get" id="searchform" action="{{route('searchView')}}" autocomplete="off">
        <strong><input onkeypress="myFunction(event)" id="id_search" style="font-size:16px;" type="text" class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
@@ -134,15 +134,16 @@
        </form>
        @if(Auth::check())
      <div class="pull-right">
-      
+
       <button class="btn btn-primary" style="margin-top:19px">
        <span  style="font-size: 19px;color: white" class="glyphicon glyphicon-list-alt">
-  
+
       </span>
      <strong style="font-size: 15px;color: white;"> Lịch sử mua hàng  </strong>
       </div>
    </button>
    @endif
+
 
    </div>
        </li>
