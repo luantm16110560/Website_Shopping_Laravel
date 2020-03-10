@@ -41,6 +41,18 @@
 					</div>
 					@endif
 					@if(Auth::check())
+					<div class="form-block">
+						<label for="gender" style="font-size: 17px; font-weight: bold"><i>Giới tính</i></label>
+						@if(Auth::user()->gender=="Nam")
+<p>Nam</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nam" checked="true" style="width: 10%">					        
+						<p>Nữ</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" style="width: 10%">
+						@else
+						<p>Nam</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nam"  style="width: 10%">					        
+						<p>Nữ</p><input id="gender" type="radio" class="input-radio" name="gender" value="Nữ" checked="true" style="width: 10%">
+						@endif
+</div>
+					@endif
+					@if(Auth::check())
 					<div class="form-block" hidden="true">
 						<label for="name" style="font-size: 17px"><i>Mã Khách Hàng</i></label>
 						<input type="text" class="form-control form-control-lg rounded-0" name="id_customer" placeholder="Họ tên" value="{{Auth::user()->id}}" required>

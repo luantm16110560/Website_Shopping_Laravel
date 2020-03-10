@@ -113,12 +113,12 @@
                               <div class="form-group">
                                   <label>Khách hàng</label>
                                
-                                  <button type="button" style="width: 200px" name="id_user" id="id_user" onclick="getUser();" class="btn btn-primary" value="{{$user->id}}">{{$user->name}}</button>
-                                  <input type="hidden" id="name" value="{{$user->name}}">
-                                  <input type="hidden" id="email" value="{{$user->email}}">
-                                  <input type="hidden" id="address" value="{{$user->address}}">
-                                  <input type="hidden" id="gender" value="{{$user->gender}}">
-                                  <input type="hidden" id="phone" value="{{$user->phone}}">
+                                  <button type="button" style="width: 200px" name="id_user" id="id_user" onclick="getUser();" class="btn btn-primary" value="">{{json_decode($bill->cus_infor)->name}}</button>
+                                  <input type="hidden" id="name" value="{{json_decode($bill->cus_infor)->name}}">
+                                  <input type="hidden" id="gender" value="{{json_decode($bill->cus_infor)->gender}}">               
+                                  <input type="hidden" id="phone" value="{{json_decode($bill->cus_infor)->phone}}">
+                                  <input type="hidden" id="email" value="{{json_decode($bill->cus_infor)->email}}">
+                                  <input type="hidden" id="address" value="{{json_decode($bill->cus_infor)->address}}">                           
                               </div>
                               <div class="form-group">
                                   <select name="isFinish" id="isFinish" >

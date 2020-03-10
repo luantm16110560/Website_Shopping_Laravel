@@ -146,6 +146,12 @@ class PageController extends Controller
         $bill->note=$req->notes;
         $bill->status=1;
         $bill->isFinish=0;
+       
+        $input = $req->only(['name', 'gender','phone','address','email']);
+        $cus_infor = json_encode($input,JSON_UNESCAPED_UNICODE );
+        $bill->cus_infor=$cus_infor ;
+
+      
         $bill->save();
         foreach($cart->items as $key=>$value){
          $bill_detail=new Bill_Detail;
@@ -453,10 +459,10 @@ class PageController extends Controller
     public function geteditBill($id_bill)
     {
         $bill = Bill::find($id_bill);
-        $user_by_id = $bill->id_user;
-        $user = User::find($user_by_id);
-           return view('page.edit_bill')->with('bill',$bill)->with('user',$user)
-         ;
+
+        //$cus_infor = $bill->cus_infor;
+       // echo($cus_infor);
+       return view('page.edit_bill')->with('bill',$bill);
     }
     public function posteditBill(Request $req,$id)
     {

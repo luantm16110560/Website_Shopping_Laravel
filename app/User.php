@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     public $timestamps=false;
     protected $fillable = [
-        'name', 'email', 'phone','address','status','role','google_id'
+        'name', 'email', 'phone','address','status','google_id','cus_infor'
     ];
 
     /**
@@ -36,5 +36,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'cus_infor'=>'array'
     ];
 }
