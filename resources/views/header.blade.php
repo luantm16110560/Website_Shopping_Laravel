@@ -134,14 +134,15 @@
        </form>
        @if(Auth::check())
      <div class="pull-right">
-
-      <button class="btn btn-primary" style="margin-top:19px">
+   <a href="{{route('order_history')}}">
+     <button  class="btn btn-primary" style="margin-top:19px">
        <span  style="font-size: 19px;color: white" class="glyphicon glyphicon-list-alt">
 
       </span>
      <strong style="font-size: 15px;color: white;"> Lịch sử mua hàng  </strong>
       </div>
    </button>
+   </a>
    @endif
 
 

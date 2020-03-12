@@ -93,11 +93,18 @@
             <div class="space20">&nbsp;</div>
 
             <div class="single-item-desc">
-            <p>@if($sanpham->amount==0) <div class="ribbon">Hết hàng</div> @else {{$sanpham->amount}} sản phẩm @endif</p>
+            <p>
+              @if($sanpham->amount==0) 
+              <div class="ribbon">Hết hàng</div> 
+              {{-- @else <strong>Kho còn</strong> <a style="border-color: red;  border-style: double;font-size:16px">{{$sanpham->amount}} sản phẩm</a> @endif</p> --}}
+              @else{{$sanpham->amount}} sản phẩm @endif
             </div>
             <div class="space20">&nbsp;</div>
             <div class="space20">&nbsp;</div>
-          
+            <label>Số lượng</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" max={{$sanpham->amount}}>
+            <div class="space20">&nbsp;</div>
+            <div class="space20">&nbsp;</div>
             <div class="single-item-options">
               <p>Size:  {{$sanpham->size}}</p>
               {{-- <select class="wc-select" name="size" id="size" onchange="Size(this)">

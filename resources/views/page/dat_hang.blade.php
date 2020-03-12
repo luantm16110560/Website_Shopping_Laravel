@@ -159,7 +159,8 @@
 							
 							<div class="your-order-item">
 								<div class="form-group" >
-									<label style="font-size: 17px" class="color-black"><select id="khuvuc"  onchange="Ship(this)">
+									<label style="font-size: 17px" class="color-black">
+									<select id="khuvuc" required  onchange="Ship(this)">
 										<option value=""> -- Chọn khu vực -- </option>
 										<option value="1">Khu vực ngoại thành</option>
 										<option value="0"> Khu vực nội thành </option>

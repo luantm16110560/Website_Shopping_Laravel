@@ -146,7 +146,7 @@ class PageController extends Controller
         $bill->note=$req->notes;
         $bill->status=1;
         $bill->isFinish=0;
-       
+        
         $input = $req->only(['name', 'gender','phone','address','email']);
         $cus_infor = json_encode($input,JSON_UNESCAPED_UNICODE );
         $bill->cus_infor=$cus_infor ;
@@ -157,7 +157,9 @@ class PageController extends Controller
          $bill_detail=new Bill_Detail;
          $bill_detail->id_bill=$bill->id;
          $bill_detail->id_product=$key;
+         
          $bill_detail->amount=$value['qty'];
+
          if($value['price2']==0){$bill_detail->unit_price=$value['price']/$value['qty'];}
          else{$bill_detail->unit_price=$value['price2']/$value['qty'];}
          $bill_detail->status=1;
@@ -755,5 +757,9 @@ class PageController extends Controller
         Type_Product::where('id',$id_cate )
         ->update(['status' => 0]);
        return redirect()->back()->with('xoathanhcong','Xóa thành công');
+    }
+    public function getOrderHistory()
+    {
+        return view('page.order_history');
     }
 }
