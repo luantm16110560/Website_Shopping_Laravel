@@ -120,7 +120,8 @@
                 <option value="43">43</option>
               </select> --}}
               @if(Auth::check())
-              @if($sanpham->amount!=0)<a class="add-to-cart" href="{{route('addtocard',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>@endif
+              @if($sanpham->amount!=0)<button onclick="addCart()" class="add-to-cart" ><i class="fa fa-shopping-cart"></i></button>
+              @endif
               @else 
               @if($sanpham->amount!=0)<a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>@endif
               @endif
@@ -131,6 +132,22 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 							<script language="javascript">
+                window.onload = function() {
+                var input = document.getElementById("quantity").focus();
+                }
+                function addCart()
+                {
+                  $.ajax({
+                    url: 'http://localhost/laravel/public/add-to-card/{{$sanpham->id}}',
+                    type: 'get',
+                    data: {},
+                   success: function (data) {
+                    // use it here
+                    document.location.reload(true);
+                   }
+                 });
+                  
+                }
 								function Size(obj)
 									{
 										var value = obj.value;
@@ -194,14 +211,14 @@
               <img src="source\image\size.png" alt="">
         </div> --}}
         <div class="space40">&nbsp;</div>
-        <div class="woocommerce-tabs">
+        <div class="woocommerce-tabs" style="corlor:red">
           <ul class="tabs">
-            <li><a href="#tab-description">Mô tả</a></li>
-            <li><a href="#tab-image">Hướng dẫn chọn size giày</a></li>
+            <li><a style="font-weight: bold;color: black;border-style: groove" href="#tab-description">Mô tả</a></li>
+            <li><a style="font-weight: bold;color: black;border-style: groove" href="#tab-image">Hướng dẫn chọn size giày</a></li>
             {{-- <li><a href="#tab-reviews">Reviews (0)</a></li> --}}
           </ul>
           <div class="panel" id="tab-description">
-            @if($sanpham->description!=null)<p>{!!$sanpham->description!!}</p>
+            @if($sanpham->description!=null)<p style="font-size: 100%">{!!$sanpham->description!!}</p>
              @else <p>Chưa có thông tin mô tả cho sản phẩm</p> 
              @endif
           </div>

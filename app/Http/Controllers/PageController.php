@@ -51,14 +51,15 @@ class PageController extends Controller
        return view('page.gioithieu');
    }
 
-   public function getAddtoCard(Request $res, $id)
+   public function getAddtoCard(Request $req, $id)
    {
        $product=Product::find($id);
        $oldCart=Session('cart')?Session::get('cart'):null;
        $cart=new Cart($oldCart);
        $cart->add($product, $id);
-       $res->session()->put('cart',$cart);
-       return redirect()->back();
+       $req->session()->put('cart',$cart);
+       // echo "server working";
+      //  return view('page.chitiet_sanpham');
    }
 
    public function AddByOne(Request $res, $id)
