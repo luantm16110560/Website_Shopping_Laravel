@@ -281,7 +281,7 @@ Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 // ORDER HISTORY 
 Route::get('/order_history',[
-	'as'=>'order_history',
+	'as'=>'orderhistory',
 	'uses'=>'PageController@getOrderHistory'
 ]);
 
