@@ -60,7 +60,7 @@
                         @endif
                      </span>
                   </div>
-                  <div class="beta-dropdown cart-body" style="width:300px;margin-top: -13px  !important " >
+                  <div class="beta-dropdown cart-body" style="width:300px;margin-top: -13px" >
                      @foreach ($product_cart as $productcart)
                      <div class="cart-item">
                         <a class="cart-item-delete" href="{{route('deletegiohang',$productcart['item']['id'])}}"><i
