@@ -28,19 +28,19 @@
                       
                           <div class="col-sm-4" style="margin-left: -18px" >
                               <div >
-                            <img style="height: 120px;width: 150px;"src="source/image/product/{{$sanpham->img1}}" alt="">
+                            <img style="height: 120px;width: 150px;font-weight: bold;border-color: blue;border-style: groove; border-width: 1px;border-height:1px"src="source/image/product/{{$sanpham->img1}}" alt="">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div >
-                          <img  style="height: 120px;width: 150px;" src="source/image/product/{{$sanpham->img2}}" alt="">
+                          <img  style="height: 120px;width: 150px;font-weight: bold;border-color: blue;border-style: groove; border-width: 1px;border-height:1px" src="source/image/product/{{$sanpham->img2}}" alt="">
                           </div>
                       </div>
                       <div class="col-sm-4">
-                          <div >
-                              <img style="height: 120px;width: 150px;" src="source/image/product/{{$sanpham->img3}}" alt="">
-                              </div>
-                    </div>
+                        <div >
+                      <img  style="height: 120px;width: 150px;font-weight: bold;border-color: blue;border-style: groove; border-width: 1px;border-height:1px" src="source/image/product/{{$sanpham->img3}}" alt="">
+                      </div>
+                  </div>
                           
                       
                    
