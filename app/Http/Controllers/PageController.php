@@ -23,7 +23,7 @@ class PageController extends Controller
    public function getIndex()
    {
     $slide = DB::table('slides')->get();
-    $product = Product::where('status','=',1)->paginate(8);
+    $product = Product::where('status','=',1)->paginate(24);
     $count =  Product::where('status','=',1)->count();
     return view('page.trangchu')->with('my_slide',$slide)->with('product',$product)->with('_count',$count);
    }
