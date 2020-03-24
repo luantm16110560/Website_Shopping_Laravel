@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-sm-7">
                     <table class="table table-hover">
-                        <thead>
+                        <the ad>
                             <tr  scope="col"><strong>Ngày đặt hàng: 26/01/2020</strong></tr>
                           <tr>
                             <th scope="col">STT</th>
