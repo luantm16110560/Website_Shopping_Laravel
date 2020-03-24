@@ -11,7 +11,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
             </button>
-            <a href="#">
+            <a href="{{route('home-page')}}">
                <img style="margin-top:4px" href="{{route('home-page')}}" src="source/image/logo/logo.jpg" width="80"
                   height="45px" alt="">
             </a>
