@@ -1,12 +1,16 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+
 <nav class="navbar navbar-fixed-top" style="background-color: lightblue;">
    <div class="container">
       <div class="navbar-header">
+   
          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
             aria-expanded="false" aria-controls="navbar">
             <i class="fa fa-bars"></i>
          </button>
+        
+
       </div>
       <div id="navbar" class="navbar-collapse collapse">
 
@@ -60,7 +64,7 @@
                         @endif
                      </span>
                   </div>
-                  <div class="beta-dropdown cart-body" style="width:300px;margin-top: -13px" >
+                  <div class="beta-dropdown cart-body" style="width:300px;margin-top: -13px">
                      @foreach ($product_cart as $productcart)
                      <div class="cart-item">
                         <a class="cart-item-delete" href="{{route('deletegiohang',$productcart['item']['id'])}}"><i
@@ -124,17 +128,22 @@
                         </div>
                      </div>
                   </div>
+                  @else
+                  <div class="cart" style="width:150px;">
+                  </div>
                   @endif
 
             </li>
-
-            <div style="position: absolute;right: 1rem;">
-               <form style="margin-top: 8px;" role="search" method="get" id="searchform"
-                  action="{{route('searchView')}}" autocomplete="off">
-                  <strong><input onkeypress="myFunction(event)" id="id_search" style="font-size:16px;" type="text"
-                        class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
-                  <script type="text/javascript">
-                     var path ="{{route('search')}}";// đường dẫn đến api để lấy kết quả dạng json
+         
+       
+            {{-- <li style="position: absolute;right: 2rem;"> --}}
+            
+            <form style="margin-top: 8px;" role="search" method="get" id="searchform" action="{{route('searchView')}}"
+               autocomplete="off">
+               <strong><input onkeypress="myFunction(event)" id="id_search" style="font-size:16px;" type="text"
+                     class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
+               <script type="text/javascript">
+                  var path ="{{route('search')}}";// đường dẫn đến api để lấy kết quả dạng json
               //type ahead để auto complete
           
               $('input.typeahead').typeahead({
@@ -150,30 +159,54 @@
      
           
         
-                  </script>
-                  <button class="fa fa-search" aria-hidden="true" type="submit" id="searchsubmit"></button>
-               </form>
-               <span class="dropdown">
-                  <a style="margin-top: -0.25rem" class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
-                  </a>
-                
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-               </span>
+               </script>
+               <button class="fa fa-search" aria-hidden="true" type="submit" id="searchsubmit"></button>
+            </form>
+             
+            <li>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               &nbsp;
+            </li>
+            
+            <span class="dropdown">
+               @if(Auth::check())
+               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                  {{Auth::user()->name}} &#8250;
+               </button>
+              
+               <ul class="dropdown-menu" style="margin-top: 10px">
+                  <li><a href="{{route('infor')}}">Thông tin cá nhân</a></li>
+                  <li><a href="{{route('orderhistory')}}">Lịch sử mua hàng</a></li>
+                  <li><a href="{{route('dangxuat')}}">Đăng xuất</a></li>
+                  @can('isManager')
+                  <li ><a href="{{route('manager-page')}}"></i>Trang bán hàng</a></li>
+                  @endcan   
+               </ul>
+           
+               @else
+               <a class="btn btn-primary" href="{{route('dangnhap')}}" role="button">Đăng nhập</a>
+               <a class="btn btn-primary" href="{{route('dangki')}}" role="button">Đăng ký</a>
+               
+               {{-- <ul class="dropdown-menu" style="margin-top: 10px">
+                  <li><a href="{{route('infor')}}">Thông tin cá nhân</a></li>
+               <li><a href="{{route('orderhistory')}}">Lịch sử mua hàng</a></li>
+                  <li><a href="{{route('dangxuat')}}">Đăng xuất</a></li>
+               </ul> --}}
+               @endif
+            </span>
+         
 
-
-            </div>
+            {{-- </li> --}}
 
 
          </ul>
+     
       </div>
+     
       <!--/.nav-collapse -->
    </div>
 </nav>
+
 <br>
 <br>
 <br>
