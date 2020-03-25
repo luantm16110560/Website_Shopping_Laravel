@@ -44,6 +44,30 @@
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;
                </li>
+
+               <li>
+                  <form style="margin-top: 8px;" role="search" method="get" id="searchform"
+                     action="{{route('searchView')}}" autocomplete="off">
+                     <strong><input onkeypress="myFunction(event)" id="id_search" style="font-size:16px;" type="text"
+                           class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
+                     <script type="text/javascript">
+                        var path ="{{route('search')}}";// đường dẫn đến api để lấy kết quả dạng json
+                            //type ahead để auto complete
+ 
+                              $('input.typeahead').typeahead({
+                                 source:function(query,process){
+                                    return $.get(path,{query:name},function(data){
+                                       return process(data);
+                                       alert(data.id);
+                                    
+
+                                    });
+                                 }
+                           });
+                     </script>
+                     <button class="fa fa-search" aria-hidden="true" type="submit" id="searchsubmit"></button>
+                  </form>
+               </li>
                
             </ul>
             <ul class="nav navbar-nav navbar-right"
@@ -137,32 +161,9 @@
                      @endif
 
                </li>
-               <li>
-                  <form style="margin-top: 8px;" role="search" method="get" id="searchform"
-                     action="{{route('searchView')}}" autocomplete="off">
-                     <strong><input onkeypress="myFunction(event)" id="id_search" style="font-size:16px;" type="text"
-                           class="typeahead form-control" name="id_search" placeholder="Tìm kiếm sản phẩm" /></strong>
-                     <script type="text/javascript">
-                        var path ="{{route('search')}}";// đường dẫn đến api để lấy kết quả dạng json
-                            //type ahead để auto complete
- 
-                              $('input.typeahead').typeahead({
-                                 source:function(query,process){
-                                    return $.get(path,{query:name},function(data){
-                                       return process(data);
-                                       alert(data.id);
-                                    
-
-                                    });
-                                 }
-                           });
-                     </script>
-                     <button class="fa fa-search" aria-hidden="true" type="submit" id="searchsubmit"></button>
-                  </form>
-               </li>
-               <li>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               </li>
+               {{-- <li>
+                  &nbsp;&nbsp;&nbsp;
+               </li> --}}
                <li >
                   @can('isManager')
                      <span class="dropdown">

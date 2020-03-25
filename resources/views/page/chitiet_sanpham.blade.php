@@ -138,7 +138,7 @@
                 function addCart()
                 {
                   $.ajax({
-                    url: 'http://localhost/laravel/public/add-to-card/{{$sanpham->id}}',
+                    url: 'http://localhost:81/laravel/public/add-to-card/{{$sanpham->id}}',
                     type: 'get',
                     data: {},
                    success: function (data) {
