@@ -8,7 +8,7 @@ class Product extends Model
 {
     protected $table='products';
 
-    protected $fillable=['name','description','unit_price','promotion_price','amount','image','isNew','status','id_type'];
+    protected $fillable=['name','description','unit_price','promotion_price','image','isNew','status','id_type'];
 
     public $timestamps=false;
 
@@ -23,6 +23,10 @@ class Product extends Model
     public function bill_detail()
     {
         return $this->hasMany('App\Bill_Detail');
+    }
+    public function attribute_value()
+    {
+        return $this->hasMany('App\Attribute_Value');
     }
 
 }

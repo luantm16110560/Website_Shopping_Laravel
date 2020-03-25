@@ -12,6 +12,8 @@ use App\Customer;
 use App\User;
 use App\Bill;
 use App\Bill_Detail;
+use App\Attribute;
+use App\Attribute_Value;
 use Session;
 use Hash;
 use Auth;
@@ -39,8 +41,19 @@ class PageController extends Controller
    {
         $sanpham=Product::where('id',$res->id)->first();
         $sp_tuongtu=Product::where([['id_type',$sanpham->id_type],['id','<>',$sanpham->id],['status','=',1],])->paginate(3);
-        $sp_sale=Product::where([['promotion_price','<>',0],['id','<>',$sanpham->id],['status','=',1],['amount','=',1],])->paginate(5);
-        return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu)->with("sp_sale",$sp_sale);
+        $sp_sale=Product::where([['promotion_price','<>',0],['id','<>',$sanpham->id],['status','=',1],])->paginate(5);
+        
+        $sl=Attribute_Value::where('id_product','=',$res->id)->first();
+        if (empty( $sl ))
+        {
+           
+            $slsp = 0;
+        }else{
+            $slsp = $sl->amount;
+           
+        }
+       $size=Attribute_Value::where('id_product','=',$res->id)->get();
+       return view('page.chitiet_sanpham')->with("sanpham",$sanpham)->with("sp_tuongtu",$sp_tuongtu)->with("sp_sale",$sp_sale)->with("slsp",$slsp)->with("sizes",$size);
    }
    public function getContact()
    {
@@ -56,10 +69,11 @@ class PageController extends Controller
        $product=Product::find($id);
        $oldCart=Session('cart')?Session::get('cart'):null;
        $cart=new Cart($oldCart);
-       $cart->add($product, $id);
+       $cart->add($product, $id, $req->sl);
        $req->session()->put('cart',$cart);
        // echo "server working";
       //  return view('page.chitiet_sanpham');
+     
    }
 
    public function AddByOne(Request $res, $id)

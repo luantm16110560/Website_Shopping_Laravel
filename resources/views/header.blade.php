@@ -113,8 +113,8 @@
                                     <tr>
                                        <td class="text-center">
                                           <span class="cart-item-amount">
-                                             {{-- <a href="{{route('addbyone',$productcart['item']['id'])}}"><i
-                                                class="fa fa-plus-circle"></i></a> --}}
+                                             <a href="{{route('addbyone',$productcart['item']['id'])}}"><i
+                                                class="fa fa-plus-circle"></i></a>
                                              {{$productcart['qty']}}
                                              <a href="{{route('deletesp',$productcart['item']['id'])}}"><i
                                                    class="fa fa-minus-circle"></i></a>
@@ -188,7 +188,7 @@
                         <li><a href="{{route('infor')}}">Thông tin cá nhân</a></li>
                         <li><a href="{{route('orderhistory')}}">Lịch sử mua hàng</a></li>
                         <li><a href="{{route('dangxuat')}}">Đăng xuất</a></li>
-                     </ul>
+                     </ul> 
                      @else
                      <div style="margin-top:8px;height: 40px">
                         <a class="btn btn-primary" href="{{route('dangnhap')}}" role="button">Đăng nhập</a>

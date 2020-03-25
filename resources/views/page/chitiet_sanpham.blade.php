@@ -94,36 +94,35 @@
 
             <div class="single-item-desc">
             <p>
-              @if($sanpham->amount==0) 
+              @if($slsp==0) 
               <div class="ribbon">Hết hàng</div> 
               {{-- @else <strong>Kho còn</strong> <a style="border-color: red;  border-style: double;font-size:16px">{{$sanpham->amount}} sản phẩm</a> @endif</p> --}}
-              @else{{$sanpham->amount}} sản phẩm @endif
+              @else
+              {{$slsp}} sản phẩm 
+              @endif
             </div>
             <div class="space20">&nbsp;</div>
             <div class="space20">&nbsp;</div>
             <label>Số lượng</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1" max={{$sanpham->amount}}>
+            <input type="number" id="quantity" name="sl" min="1" value="1" max={{$slsp}}>
             <div class="space20">&nbsp;</div>
             <div class="space20">&nbsp;</div>
             <div class="single-item-options">
-              <p>Size:  {{$sanpham->size}}</p>
-              {{-- <select class="wc-select" name="size" id="size" onchange="Size(this)">
-                <option value="">-- Size --</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-              </select> --}}
+              {{-- <p>Size:  {{$slsp->size}}</p> --}}
+           
+   
+              <select class="wc-select" name="size" id="size" onchange="Size(this)">
+                @foreach ($sizes as $size)
+                <option> {{$size->value}}</option>
+                @endforeach
+              </select>
+          
+         
               @if(Auth::check())
-              @if($sanpham->amount!=0)<button onclick="addCart()" class="add-to-cart" ><i class="fa fa-shopping-cart"></i></button>
+              @if($slsp!=0)<button onclick="addCart()" class="add-to-cart" ><i class="fa fa-shopping-cart"></i></button>
               @endif
               @else 
-              @if($sanpham->amount!=0)<a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>@endif
+              @if($slsp!=0)<a class="add-to-cart" href="{{route('dangnhap')}}"><i class="fa fa-shopping-cart"></i></a>@endif
               @endif
               <div class="clearfix"></div>
             </div>
