@@ -11,7 +11,7 @@ class Bill extends Model
     protected $fillable=['date_order','total','payment','note','status'];
 
     public $timestamps=false;
-
+//
     public function user()
     {
         return $this->belongTo('App\User');
