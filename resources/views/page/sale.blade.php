@@ -94,11 +94,11 @@
                                         <a href="{{route('product-detail',$p->id)}}"><img style="width: auto" src="source/image/product/{{$p->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        @if(strlen($bl->name)<36)
-                                        <p class="single-item-title"><font>{{$bl->name}}</font></p>
+                                        @if(strlen($p->name)<36)
+                                        <p class="single-item-title"><font>{{$p->name}}</font></p>
                                         <br>
                                         @else
-                                        <p class="single-item-title"><font>{{$bl->name}}</font></p>
+                                        <p class="single-item-title"><font>{{$p->name}}</font></p>
                                         @endif
 
                                         {{-- <p class="single-item-title" style="color: red;font-weight: bold"><strong> Mã sản phẩm:     </strong>{{$p->id}}</p> --}}

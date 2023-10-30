@@ -505,14 +505,14 @@ class ProductController extends Controller
     {
         if(!Auth::check())
         {
-        $product = Product::where('status',1)
-        ->where('promotion_price','<>',0)
-        ->paginate(8);
-        $slide = DB::table('slides')->get();
-        return view('page.sale')
-        ->with('product',$product)
-        ->with('my_slide',$slide);
-        }
+            $product = Product::where('status',1)
+            ->where('promotion_price','<>',0)
+            ->paginate(8);
+            $slide = DB::table('slides')->get();
+            return view('page.sale')
+            ->with('product',$product)
+            ->with('my_slide',$slide);
+            }
         else
         {
             $product = Product::where('status',1)
@@ -523,13 +523,13 @@ class ProductController extends Controller
             ->select(
             'user_like_product.id_product as id_product_like'
             )
-        ->where([['id_user',  '=', Auth::user()->id],['isLike','=',1]])
-        ->join('products','user_like_product.id_product','=','products.id')->get();
-        $slide = DB::table('slides')->get();
-           return view('page.sale')
-           ->with('product',$product)
-           ->with('my_slide',$slide)
-           ->with('like_list',$like_list);
+            ->where([['id_user',  '=', Auth::user()->id],['isLike','=',1]])
+            ->join('products','user_like_product.id_product','=','products.id')->get();
+            $slide = DB::table('slides')->get();
+            return view('page.sale')
+            ->with('product',$product)
+            ->with('my_slide',$slide)
+            ->with('like_list',$like_list);
 
         }
     }

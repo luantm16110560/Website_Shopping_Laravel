@@ -28,10 +28,9 @@
                 <img src="source\image\slide\1.jpg" style="width:100%;height: 350px">
 
             </div>
-
             @foreach($my_slide as $sl)
             <div data-interval="1000" class="item">
-                <img src="source\image\banner\{{$sl->image}}" style="width:100%;height: 350px">
+                <img src="source/image/banner/{{$sl->image}}" style="width:100%;height: 350px">
             </div>
             @endforeach
 
