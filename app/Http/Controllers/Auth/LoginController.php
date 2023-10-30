@@ -49,16 +49,16 @@ class LoginController extends Controller
         try {
 
             $user = Socialite::driver('google')->user();
-
             $finduser = User::where('provider_id', $user->id)->first();
-
             if($finduser){
-
                 Auth::login($finduser);
-
-                 return redirect('/home');
-
+                return redirect('/home');
             }else{
+                $us = User::where('email', $user->email)->first();
+                if($us){
+                    Auth::login($us);
+                    return redirect('/home');
+                }
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
